@@ -1,6 +1,6 @@
 EAPI=5
 
-inherit eutils java-utils-2
+inherit eutils java-utils-2 java-pkg-2 java-ant-2
 
 DESCRIPTION="Open source personal backup solution"
 HOMEPAGE="http://www.areca-backup.org/"
