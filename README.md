@@ -8,6 +8,5 @@ If you want to use one (or more) of these ebuilds, just clone this repository an
 
 * Random font packages
 * ksuperkey for KDE
-* Areca backup
 * More ebuilds might be added at some point
 
