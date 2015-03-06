@@ -1,3 +1,6 @@
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
 EAPI=5
 
 DESCRIPTION="A utility that redirects the superkey (aka 'Windows key') to another key combination so it can be used as a hotkey in KDE"
