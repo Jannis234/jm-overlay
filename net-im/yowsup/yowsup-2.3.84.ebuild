@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+encryption"
 
 RDEPEND="dev-lang/python[readline]
-		 >=dev-python/axolotl-0.1.1[${PYTHON_USEDEP}]
+		 >=dev-python/axolotl-0.1.7[${PYTHON_USEDEP}]
 		 dev-python/python-dateutil[${PYTHON_USEDEP}]
 		 dev-python/pillow[${PYTHON_USEDEP}]
 		 dev-python/configargparse[${PYTHON_USEDEP}]

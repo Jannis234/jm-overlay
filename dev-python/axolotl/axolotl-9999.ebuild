@@ -4,11 +4,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
-inherit distutils-r1
+inherit distutils-r1 git-2
 
 DESCRIPTION="Python port of libaxolotl"
 HOMEPAGE="https://github.com/tgalal/python-axolotl"
-SRC_URI="https://github.com/tgalal/python-axolotl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/tgalal/python-axolotl.git"
 
 LICENSE="GPL-3"
 SLOT="0"
