@@ -3,6 +3,8 @@
 
 EAPI=5
 
+inherit multilib
+
 DESCRIPTION="Store your data in images"
 HOMEPAGE="https://sourceforge.net/projects/jm-impack/"
 SRC_URI="http://downloads.sourceforge.net/project/jm-impack/ImPack/${PV}/${P}-src.tar.xz"
@@ -17,6 +19,13 @@ RDEPEND=">=dev-lang/mono-3
 		 dev-dotnet/gtk-sharp:3"
 DEPEND="${RDEPEND}"
 S="${WORKDIR}/${P}/ImPack"
+
+src_prepare() {
+
+	sed -i "/Icon/d" impack.desktop || die # Some desktops don't find the icon if /usr/lib is a symlink
+	echo "Icon=/usr/$(get_libdir)/impack/ImPack.png" >> impack.desktop
+
+}
 
 src_install() {
 
