@@ -12,8 +12,8 @@ SRC_URI="http://downloads.sourceforge.net/project/jm-impack/ImPack/${PV}/${P}-sr
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE_LINGUAS=" de"
-IUSE="${IUSE_LINGUAS// / linguas_}"
+IMPACK_LINGUAS=( de )
+IUSE="${IMPACK_LINGUAS[@]/#/linguas_}"
 
 RDEPEND=">=dev-lang/mono-3
 		 dev-dotnet/gtk-sharp:3"
