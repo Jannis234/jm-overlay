@@ -1,3 +1,4 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +17,7 @@ IMPACK_LINGUAS=( de )
 IUSE="${IMPACK_LINGUAS[@]/#/linguas_}"
 
 RDEPEND=">=dev-lang/mono-3
-		 dev-dotnet/gtk-sharp:3"
+	dev-dotnet/gtk-sharp:3"
 DEPEND="${RDEPEND}"
 S="${WORKDIR}/${P}/ImPack"
 
@@ -32,11 +33,10 @@ src_install() {
 	use linguas_de || rm bin/Release/Locale/deu.xml
 
 	emake install PREFIX="${D}/usr"
-	
+
 	rm -rf "${D}/usr/share/man" # Let portage handle manpages/docs
 	rm -rf "${D}/usr/share/doc"
 	doman impack.1
 	dodoc README.txt LICENSE.txt
 
 }
-

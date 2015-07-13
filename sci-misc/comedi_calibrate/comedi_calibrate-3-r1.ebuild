@@ -1,3 +1,4 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,15 +14,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sci-libs/comedilib
-		 sci-libs/gsl
-		 dev-libs/boost"
+	sci-libs/gsl
+	dev-libs/boost"
 DEPEND="${RDEPEND}"
 
 src_install() {
 
 	default
 
-	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
+	dodoc AUTHORS ChangeLog INSTALL NEWS README
 
 }
-

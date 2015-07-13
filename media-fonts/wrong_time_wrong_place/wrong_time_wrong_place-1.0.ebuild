@@ -1,3 +1,4 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,7 +26,6 @@ src_prepare() {
 
 	# Remove spaces from filenames
 	mv "Read me.txt" "Readme.txt"
-	mv "Wrong time, wrong place.ttf" "Wrong_time_wrong_place.ttf" 
+	mv "Wrong time, wrong place.ttf" "Wrong_time_wrong_place.ttf"
 
 }
-

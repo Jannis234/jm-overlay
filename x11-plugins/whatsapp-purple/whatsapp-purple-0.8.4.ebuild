@@ -1,3 +1,4 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,9 +14,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="net-im/pidgin
-		 media-libs/freeimage"
+	media-libs/freeimage"
 DEPEND="${RDEPEND}
-		virtual/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 
@@ -23,7 +24,7 @@ src_prepare() {
 		-e "/-O2/d" \
 		-e "s/-pipe//" \
 		Makefile || die # Remove CFLAGS/LDFLAGS that should be chosen by the user
-	
+
 	sed -i \
 		-e "/-shared/aCFLAGS += \$(CUSTOM_CFLAGS)\nLDFLAGS += \$(CUSTOM_LDFLAGS)" \
 		Makefile || die
@@ -35,4 +36,3 @@ src_compile() {
 	emake CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
 
 }
-

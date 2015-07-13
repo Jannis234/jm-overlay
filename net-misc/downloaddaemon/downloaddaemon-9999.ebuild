@@ -1,3 +1,4 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,7 +24,7 @@ ESVN_RESTRICT="export"
 src_unpack() {
 
 	subversion_src_unpack
-	
+
 	local S="${S}/${S_dest}"
 	mkdir -p "${S}"
 	local repo_uri="$(subversion__get_repository_uri "${1:-${ESVN_REPO_URI}}")"
@@ -35,6 +36,7 @@ src_unpack() {
 
 src_prepare() {
 
+	# Don't compile plugins for filehosters that don't exist anymore
 	epatch "${FILESDIR}/remove_useless_plugins.patch"
 
 }
@@ -61,11 +63,10 @@ pkg_postinst() {
 	elog ""
 	elog "Remeber that you need to modify /etc/downloaddaemon/downloaddaemon.conf"
 	elog "to inform DownloadDaemom that these tools are installed"
-	
+
 	enewgroup downloadd
 	enewuser downloadd -1 -1 /etc/downloaddaemon downloadd
 	mkdir -p /var/downloads
 	chown -R downloadd:downloadd /etc/downloaddaemon /var/downloads
 
 }
-
