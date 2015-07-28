@@ -8,7 +8,7 @@ inherit eutils cmake-utils subversion
 
 DESCRIPTION="CLI interface for net-misc/downloaddaemon"
 HOMEPAGE="http://downloaddaemon.sourceforge.net/"
-ESVN_REPO_URI="https://downloaddaemon.svn.sourceforge.net/svnroot/downloaddaemon/trunk/"
+ESVN_REPO_URI="svn://svn.code.sf.net/p/downloaddaemon/code/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
