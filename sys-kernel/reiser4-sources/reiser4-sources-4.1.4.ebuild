@@ -6,7 +6,7 @@ EAPI="5"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_GENPATCHES_VER="8"
-K_DEBLOB_AVAILABLE="0"
+K_DEBLOB_AVAILABLE="1"
 K_KDBUS_AVAILABLE="1"
 K_SECURITY_UNSUPPORTED="1"
 inherit kernel-2
@@ -15,7 +15,7 @@ detect_arch
 
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 -hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches http://sourceforge.net/projects/reiser4/"
-IUSE="experimental"
+IUSE="deblob experimental"
 
 DESCRIPTION="Full sources including the Gentoo and Reiser4 patchsets for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
 REISER4_URI="http://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-${PV}.patch.gz"
