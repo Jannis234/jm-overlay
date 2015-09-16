@@ -8,4 +8,4 @@ LICENSE=GPL-2
 RDEPEND=sci-libs/comedilib sci-libs/gsl dev-libs/boost
 SLOT=0
 SRC_URI=http://www.comedi.org/download/comedi_calibrate-3.tar.gz
-_md5_=9a73b051582e55158f5e1b4e6d5601a4
+_md5_=5e5304614b75a0e6a202480f7daaa1a0

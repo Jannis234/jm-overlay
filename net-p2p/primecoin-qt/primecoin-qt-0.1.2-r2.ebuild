@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ DESCRIPTION="Cryptocurrency forked from Bitcoin which aims to be energy efficien
 HOMEPAGE="http://primecoin.org/"
 SRC_URI="mirror://sourceforge/${MyPN}/${MyP}-linux.tar.gz -> ${MyP}.tar.gz"
 
-LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CC-BY-SA-3.0 LGPL-2.1 )"
+LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CC-BY-SA-3.0 LGPL-2.1 ) system-leveldb? ( BSD )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+system-leveldb dbus ipv6 kde +qrcode upnp"

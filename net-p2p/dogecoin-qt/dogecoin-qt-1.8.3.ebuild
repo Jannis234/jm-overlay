@@ -18,7 +18,7 @@ DESCRIPTION="P2P Internet currency favored by Shiba Inus worldwide"
 HOMEPAGE="https://dogecoin.com/"
 SRC_URI="https://github.com/${MyPN}/${MyPN}/archive/v${MyPV}.tar.gz -> ${MyP}.tar.gz"
 
-LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CC-BY-SA-3.0 LGPL-2.1 )"
+LICENSE="MIT ISC GPL-3 LGPL-2.1 BSD public-domain || ( CC-BY-SA-3.0 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="dbus kde +qrcode upnp"

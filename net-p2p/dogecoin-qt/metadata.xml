@@ -8,6 +8,7 @@
 	<use>
 		<flag name="qrcode">Enable generation of QR Codes for receiving payments</flag>
 		<flag name="system-leveldb">Use system version of <pkg>dev-libs/leveldb</pkg> instead of the bundled one</flag>
+		<flag name="linguas_de_AT">German locale for Austria</flag>
 	</use>
 	<upstream>
 		<remote-id type="github">dogecoin/dogecoin</remote-id>

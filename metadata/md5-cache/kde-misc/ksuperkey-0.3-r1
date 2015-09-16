@@ -8,4 +8,4 @@ LICENSE=GPL-3
 RDEPEND=x11-libs/libX11 x11-libs/libXtst
 SLOT=0
 SRC_URI=http://kde-apps.org/CONTENT/content-files/154569-ksuperkey-0.3.tar.gz
-_md5_=8e633d15b41528d42f60af5b3fc19795
+_md5_=988f67eb5b006e2d7276676fc0696b76

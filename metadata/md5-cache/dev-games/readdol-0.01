@@ -7,4 +7,4 @@ KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=http://wiibrew.org/w/images/4/44/Readdol-0.01.zip
-_md5_=718064b890e1bf6e9bc3187de24f4796
+_md5_=98ebbeec26ead1aceff82e5df7c68cdb

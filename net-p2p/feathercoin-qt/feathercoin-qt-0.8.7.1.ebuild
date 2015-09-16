@@ -10,17 +10,17 @@ LANGS="af_ZA ar bg bs ca ca_ES cs cy da de el_GR en eo es es_CL et eu_ES fa fa_I
 inherit db-use eutils fdo-mime gnome2-utils kde4-functions qt4-r2
 
 MyPV="${PV/_/-}"
-MyPN="dogecoin"
+MyPN="Feathercoin"
 MyP="${MyPN}-${MyPV}"
 
-DESCRIPTION="P2P Internet currency favored by Shiba Inus worldwide"
-HOMEPAGE="https://dogecoin.com/"
-SRC_URI="https://github.com/${MyPN}/${MyPN}/archive/${MyPV}.tar.gz -> ${MyP}.tar.gz"
+DESCRIPTION="Open source internet currency"
+HOMEPAGE="https://www.feathercoin.com/"
+SRC_URI="https://github.com/FeatherCoin/${MyPN}/archive/v${MyPV}.tar.gz -> ${MyP}.tar.gz"
 
-LICENSE="MIT ISC GPL-3 LGPL-2.1 public-domain || ( CC-BY-SA-3.0 LGPL-2.1 ) system-leveldb? ( BSD )"
+LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+system-leveldb dbus ipv6 kde +qrcode upnp"
+IUSE="dbus ipv6 +qrcode upnp"
 
 RDEPEND="
 	dev-libs/boost[threads(+)]
@@ -32,9 +32,6 @@ RDEPEND="
 		net-libs/miniupnpc
 	)
 	sys-libs/db:$(db_ver_to_slot "${DB_VER}")[cxx]
-	system-leveldb? (
-		<=dev-libs/leveldb-1.12.0[-snappy]
-	)
 	dev-qt/qtgui:4
 	dbus? (
 		dev-qt/qtdbus:4
@@ -49,20 +46,18 @@ DOCS="doc/README.md doc/release-notes.md"
 S="${WORKDIR}/${MyP}"
 
 src_prepare() {
-#	epatch "${FILESDIR}"/${MyPN}-sys_leveldb.patch
-#	rm -r src/leveldb || die
 
-	sed 's/BDB_INCLUDE_PATH=.*//' -i 'dogecoin-qt.pro' || die
+	sed 's/BDB_INCLUDE_PATH=.*//' -i 'feathercoin-qt.pro' || die
 
 	cd src || die
 
 	local filt= yeslang= nolang=
 
-	#for lan in $LANGS; do
-	#	if [ ! -e qt/locale/bitcoin_$lan.ts ]; then
-	#		ewarn "Language '$lan' no longer supported. Ebuild needs update."
-	#	fi
-	#done
+	for lan in $LANGS; do
+		if [ ! -e qt/locale/bitcoin_$lan.ts ]; then
+			ewarn "Language '$lan' no longer supported. Ebuild needs update."
+		fi
+	done
 
 	for ts in $(ls qt/locale/*.ts)
 	do
@@ -95,7 +90,6 @@ src_configure() {
 	use qrcode && OPTS+=("USE_QRCODE=1")
 	use ipv6 || OPTS+=("USE_IPV6=-")
 
-	use system-leveldb && OPTS+=("USE_SYSTEM_LEVELDB=1")
 	OPTS+=("BDB_INCLUDE_PATH=$(db_includedir "${DB_VER}")")
 	OPTS+=("BDB_LIB_SUFFIX=-${DB_VER}")
 
@@ -103,16 +97,8 @@ src_configure() {
 		OPTS+=("LIBS+=-lboost_chrono\$\$BOOST_LIB_SUFFIX")
 	fi
 
-	#The litecoin codebase is mostly taken from bitcoin-qt
-	eqmake4 dogecoin-qt.pro "${OPTS[@]}" || die
+	eqmake4 feathercoin-qt.pro "${OPTS[@]}" || die
 }
-
-#Tests are broken with and without our litecoin-sys_leveldb.patch
-#src_test() {
-#	cd src || die
-#	emake -f makefile.unix "${OPTS[@]}" test_litecoin
-#	./test_litecoin || die 'Tests failed'
-#}
 
 src_install() {
 #	qt4-r2_src_install
@@ -120,9 +106,9 @@ src_install() {
 	dobin ${PN}
 
 	insinto /usr/share/pixmaps
-	newins "share/pixmaps/bitcoin.ico" "${PN}.ico"
+	newins "share/pixmaps/bitcoin256.png" "${PN}.png"
 
-	make_desktop_entry "${PN} %u" "Dogecoin-Qt" "/usr/share/pixmaps/${PN}.ico" "Qt;Network;P2P;Office;Finance;" "MimeType=x-scheme-handler/dogecoin;\nTerminal=false"
+	make_desktop_entry "${PN} %u" "Feathercoin-Qt" "/usr/share/pixmaps/${PN}.png" "Qt;Network;P2P;Office;Finance;" "Terminal=false"
 
 #	newman contrib/debian/manpages/bitcoin-qt.1 ${PN}.1
 
