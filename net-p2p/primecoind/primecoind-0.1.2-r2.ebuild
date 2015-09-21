@@ -16,7 +16,7 @@ DESCRIPTION="P2P Internet currency based on Bitcoin but easier to mine"
 HOMEPAGE="http://primecoin.org/"
 SRC_URI="mirror://sourceforge/${MyPN}/${MyP}-linux.tar.gz -> ${MyP}.tar.gz"
 
-LICENSE="MIT ISC GPL-2 system-leveldb? ( BSD )"
+LICENSE="MIT ISC GPL-2 !system-leveldb? ( BSD )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+system-leveldb examples ipv6 logrotate upnp"
