@@ -16,7 +16,7 @@ MyP="${MyPN}-${MyPV}"
 
 DESCRIPTION="A Currency for the digital age"
 HOMEPAGE="http://digitalcoin.org/"
-SRC_URI="https://github.com/DGCDev/${MyPN}/archive/v${MyPV}.tar.gz"
+SRC_URI="https://github.com/DGCDev/${MyPN}/archive/v${MyPV}.tar.gz -> ${MyP}.tar.gz"
 
 LICENSE="MIT BSD"
 SLOT="0"
