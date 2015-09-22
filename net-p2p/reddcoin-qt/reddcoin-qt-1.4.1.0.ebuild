@@ -6,22 +6,22 @@ EAPI=5
 
 DB_VER="4.8"
 
-LANGS="en ru uk"
+LANGS="af_ZA ar bg bs ca_ES ca cs cy da de el_GR en eo es_CL es et eu_ES fa_IR fa fi fr_CA fr gu_IN he hi_IN hr hu it ja la lt lv_LV nb nl pl pt_BR pt_PT ro_RO ru sk sr sv th_TH tr uk zh_CN zh_TW"
 
 inherit db-use eutils fdo-mime gnome2-utils kde4-functions qt4-r2
 
 MyPV="${PV/_/-}"
-MyPN="novacoin"
+MyPN="reddcoin"
 MyP="${MyPN}-${MyPV}"
 
-DESCRIPTION="Decentralized digital currency"
-HOMEPAGE="http://novacoin.org/"
-SRC_URI="https://github.com/novacoin-project/${MyPN}/archive/nvc-v${MyPV}.tar.gz"
+DESCRIPTION="The social currency"
+HOMEPAGE="https://www.reddcoin.com/"
+SRC_URI="https://github.com/reddcoin-project/${MyPN}/archive/v${MyPV}.tar.gz -> ${MyP}.tar.gz"
 
 LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ipv6 dbus kde +qrcode upnp"
+IUSE="ipv6 dbus +qrcode upnp"
 
 RDEPEND="
 	dev-libs/boost[threads(+)]
@@ -43,9 +43,9 @@ DEPEND="${RDEPEND}
 	>=app-shells/bash-4.1
 "
 
-DOCS="doc/README"
+DOCS="doc/README.md"
 
-S="${WORKDIR}/${MyPN}-nvc-v${MyPV}"
+S="${WORKDIR}/${MyPN}-${MyPV}"
 
 src_prepare() {
 	cd src || die
@@ -96,23 +96,23 @@ src_configure() {
 		OPTS+=("LIBS+=-lboost_chrono\$\$BOOST_LIB_SUFFIX")
 	fi
 
-	eqmake4 novacoin-qt.pro "${OPTS[@]}" || die
+	eqmake4 reddcoin-qt.pro "${OPTS[@]}" || die
 }
 
 src_install() {
-	dobin novacoin-qt # Upstream's makefile doesn't install anything
+	dobin reddcoin-qt # Upstream's makefile doesn't install anything
 
 	insinto /usr/share/pixmaps
-	newins "share/pixmaps/novacoin80.xpm" "${PN}.xpm"
+	newins "src/qt/res/icons/bitcoin.png" "${PN}.png"
 
-	make_desktop_entry "${PN} %u" "Novacoin-Qt" "/usr/share/pixmaps/${PN}.xpm" "Qt;Network;P2P;Office;Finance;" "Terminal=false"
+	make_desktop_entry "${PN} %u" "Reddcoin-Qt" "/usr/share/pixmaps/${PN}.png" "Qt;Network;P2P;Office;Finance;" "Terminal=false"
 
 	# doman contrib/debian/manpages/bitcoin-qt.1
 
-	if use kde; then
-		insinto /usr/share/kde4/services
-		doins contrib/debian/novacoin-qt.protocol
-	fi
+	#if use kde; then
+	#	insinto /usr/share/kde4/services
+	#	doins contrib/debian/novacoin-qt.protocol
+	#fi
 }
 
 update_caches() {
