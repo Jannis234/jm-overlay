@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<layman>
-	<overlay name="jm-overlay" status="unofficial" src="https://github.com/Jannis234/jm-overlay.git" type="git">
-		<link>https://github.com/Jannis234/jm-overlay</link>
-		<description>Personal overlay with more or less random ebuilds</description>
-	</overlay>
-</layman>
