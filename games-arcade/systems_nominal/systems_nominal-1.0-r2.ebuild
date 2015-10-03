@@ -17,7 +17,7 @@ KEYWORDS="-* ~amd64" # sys-libs/libudev-compat is only keyworded on amd64 right 
 IUSE=""
 
 DEPEND="app-arch/p7zip"
-RDEPEND="${DEPEND}
+RDEPEND="
 	x11-libs/libX11
 	x11-libs/libXrender
 	dev-libs/glib:2
