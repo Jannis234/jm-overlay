@@ -13,7 +13,7 @@ SRC_URI="http://assets.nerdcubed.co.uk/${PN}_${PV}_linux.7z
 
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* ~amd64" # sys-libs/libudev-compat is only keyworded on amd64 right now
 IUSE=""
 
 DEPEND="app-arch/p7zip"
@@ -40,7 +40,7 @@ RDEPEND="${DEPEND}
 	x11-libs/libXdamage
 	dev-libs/expat
 	sys-apps/dbus
-	virtual/libudev
+	sys-libs/libudev-compat
 "
 
 RESTRICT="mirror bindist"
@@ -70,8 +70,6 @@ src_install() {
 	chmod +x "${D}"/${dir}/systemsnominal || die
 
 	newicon ${PN}.ico ${PN}.ico # Game's website doens't have any icons for this game, so we'll use the website's icon
-
-	ln -s /lib/libudev.so.1 "${D}"/${dir}/libudev.so.0 || die # Hacky workaround, but it works for this game
 
 	games_make_wrapper ${PN} ${dir}/systemsnominal ${dir} ${dir}
 	make_desktop_entry ${PN} "Systems Nominal" "/usr/share/pixmaps/${PN}.ico"
