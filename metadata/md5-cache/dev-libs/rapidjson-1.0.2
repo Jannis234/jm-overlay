@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=doc? ( app-doc/doxygen[dot] ) sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=Fast JSON parser/generator for C++
+EAPI=5
+HOMEPAGE=https://github.com/miloyip/rapidjson
+IUSE=doc examples
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT BSD JSON
+SLOT=0
+SRC_URI=https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz -> rapidjson-1.0.2.tar.gz
+_eclasses_=cmake-utils	7dc05d514e5011a2a16bfa7a32e69587	eutils	43da5163ba106e87d22d2e7d6d67537f	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_md5_=b1256762b0ead3b7f2d53cccef0ed99a
