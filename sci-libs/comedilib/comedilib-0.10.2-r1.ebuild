@@ -35,8 +35,8 @@ multilib_src_configure() {
 		$(use_enable firmware) \
 		$(use_enable scxi) \
 		$(use_enable doc docbook) \
-		$(use_with pdf pdf-backend=default) \
-		$(use_with udev udev-hotplug=/lib) \
+		$(use_with pdf pdf-backend default) \
+		$(use_with udev udev-hotplug /lib) \
 		$(use_enable python python-binding)
 
 }

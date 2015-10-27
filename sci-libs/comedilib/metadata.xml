@@ -4,5 +4,6 @@
 	<use>
 		<flag name='firmware'>Install firmware files needed for some devices</flag>
 		<flag name='scxi'>Build the SCXI convenience library</flag>
+		<flag name='pdf'>Install documentation in PDF format</flag>
 	</use>
 </pkgmetadata>
