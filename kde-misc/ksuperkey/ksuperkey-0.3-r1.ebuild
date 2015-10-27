@@ -19,30 +19,22 @@ DEPEND="${REPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-
 	sed -i \
 		-e "/-Wall/a\CFLAGS += \$(CUSTOM_CFLAGS)" \
 		-e "/-pthread/a\LDFLAGS += \$(CUSTOM_LDFLAGS)" \
 		Makefile || die
-
 }
 
 src_compile() {
-
-	emake CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
-
+	emake CC="${CHOST}-gcc" CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
 }
 
 src_install() {
-
 	emake install PREFIX="${D}/usr" || die
 
 	dodoc README.md
-
 }
 
 pkg_postinst() {
-
 	elog "If you want ksuperkey to auto-start with KDE, you might want to create a symlink to /usr/bin/ksuperkey in ~/.kde4/Autostart/"
-
 }

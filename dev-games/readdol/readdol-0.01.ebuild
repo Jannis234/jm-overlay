@@ -18,25 +18,20 @@ DEPEND="${RDEPEND}
 	app-arch/unzip"
 
 src_prepare() {
-
 	rm readdol.exe
 
 	sed -i \
 		-e "s/-g -O2//" \
+		-e "s/gcc/${CHOST}-gcc/" \
 		Makefile || die
-
 }
 
 src_compile() {
-
 	emake CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" || die
-
 }
 
 src_install() {
-
 	dobin readdol
 
 	dodoc LICENSE.txt
-
 }

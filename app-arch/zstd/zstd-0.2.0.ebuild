@@ -29,24 +29,24 @@ src_prepare() {
 
 multilib_src_compile() {
 	cd ./lib || die
-	emake CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+	emake CC="${CHOST}-gcc" CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
 	if use tools && multilib_is_native_abi; then
 		cd ./programs || die
-		emake CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+		emake CC="${CHOST}-gcc" CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
 	fi
 }
 
 multilib_src_install() {
 	cd ./lib || die
-	emake install CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+	emake install CC="${CHOST}-gcc" CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
 	if use tools && multilib_is_native_abi; then
 		cd ./bin
-		emake install CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+		emake install CC="${CHOST}-gcc" CFLAGS="${CFLAGS}" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
 	fi
 

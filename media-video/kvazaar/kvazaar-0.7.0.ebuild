@@ -29,10 +29,10 @@ src_prepare() {
 
 multilib_src_compile() {
 	cd src || die
-	emake lib-shared ARCH=${ABI}
-	use static-libs && emake lib-static ARCH=${ABI}
+	emake lib-shared ARCH=${ABI} CC="${CHOST}-gcc"
+	use static-libs && emake lib-static ARCH=${ABI} CC="${CHOST}-gcc"
 	if multilib_is_native_abi; then
-		use cli-encoder && emake cli ARCH=${ABI}
+		use cli-encoder && emake cli ARCH=${ABI} CC="${CHOST}-gcc"
 		if use doc; then
 			cd ..
 			doxygen docs.doxy || die
