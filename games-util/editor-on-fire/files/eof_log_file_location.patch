@@ -1,0 +1,19 @@
+diff -r -u editor-on-fire-r1437_orig/src/main.c editor-on-fire-r1437/src/main.c
+--- editor-on-fire-r1437_orig/src/main.c	2015-08-15 22:39:01.000000000 +0200
++++ editor-on-fire-r1437/src/main.c	2015-10-29 22:14:55.662751732 +0100
+@@ -4900,14 +4900,12 @@
+ unsigned int eof_log_id = 0;
+ void eof_start_logging(void)
+ {
+-	char log_filename[1024] = {0};
++	char log_filename[] = "/tmp/eof_log.txt";
+ 
+ 	if((eof_log_fp == NULL) && enable_logging)
+ 	{	//If logging isn't alredy running, and logging isn't disabled
+ 		srand(time(NULL));	//Seed the random number generator with the current time
+ 		eof_log_id = ((unsigned int) rand()) % 1000;	//Create a 3 digit random number to represent this EOF instance
+-		get_executable_name(log_filename, 1024);	//Get the path of the EOF binary that is running
+-		(void) replace_filename(log_filename, log_filename, "eof_log.txt", 1024);
+ 		eof_log_fp = fopen(log_filename, "w");
+ 		eof_log_level |= 1;	//Set the logging enabled bit
+ 
