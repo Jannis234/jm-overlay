@@ -34,8 +34,11 @@ src_prepare() {
 		-e "s/-O2 -fomit-frame-pointer -ffast-math -funroll-loops/\$(CUSTOM_CFLAGS)/" \
 		src/makefile.linux || die
 
+	# EOF assumes its directory to be writable in some cases which doesn't work on system-wide installs
+	# (unless you're on windows, of course)
 	epatch "${FILESDIR}"/eof_fixed_lame_oggenc_check.patch || die
 	epatch "${FILESDIR}"/eof_log_file_location.patch || die
+	epatch "${FILESDIR}"/eof_temp_files_location.patch || die
 }
 
 src_compile() {

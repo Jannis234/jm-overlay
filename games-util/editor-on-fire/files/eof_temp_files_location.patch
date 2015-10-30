@@ -1,0 +1,72 @@
+diff -r -u editor-on-fire-r1437_orig/src/song.c editor-on-fire-r1437/src/song.c
+--- editor-on-fire-r1437_orig/src/song.c	2015-08-15 22:39:01.000000000 +0200
++++ editor-on-fire-r1437/src/song.c	2015-10-30 08:57:48.701724751 +0100
+@@ -2613,7 +2613,7 @@
+ 			unsigned long filesize;
+ 
+ 		//Parse the linked list to write the MIDI data to a temp file
+-			tfp = pack_fopen("rawmididata.tmp", "w");
++			tfp = pack_fopen("/tmp/eof_rawmididata.tmp", "w");
+ 			if(!tfp)
+ 			{	//If the temp file couldn't be opened for writing
+ 				eof_log("\tError creating temp file for raw MIDI data block", 1);
+@@ -2658,9 +2658,9 @@
+ 			(void) pack_fclose(tfp);	//Close temp file
+ 
+ 		//Write the custom data block
+-			filesize = (unsigned long)file_size_ex("rawmididata.tmp");
++			filesize = (unsigned long)file_size_ex("/tmp/eof_rawmididata.tmp");
+ 			(void) pack_iputl(filesize, fp);	//Write the size of this data block
+-			tfp = pack_fopen("rawmididata.tmp", "r");
++			tfp = pack_fopen("/tmp/eof_rawmididata.tmp", "r");
+ 			if(!tfp)
+ 			{	//If the temp file couldn't be opened for writing
+ 				eof_log("\tError reading temp file for raw MIDI data block", 1);
+@@ -2672,7 +2672,7 @@
+ 				(void) pack_putc(pack_getc(tfp), fp);	//Copy the byte to the output project file
+ 			}
+ 			(void) pack_fclose(tfp);
+-			(void) delete_file("rawmididata.tmp");	//Delete the temp file
++			(void) delete_file("/tmp/eof_rawmididata.tmp");	//Delete the temp file
+ 		}//If there is raw MIDI data being stored, write it as a custom data block
+ 		if(has_fp_beat_timings)
+ 		{	//If floating point beat timings are to be written
+@@ -2681,7 +2681,7 @@
+ 			unsigned long filesize;
+ 
+ 		//Write the beat timings to a temp file
+-			tfp = pack_fopen("beattimes.tmp", "w");
++			tfp = pack_fopen("/tmp/eof_beattimes.tmp", "w");
+ 			if(!tfp)
+ 			{	//If the temp file couldn't be opened for writing
+ 				eof_log("\tError creating temp file for floating point beat timings data block", 1);
+@@ -2696,9 +2696,9 @@
+ 			(void) pack_fclose(tfp);	//Close temp file
+ 
+ 		//Write the custom data block
+-			filesize = (unsigned long)file_size_ex("beattimes.tmp");
++			filesize = (unsigned long)file_size_ex("/tmp/eof_beattimes.tmp");
+ 			(void) pack_iputl(filesize, fp);	//Write the size of this data block
+-			tfp = pack_fopen("beattimes.tmp", "r");
++			tfp = pack_fopen("/tmp/eof_beattimes.tmp", "r");
+ 			if(!tfp)
+ 			{	//If the temp file couldn't be opened for writing
+ 				eof_log("\tError reading temp file for floating point beat timings data block", 1);
+@@ -2710,7 +2710,7 @@
+ 				(void) pack_putc(pack_getc(tfp), fp);	//Copy the byte to the output project file
+ 			}
+ 			(void) pack_fclose(tfp);
+-			(void) delete_file("beattimes.tmp");	//Delete the temp file
++			(void) delete_file("/tmp/eof_beattimes.tmp");	//Delete the temp file
+ 		}
+ 	}//If writing data in a custom data block
+ 	else
+@@ -3201,7 +3201,7 @@
+ 				{	//Write tech notes
+ 					PACKFILE *tempf;	//Since the size of the custom data block must be known in advance, write it to a temp file so its size can be read
+ 					unsigned long file_size;
+-					char tempfilename[] = "eof_tech_notes.tmp";
++					char tempfilename[] = "/tmp/eof_tech_notes.tmp";
+ 
+ 					tempf = pack_fopen(tempfilename, "w");
+ 					if(!tempf)
