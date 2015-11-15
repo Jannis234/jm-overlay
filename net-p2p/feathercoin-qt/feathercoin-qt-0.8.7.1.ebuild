@@ -46,7 +46,6 @@ DOCS="doc/README.md doc/release-notes.md"
 S="${WORKDIR}/${MyP}"
 
 src_prepare() {
-
 	sed 's/BDB_INCLUDE_PATH=.*//' -i 'feathercoin-qt.pro' || die
 
 	cd src || die

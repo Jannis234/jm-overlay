@@ -29,7 +29,6 @@ REQUIRED_USE="pdf? ( doc )
 CONFIG_CHECK="COMEDI"
 
 multilib_src_configure() {
-
 	ECONF_SOURCE=${S} econf \
 		$(use_enable static-libs static) \
 		$(use_enable firmware) \
@@ -38,20 +37,15 @@ multilib_src_configure() {
 		$(use_with pdf pdf-backend default) \
 		$(use_with udev udev-hotplug /lib) \
 		$(use_enable python python-binding)
-
 }
 
 multilib_src_install() {
-
 	default
 
 	use python && python_optimize
-
 }
 
 multilib_src_install_all() {
-
 	cd "${S}"
 	dodoc INSTALL AUTHORS ChangeLog NEWS README
-
 }

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst prepare
+DEPEND=virtual/pkgconfig
+DESCRIPTION=ksuperkey allows you to open the application launcher in KDE Plasma Desktop using the Super key
+EAPI=5
+HOMEPAGE=http://kde-apps.org/content/show.php?content=154569
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-3
+RDEPEND=x11-libs/libX11 x11-libs/libXtst
+SLOT=0
+SRC_URI=http://kde-apps.org/CONTENT/content-files/154569-ksuperkey-0.3.tar.gz
+_eclasses_=eutils	8644194de7be04932084752fb1327080	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_md5_=18e9a265a03a986c562fed40d34db143

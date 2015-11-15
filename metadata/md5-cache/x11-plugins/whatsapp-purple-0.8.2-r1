@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile prepare
+DEPEND=net-im/pidgin media-libs/freeimage virtual/pkgconfig
+DESCRIPTION=WhatsApp protocol implementation for libpurple (Pidgin)
+EAPI=5
+HOMEPAGE=https://davidgf.net/whatsapp/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=net-im/pidgin media-libs/freeimage
+SLOT=0
+SRC_URI=https://github.com/davidgfnet/whatsapp-purple/archive/v0.8.2.tar.gz -> whatsapp-purple-0.8.2.tar.gz
+_eclasses_=eutils	8644194de7be04932084752fb1327080	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_md5_=4d9594ef7cb0f16c59a13d9ee2d40ce8

@@ -19,7 +19,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-
 	sed -i \
 		-e "/-O2/d" \
 		-e "s/-pipe//" \
@@ -28,11 +27,8 @@ src_prepare() {
 	sed -i \
 		-e "/-shared/aCFLAGS += \$(CUSTOM_CFLAGS)\nLDFLAGS += \$(CUSTOM_LDFLAGS)" \
 		Makefile || die
-
 }
 
 src_compile() {
-
 	emake CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
-
 }

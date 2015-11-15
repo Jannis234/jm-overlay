@@ -19,9 +19,7 @@ RDEPEND="sci-libs/comedilib
 DEPEND="${RDEPEND}"
 
 src_install() {
-
 	default
 
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
-
 }

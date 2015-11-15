@@ -17,7 +17,6 @@ IUSE=""
 RDEPEND="virtual/httpd-php"
 
 src_install() {
-
 	dodoc AUTHORS CHANGES TODO DEVELOPING
 
 	cd "${S}/src/ddclient-php"
@@ -25,5 +24,4 @@ src_install() {
 	doins -r .
 
 	webapp_src_install
-
 }

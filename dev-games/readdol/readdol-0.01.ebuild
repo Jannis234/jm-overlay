@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit eutils
+
 DESCRIPTION="Displays information about DOL files (Nintendo GameCube/Wii binaries)"
 HOMEPAGE="http://wiibrew.org/wiki/Readdol"
 SRC_URI="http://wiibrew.org/w/images/4/44/Readdol-${PV}.zip"

@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst preinst prepare prerm setup unpack
+DEPEND=|| ( dev-vcs/subversion[http] dev-vcs/subversion[webdav-neon] dev-vcs/subversion[webdav-serf] ) net-misc/rsync >=app-admin/webapp-config-1.50.15
+DESCRIPTION=PHP web-interface for net-misc/downloaddaemon
+EAPI=5
+HOMEPAGE=http://downloaddaemon.sourceforge.net/
+IUSE=vhosts
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=virtual/httpd-php >=app-admin/webapp-config-1.50.15
+SLOT=9999-r1
+_eclasses_=eutils	8644194de7be04932084752fb1327080	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	subversion	4fee0a764150bb4dda27ed4d2c4ed7ce	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	webapp	42c6ef7af496b228f9854b3c81e4b226
+_md5_=71b129286fb0ff6ae208d5bc59a2c25c
