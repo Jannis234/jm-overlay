@@ -1,0 +1,21 @@
+diff -r -u editor-on-fire-r1437_orig/src/main.c editor-on-fire-r1437/src/main.c
+--- editor-on-fire-r1437_orig/src/main.c	2015-08-15 22:39:01.000000000 +0200
++++ editor-on-fire-r1437/src/main.c	2015-11-23 20:53:16.803581004 +0100
+@@ -4091,7 +4091,7 @@
+ 	ncdfs_filter_list_add(eof_filter_bf_files, "rif", "Bandfuse chart files (*.rif)", 1);
+ 
+ 	/* check availability of MP3 conversion tools */
+-	if(!eof_supports_mp3)
++	/*if(!eof_supports_mp3)
+ 	{
+ 	#ifdef ALLEGRO_WINDOWS
+ 		if((eof_system("lame -S check.wav >foo") == 0) && (eof_system("oggenc2 -h >foo") == 0))
+@@ -4133,7 +4133,7 @@
+ 			allegro_message("MP3 support disabled.\n\nPlease install LAME and Vorbis Tools if you want MP3 support.");
+ 		}
+ 	#endif
+-	}
++	}*/
+ 
+ 	/* check availability of silence generating tools */
+ 	if(!eof_supports_oggcat)

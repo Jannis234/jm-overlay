@@ -1,0 +1,21 @@
+diff -r -u editor-on-fire-r1437_orig/src/main.c editor-on-fire-r1437/src/main.c
+--- editor-on-fire-r1437_orig/src/main.c	2015-08-15 22:39:01.000000000 +0200
++++ editor-on-fire-r1437/src/main.c	2015-11-23 21:03:02.149245073 +0100
+@@ -4136,7 +4136,7 @@
+ 	}
+ 
+ 	/* check availability of silence generating tools */
+-	if(!eof_supports_oggcat)
++	/*if(!eof_supports_oggcat)
+ 	{
+ 		SAMPLE *silentaudio = create_silence_sample(1);	//Create 1ms worth of silence
+ 		if(silentaudio != NULL)
+@@ -4168,7 +4168,7 @@
+ 				(void) delete_file("silence.wav");
+ 			}
+ 		}
+-	}
++	}*/
+ 
+ 	/* make music filter */
+ 	eof_filter_music_files = ncdfs_filter_list_create();
