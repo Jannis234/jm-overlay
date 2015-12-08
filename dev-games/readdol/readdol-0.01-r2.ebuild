@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Displays information about DOL files (Nintendo GameCube/Wii binaries)"
 HOMEPAGE="http://wiibrew.org/wiki/Readdol"
@@ -26,10 +26,12 @@ src_prepare() {
 		-e "s/-g -O2//" \
 		-e "s/gcc/${CHOST}-gcc/" \
 		Makefile || die
+
+	epatch_user
 }
 
 src_compile() {
-	emake CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" || die
+	emake CC="$(tc-getCC)" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" || die
 }
 
 src_install() {

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit games
+inherit games toolchain-funcs
 
 MyPV=r${PV}
 MyP=${PN}-${MyPV}
@@ -34,15 +34,20 @@ src_prepare() {
 		-e "s/-O2 -fomit-frame-pointer -ffast-math -funroll-loops/\$(CUSTOM_CFLAGS)/" \
 		src/makefile.linux || die
 
+	# No need to check for lame and oggenc at every startup since that was already done by the package manager
+	epatch "${FILESDIR}"/eof_no_lame_oggenc_check.patch || die
+	# oggCat is currently not available in portage
+	epatch "${FILESDIR}"/eof_no_oggcat_check.patch || die
 	# EOF assumes its directory to be writable in some cases which doesn't work on system-wide installs
 	# (unless you're on windows, of course)
-	epatch "${FILESDIR}"/eof_fixed_lame_oggenc_check.patch || die
 	epatch "${FILESDIR}"/eof_log_file_location.patch || die
 	epatch "${FILESDIR}"/eof_temp_files_location.patch || die
+
+	epatch_user
 }
 
 src_compile() {
-	emake CUSTOM_CFLAGS="${CFLAGS}" CC="${CHOST}-gcc"
+	emake CUSTOM_CFLAGS="${CFLAGS}" CC="$(tc-getCC)"
 }
 
 src_install() {

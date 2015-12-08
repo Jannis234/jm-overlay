@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit multilib-minimal
+inherit multilib-minimal toolchain-funcs
 
 DESCRIPTION="Zstd, short for Zstandard, is a lossless compression algorithm"
 HOMEPAGE="https://github.com/Cyan4973/zstd"
@@ -23,8 +23,6 @@ S="${WORKDIR}/${PN}-${P}"
 src_prepare() {
 	sed -i "s/install: libzstd/install:/" lib/Makefile || die # Avoid recompiling during src_install
 	sed -i "s/install: zstd/install:/" programs/Makefile || die
-	sed -i "/DESTDIR?=/aCC=${CHOST}-gcc" lib/Makefile || die
-	sed -i "/DESTDIR?=/aCC=${CHOST}-gcc" programs/Makefile || die
 
 	epatch_user
 
@@ -33,24 +31,24 @@ src_prepare() {
 
 multilib_src_compile() {
 	cd ./lib || die
-	emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+	emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
 	if use tools && multilib_is_native_abi; then
 		cd ./programs || die
-		emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+		emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
 	fi
 }
 
 multilib_src_install() {
 	cd ./lib || die
-	emake install CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+	emake install CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
 	if use tools && multilib_is_native_abi; then
 		cd ./bin
-		emake install CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" LIBDIR="${D}/usr/$(get_libdir)"
+		emake install CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
 	fi
 

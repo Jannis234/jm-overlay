@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit eutils toolchain-funcs
+
 DESCRIPTION="ksuperkey allows you to open the application launcher in KDE Plasma Desktop using the Super key"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=154569"
 SRC_URI="http://kde-apps.org/CONTENT/content-files/154569-ksuperkey-${PV}.tar.gz"
@@ -23,10 +25,12 @@ src_prepare() {
 		-e "/-Wall/a\CFLAGS += \$(CUSTOM_CFLAGS)" \
 		-e "/-pthread/a\LDFLAGS += \$(CUSTOM_LDFLAGS)" \
 		Makefile || die
+
+	epatch_user
 }
 
 src_compile() {
-	emake CC="${CHOST}-gcc" CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
+	emake CC="$(tc-getCC)" CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_LDFLAGS="${LDFLAGS}" || die
 }
 
 src_install() {
