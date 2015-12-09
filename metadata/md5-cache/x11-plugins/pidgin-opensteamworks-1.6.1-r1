@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare setup
+DEPEND=dev-libs/glib:2 dev-libs/json-glib polarssl? ( net-libs/polarssl ) !polarssl? ( dev-libs/nss ) gnome-base/libgnome-keyring net-im/pidgin app-arch/unzip virtual/pkgconfig
+DESCRIPTION=Steam protocol plugin for pidgin
+EAPI=5
+HOMEPAGE=https://github.com/eionrobb/pidgin-opensteamworks
+IUSE=polarssl
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=GPL-3
+RDEPEND=dev-libs/glib:2 dev-libs/json-glib polarssl? ( net-libs/polarssl ) !polarssl? ( dev-libs/nss ) gnome-base/libgnome-keyring net-im/pidgin
+SLOT=0
+SRC_URI=https://github.com/EionRobb/pidgin-opensteamworks/archive/1.6.1.tar.gz -> pidgin-opensteamworks-1.6.1.tar.gz
+_eclasses_=eutils	d9bd2ddd85a58e470b49ca997e255a4c	multilib	3972ca401cf7dbb430df9995f5d8d580	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_md5_=467b202eb908e66f2670c17b2bfa1c23
