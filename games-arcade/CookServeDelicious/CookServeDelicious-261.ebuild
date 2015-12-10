@@ -57,7 +57,7 @@ RDEPEND="x86? (
 			sys-apps/keyutils[abi_x86_32(-)]
 		)"
 
-RESTRICT="fetch strip"
+RESTRICT="fetch strip mirror bindist"
 S="${WORKDIR}/CSDSteamBuild"
 QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/runner"
 

@@ -31,7 +31,7 @@ RDEPEND="virtual/opengl
 	media-libs/fontconfig
 "
 
-RESTRICT="fetch"
+RESTRICT="fetch mirror bindist"
 S="${WORKDIR}"
 QA_PREBUILT="${GAMES_PREFIX_OPT#/}/Awesome/Awesome.*
 	${GAMES_PREFIX_OPT#/}/Awesome/Awesome_Data/Mono/*/libmono.so
