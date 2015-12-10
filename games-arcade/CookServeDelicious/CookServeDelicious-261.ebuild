@@ -30,7 +30,6 @@ RDEPEND="x86? (
 			x11-libs/libxcb
 			x11-libs/libxshmfence
 			x11-libs/libdrm
-			virtual/krb5
 			x11-libs/libXau
 			x11-libs/libXdmcp
 			sys-libs/e2fsprogs-libs
@@ -50,7 +49,6 @@ RDEPEND="x86? (
 			x11-libs/libxcb[abi_x86_32(-)]
 			x11-libs/libxshmfence[abi_x86_32(-)]
 			x11-libs/libdrm[abi_x86_32(-)]
-			virtual/krb5[abi_x86_32(-)]
 			x11-libs/libXau[abi_x86_32(-)]
 			x11-libs/libXdmcp[abi_x86_32(-)]
 			sys-libs/e2fsprogs-libs[abi_x86_32(-)]

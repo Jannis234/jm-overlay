@@ -51,9 +51,9 @@ src_install() {
 
 	use x86 && filename="Awesome.x86"
 	use amd64 && filename="Awesome.x86_64"
-	chmod +x ${dir}/${filename} || die
+	chmod +x "${D}/${dir}/${filename}" || die
 	games_make_wrapper awesome ${dir}/${filename} ${dir} ${dir}
-	make_desktop_entry ${PN} "Aaaaa for the Awesome" "${dir}/Awesome_Data/Resources/UnityPlayer.png"
+	make_desktop_entry awesome "Aaaaa for the Awesome" "${dir}/Awesome_Data/Resources/UnityPlayer.png"
 
 	prepgamesdirs
 }
