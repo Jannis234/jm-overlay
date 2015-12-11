@@ -6,7 +6,7 @@ EAPI=5
 
 inherit eutils toolchain-funcs
 
-DESCRIPTION="ksuperkey allows you to open the application launcher in KDE Plasma Desktop using the Super key"
+DESCRIPTION="ksuperkey allows opening the launcher in KDE using the super key"
 HOMEPAGE="http://kde-apps.org/content/show.php?content=154569"
 SRC_URI="http://kde-apps.org/CONTENT/content-files/154569-ksuperkey-${PV}.tar.gz"
 LICENSE="GPL-3"
