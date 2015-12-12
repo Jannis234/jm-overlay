@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Cyan4973/${PN}/archive/${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="static-libs +tools"
+IUSE="static-libs +tools test"
 
 DEPEND=""
 RDEPEND=""
@@ -34,7 +34,7 @@ multilib_src_compile() {
 	emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
-	if use tools && multilib_is_native_abi; then
+	if (use tools && multilib_is_native_abi) || use test; then
 		cd ./programs || die
 		emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
@@ -60,4 +60,9 @@ multilib_src_install() {
 
 multilib_src_install_all() {
 	dodoc README.md NEWS
+}
+
+multilib_src_test() {
+	cd ./programs || die
+	emake test
 }
