@@ -23,17 +23,6 @@ RDEPEND="x86? (
 			media-libs/openal
 			dev-libs/openssl:0
 			x11-libs/libX11
-			x11-libs/libXext
-			dev-libs/expat
-			x11-libs/libXdamage
-			x11-libs/libXfixes
-			x11-libs/libxcb
-			x11-libs/libxshmfence
-			x11-libs/libdrm
-			x11-libs/libXau
-			x11-libs/libXdmcp
-			sys-libs/e2fsprogs-libs
-			sys-apps/keyutils
 		)
 		amd64? (
 			sys-libs/zlib[abi_x86_32(-)]
@@ -42,17 +31,6 @@ RDEPEND="x86? (
 			media-libs/openal[abi_x86_32(-)]
 			dev-libs/openssl:0[abi_x86_32(-)]
 			x11-libs/libX11[abi_x86_32(-)]
-			x11-libs/libXext[abi_x86_32(-)]
-			dev-libs/expat[abi_x86_32(-)]
-			x11-libs/libXdamage[abi_x86_32(-)]
-			x11-libs/libXfixes[abi_x86_32(-)]
-			x11-libs/libxcb[abi_x86_32(-)]
-			x11-libs/libxshmfence[abi_x86_32(-)]
-			x11-libs/libdrm[abi_x86_32(-)]
-			x11-libs/libXau[abi_x86_32(-)]
-			x11-libs/libXdmcp[abi_x86_32(-)]
-			sys-libs/e2fsprogs-libs[abi_x86_32(-)]
-			sys-apps/keyutils[abi_x86_32(-)]
 		)"
 
 RESTRICT="fetch strip mirror bindist"
