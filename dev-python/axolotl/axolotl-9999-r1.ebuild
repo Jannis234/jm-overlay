@@ -13,12 +13,13 @@ EGIT_REPO_URI="https://github.com/tgalal/python-axolotl.git"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-libs/protobuf-2.6[${PYTHON_USEDEP}]
 	dev-python/pycrypto[${PYTHON_USEDEP}]
 	dev-python/axolotl-curve25519[${PYTHON_USEDEP}]"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-S="${WORKDIR}/python-${P}"
+DOCS=( README.md )

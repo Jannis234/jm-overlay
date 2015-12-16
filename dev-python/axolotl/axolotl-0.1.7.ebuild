@@ -5,11 +5,12 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 git-r3
 
 DESCRIPTION="Python port of libaxolotl"
 HOMEPAGE="https://github.com/tgalal/python-axolotl"
-SRC_URI="https://github.com/tgalal/python-axolotl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/tgalal/python-axolotl.git"
+EGIT_COMMIT="9585d7212c95c47aa97e0a4d74b4a756e4d11daa"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,6 +20,7 @@ IUSE=""
 RDEPEND=">=dev-libs/protobuf-2.6[${PYTHON_USEDEP}]
 	dev-python/pycrypto[${PYTHON_USEDEP}]
 	dev-python/axolotl-curve25519[${PYTHON_USEDEP}]"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-S="${WORKDIR}/python-${P}"
+DOCS=( README.md )

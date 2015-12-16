@@ -27,4 +27,7 @@ RDEPEND=">=dev-python/axolotl-0.1.1[${PYTHON_USEDEP}]
 		dev-python/pycrypto[${PYTHON_USEDEP}]
 		dev-python/axolotl-curve25519[${PYTHON_USEDEP}]
 	)"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+DOCS=( README.md )
