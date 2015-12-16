@@ -10,5 +10,5 @@ RDEPEND=>=dev-python/axolotl-0.1.7[python_targets_python2_7(-)?,-python_single_t
 REQUIRED_USE=python_targets_python2_7
 SLOT=0
 SRC_URI=https://github.com/tgalal/yowsup/archive/v2.3.84.tar.gz -> yowsup-2.3.84.tar.gz
-_eclasses_=distutils-r1	ad2c2233bbbe5ff87ac352969fabd418	eutils	d9bd2ddd85a58e470b49ca997e255a4c	multilib	3972ca401cf7dbb430df9995f5d8d580	python-single-r1	ca40cb914622e9992594549e6730cf37	python-utils-r1	a5050c5c19fd08ed14d5d9f1792154fc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_eclasses_=distutils-r1	ad2c2233bbbe5ff87ac352969fabd418	eutils	d9bd2ddd85a58e470b49ca997e255a4c	multilib	3972ca401cf7dbb430df9995f5d8d580	python-single-r1	caecf590709cc0fcf0b6582bdc49150f	python-utils-r1	832cb17726d498a182de6b9ee2adc0dc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
 _md5_=39a81423463335fe611c51eb966aad15
