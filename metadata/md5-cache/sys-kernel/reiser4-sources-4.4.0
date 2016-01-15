@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst postrm preinst setup test unpack
+DEPEND=!build? ( sys-apps/sed >=sys-devel/binutils-2.11.90.0.31 ) deblob? ( || ( >=dev-lang/python-2.7.5-r2:2.7 ) )
+DESCRIPTION=Full sources including the Gentoo and Reiser4 patchsets for the 4.4 kernel tree
+EAPI=5
+HOMEPAGE=https://dev.gentoo.org/~mpagano/genpatches http://sourceforge.net/projects/reiser4/
+IUSE=deblob experimental symlink build kdbus deblob
+KEYWORDS=~alpha ~amd64 ~arm ~arm64 -hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
+LICENSE=GPL-2 !deblob? ( freedist )
+RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc )
+RESTRICT=binchecks strip
+SLOT=4.4.0
+SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.4.tar.xz deblob? ( http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.4-gnu/deblob-4.4 http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.4-gnu/deblob-check -> deblob-check-4.4 ) mirror://gentoo/genpatches-4.4-1.base.tar.xz mirror://gentoo/genpatches-4.4-1.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.4-1.experimental.tar.xz ) http://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-4.4.0.patch.gz
+_eclasses_=eutils	d9bd2ddd85a58e470b49ca997e255a4c	kernel-2	ef694b0e1e5876dc1f8cb80992dd7cb9	multilib	3972ca401cf7dbb430df9995f5d8d580	python-any-r1	8eb13cdf35f6e43c48107b911900b2cc	python-utils-r1	30887c5e8630bbf27b5cf0fd74564323	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=49d45b3129341e4ba2d0f90c48919469
