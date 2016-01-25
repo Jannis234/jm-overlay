@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -31,7 +31,7 @@ RDEPEND="virtual/opengl
 	media-libs/fontconfig
 "
 
-RESTRICT="fetch mirror bindist"
+RESTRICT="fetch mirror bindist splitdebug"
 S="${WORKDIR}"
 QA_PREBUILT="${GAMES_PREFIX_OPT#/}/Awesome/Awesome.*
 	${GAMES_PREFIX_OPT#/}/Awesome/Awesome_Data/Mono/*/libmono.so

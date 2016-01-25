@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -34,7 +34,7 @@ RDEPEND="
 	)
 "
 
-RESTRICT="strip mirror bindist"
+RESTRICT="strip mirror bindist splitdebug"
 S="${WORKDIR}/${PN}"
 QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/GirlsLikeRobots
 	${GAMES_PREFIX_OPT#/}/${PN}/GirlsLikeRobots_Data/Mono/*/libmono.so"

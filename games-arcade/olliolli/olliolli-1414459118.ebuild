@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -28,7 +28,7 @@ RDEPEND="!bundled-libs? (
 		)
 	)"
 
-RESTRICT="mirror bindist"
+RESTRICT="mirror bindist splitdebug"
 
 QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/linux32
 	${GAMES_PREFIX_OPT#/}/${PN}/libopenal.so.1
