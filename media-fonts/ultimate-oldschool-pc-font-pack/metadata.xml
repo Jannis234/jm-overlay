@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="px437">Install fonts with the original DOS charset</flag>
+		<flag name="pxplus">Install fonts with unicode enhancements</flag>
+	</use>
+</pkgmetadata>
