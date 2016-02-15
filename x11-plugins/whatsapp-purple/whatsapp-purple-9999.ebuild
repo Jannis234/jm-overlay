@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/davidgfnet/whatsapp-purple.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="net-im/pidgin
