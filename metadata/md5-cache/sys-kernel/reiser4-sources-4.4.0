@@ -10,5 +10,5 @@ RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/
 RESTRICT=binchecks strip
 SLOT=4.4.0
 SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.4.tar.xz deblob? ( http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.4-gnu/deblob-4.4 http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.4-gnu/deblob-check -> deblob-check-4.4 ) mirror://gentoo/genpatches-4.4-1.base.tar.xz mirror://gentoo/genpatches-4.4-1.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.4-1.experimental.tar.xz ) http://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-4.4.0.patch.gz
-_eclasses_=eutils	28fb3e5852485af1c348d446b0b98389	kernel-2	f745fe70cd0e35af07412905687b9a7f	multilib	3972ca401cf7dbb430df9995f5d8d580	python-any-r1	8eb13cdf35f6e43c48107b911900b2cc	python-utils-r1	30887c5e8630bbf27b5cf0fd74564323	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	28fb3e5852485af1c348d446b0b98389	kernel-2	f745fe70cd0e35af07412905687b9a7f	multilib	3972ca401cf7dbb430df9995f5d8d580	python-any-r1	8eb13cdf35f6e43c48107b911900b2cc	python-utils-r1	2e6826f6a93ad2acf904eecf5b5fb6d2	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=49d45b3129341e4ba2d0f90c48919469
