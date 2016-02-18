@@ -13,7 +13,7 @@ SRC_URI="http://assets.nerdcubed.co.uk/${PN}_${PV}_linux.7z
 
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="-* ~amd64" # sys-libs/libudev-compat is only keyworded on amd64 right now
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 
 DEPEND="app-arch/p7zip"
