@@ -11,7 +11,6 @@ HOMEPAGE="https://pommi.nethuis.nl/category/cgp/ https://github.com/pommi/CGP"
 SRC_URI="https://github.com/pommi/CGP/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+json apache2"
 
@@ -20,6 +19,10 @@ RDEPEND="virtual/httpd-php
 	net-analyzer/rrdtool[graph]"
 
 src_prepare() {
+	# Hardcode the version number so we don't have to install "doc/CHANGELOG" into htdocs
+	epatch "${FILESDIR}/cgp_hardcode_version.patch"
+	sed -i "s/EBUILD_VERSION_PLACEHOLDER/${PV}/" inc/html.inc.php || die
+
 	epatch_user
 }
 
