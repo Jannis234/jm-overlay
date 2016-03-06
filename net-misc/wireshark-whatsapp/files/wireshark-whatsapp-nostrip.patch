@@ -1,0 +1,20 @@
+diff -ru wireshark-whatsapp-0.16_orig/CMakeLists.txt wireshark-whatsapp-0.16/CMakeLists.txt
+--- wireshark-whatsapp-0.16_orig/CMakeLists.txt	2016-01-30 17:57:41.000000000 +0100
++++ wireshark-whatsapp-0.16/CMakeLists.txt	2016-03-06 19:55:04.434071161 +0100
+@@ -129,16 +129,3 @@
+   endif(MINGW)
+ endif (WIN32)
+ 
+-if (WIN32)
+-add_custom_command(TARGET whatsapp
+- POST_BUILD
+- COMMAND ${CMAKE_STRIP} --strip-debug --strip-unneeded whatsapp.dll
+-)
+-ELSE()
+-add_custom_command(TARGET whatsapp
+- POST_BUILD
+- COMMAND ${CMAKE_STRIP} --strip-debug --strip-unneeded whatsapp.so
+-)
+-ENDIF()
+-
+-

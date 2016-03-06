@@ -1,0 +1,21 @@
+diff -ru wireshark-whatsapp-0.16_orig/packet-whatsapp.c wireshark-whatsapp-0.16/packet-whatsapp.c
+--- wireshark-whatsapp-0.16_orig/packet-whatsapp.c	2016-01-30 17:57:41.000000000 +0100
++++ wireshark-whatsapp-0.16/packet-whatsapp.c	2016-03-06 20:04:07.306690664 +0100
+@@ -97,7 +97,7 @@
+ 
+ static guint get_whatsapp_message_len(packet_info *pinfo, tvbuff_t *tvb, int offset)
+ {
+-  int length = tvb_length(tvb)-offset;
++  int length = tvb_captured_length(tvb)-offset;
+   guint8* buffer = tvb_memdup(NULL, tvb, offset, length);
+   int wa_len = whatsapp_data_length(buffer, length);
+   g_free(buffer);
+@@ -114,7 +114,7 @@
+     proto_item *ti = proto_tree_add_item (tree, proto_whatsapp, tvb, 0,-1, ENC_NA);
+     proto_tree * subtree = proto_item_add_subtree (ti, message_whatsapp);
+ 
+-    int length = tvb_length(tvb);
++    int length = tvb_captured_length(tvb);
+     guint8* buffer = tvb_memdup(NULL, tvb, 0, length);
+     r = whatsapp_data_dissect_tree(buffer, length, subtree, tvb, pinfo);
+     g_free(buffer);
