@@ -9,6 +9,7 @@ inherit eutils git-r3
 DESCRIPTION="WhatsApp protocol implementation for libpurple (Pidgin)"
 HOMEPAGE="https://davidgf.net/whatsapp/"
 EGIT_REPO_URI="https://github.com/davidgfnet/whatsapp-purple.git"
+EGIT_BRANCH="devel"
 
 LICENSE="GPL-2"
 SLOT="0"
