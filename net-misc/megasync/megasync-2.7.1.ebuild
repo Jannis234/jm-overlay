@@ -19,6 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT="bindist"
 S="${WORKDIR}/MEGAsync-${MEGASYNC_COMMIT}"
 
 RDEPEND="dev-libs/crypto++

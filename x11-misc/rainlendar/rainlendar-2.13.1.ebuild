@@ -40,6 +40,7 @@ RDEPEND="x11-libs/libX11
 	net-dns/libidn
 	media-libs/libcanberra"
 
+RESTRICT="bindist mirror"
 S="${WORKDIR}/rainlendar2"
 QA_PREBUILT="${EROOT}opt/${PN}/rainlendar2
 	${EROOT}opt/${PN}/lfs.so
