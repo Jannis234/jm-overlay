@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 python3_5 )
+PYTHON_COMPAT=( python2_7 python3_{3,4,5} pypy pypy3 )
 
 inherit distutils-r1
 
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/google/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+tools doc"
+IUSE="+tools doc test"
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
@@ -24,7 +24,7 @@ DOCS="README.md CONTRIBUTING.md"
 src_compile() {
 	distutils-r1_src_compile
 
-	if use tools; then
+	if use tools || use test; then
 		cd tools || die
 		emake
 	fi
