@@ -1,0 +1,8 @@
+diff -ru loguru_orig/test/build_and_run.sh loguru/test/build_and_run.sh
+--- loguru_orig/test/build_and_run.sh	2016-03-27 22:12:21.592407509 +0200
++++ loguru/test/build_and_run.sh	2016-03-27 22:13:32.413882306 +0200
+@@ -58,4 +58,3 @@
+ 
+ ./loguru_test $@
+ 
+-./loguru_test hang

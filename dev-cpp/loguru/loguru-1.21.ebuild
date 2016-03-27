@@ -10,7 +10,7 @@ DESCRIPTION="A header-only C++ logging library"
 HOMEPAGE="https://github.com/emilk/loguru"
 
 EGIT_REPO_URI="https://github.com/emilk/loguru.git"
-EGIT_COMMIT="95701fb9a8f371e0d2c90b379d796c8edd5016a2"
+EGIT_COMMIT="8671d6d1d693f33774956b0fc388f344a5a2b083"
 
 LICENSE="public-domain"
 SLOT="0"
