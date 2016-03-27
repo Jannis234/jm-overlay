@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Cyan4973/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="static-libs +tools"
+IUSE="static-libs +tools test"
 
 DEPEND=""
 RDEPEND=""
@@ -32,7 +32,7 @@ multilib_src_compile() {
 	emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 	cd ..
 
-	if (use tools && multilib_is_native_abi); then
+	if (use tools && multilib_is_native_abi) || test; then
 		cd ./programs || die
 		emake CFLAGS="${CFLAGS} $(get_abi_CFLAGS)" PREFIX="${D}/usr" CC="$(tc-getCC)" LIBDIR="${D}/usr/$(get_libdir)"
 		cd ..
