@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -29,13 +29,13 @@ REQUIRED_USE="pdf? ( doc )
 CONFIG_CHECK="COMEDI"
 
 multilib_src_configure() {
-	ECONF_SOURCE=${S} econf \
+	ECONF_SOURCE="${S}" econf \
 		$(use_enable static-libs static) \
 		$(use_enable firmware) \
 		$(use_enable scxi) \
 		$(use_enable doc docbook) \
 		$(use_with pdf pdf-backend default) \
-		$(use_with udev udev-hotplug /lib) \
+		$(use_with udev udev-hotplug "${EPREFIX}/lib") \
 		$(use_enable python python-binding)
 }
 
