@@ -18,7 +18,7 @@ IUSE="bundled-libs"
 
 DEPEND=""
 RDEPEND="!bundled-libs? (
-		x86? ( 
+		x86? (
 			media-libs/openal
 			dev-games/physfs[zip]
 		)

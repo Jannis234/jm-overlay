@@ -20,9 +20,9 @@ KEYWORDS="~amd64 ~x86"
 COMMON_DEP=""
 
 RDEPEND=">=virtual/jre-1.7
-  ${COMMON_DEP}"
+	${COMMON_DEP}"
 DEPEND=">=virtual/jdk-1.7
-  ${COMMON_DEP}"
+	${COMMON_DEP}"
 
 S="${WORKDIR}/${PN}-${P}"
 

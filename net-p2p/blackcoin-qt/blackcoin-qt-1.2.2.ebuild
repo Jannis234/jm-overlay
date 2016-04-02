@@ -46,7 +46,7 @@ S="${WORKDIR}/${MyP}"
 src_prepare() {
 	sed 's/BDB_INCLUDE_PATH=.*//' -i 'blackcoin-qt.pro' || die
 	sed -i "s/--param ssp-buffer-size=1//" blackcoin-qt.pro || die
-	
+
 	cd src || die
 
 	local filt= yeslang= nolang=
