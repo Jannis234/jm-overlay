@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-MISC-FREE JSON wcwidth.cpp ConvertUTF.cpp
+MISC-FREE wcwidth.cpp ConvertUTF.cpp
 
-BINARY-REDISTRIBUTABLE Rainlendar
-
-EULA MEGA-Code-Review UT4-PreAlpha-EULA zynamics-bindiff-eula
+EULA Rainlendar MEGA-Code-Review UT4-PreAlpha-EULA zynamics-bindiff-eula
