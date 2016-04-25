@@ -37,13 +37,6 @@ RDEPEND=">=net-libs/nodejs-0.6.0"
 
 S="${WORKDIR}/${PN}"
 
-unpack_npm_mod() {
-	unpack "$1".tgz
-	mkdir "${1%-*}" || die
-	mv package/* "${1%-*}" || die
-	rm -r package || die
-}
-
 src_unpack() {
 	for i in ${NODE_MODULES}; do
 		if [ "$i" == "{" ]; then
