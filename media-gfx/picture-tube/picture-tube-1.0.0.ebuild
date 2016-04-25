@@ -58,6 +58,9 @@ src_unpack() {
 }
 
 src_install() {
+	dodoc README.markdown
+	rm README.markdown || die
+
 	insinto "/usr/$(get_libdir)/node_modules/${PN}"
 	doins -r ./*
 	chmod +x "${D}/usr/$(get_libdir)/node_modules/picture-tube/bin/tube.js" || die
