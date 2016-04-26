@@ -8,7 +8,7 @@ inherit node-module
 
 DESCRIPTION="Like ruby's abbrev module, but in js"
 
-LICENSE="MIT"
+LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
