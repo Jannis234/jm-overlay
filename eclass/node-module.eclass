@@ -92,6 +92,16 @@ install_node_module_depend() {
 	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
 }
 
+# @FUNCTION: install_node_module_binary
+# @USAGE: <path> <target>
+# Installs a symlink to a binary inside the Node.js module
+install_node_module_binary() {
+	[[ ${#} -eq 2 ]] || die "Invalid arguments to install_node_module_binary"
+
+	chmod +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" || die
+	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
+}
+
 node-module_src_install() {
 	einstalldocs
 
