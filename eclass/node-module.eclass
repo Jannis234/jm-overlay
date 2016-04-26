@@ -36,9 +36,9 @@ EXPORT_FUNCTIONS src_install
 
 # @ECLASS-VARIABLE: NODE_MODULE_NAME
 # @DESCRIPTION:
-# The module's name. Defaults to ${PV} if not set
+# The module's name. Defaults to ${PN} if not set
 if [ -z ${NODE_MODULE_NAME} ]; then
-	NODE_MODULE_NAME="${PV}"
+	NODE_MODULE_NAME="${PN}"
 fi
 # @ECLASS_VARIABLE: NODE_MODULE_DEFAULT_FILES
 # @DESCRIPTION:
@@ -49,10 +49,6 @@ NODE_MODULE_DEFAULT_FILES="index.js ${NODE_MODULE_NAME}.js package.json lib"
 # List of additional files/directories that need to be installed
 # Set this if your package includes additional files/directories that are
 # not part of NODE_MODULE_DEFAULT_FILES
-# @ECLASS_VARIABLE: NODE_MODULE_INSTALL_PATH
-# @DESCRIPTION:
-# Path where Node.js modules are installed
-NODE_MODULE_INSTALL_PATH="${EROOT}usr/$(get_libdir)/node"
 # @ECLASS_VARIABLE: NODE_MODULE_DEPEND
 # @DESCRIPTION:
 # A list of packages that this Node.js module depends on
@@ -64,6 +60,7 @@ NODE_MODULE_INSTALL_PATH="${EROOT}usr/$(get_libdir)/node"
 HOMEPAGE="https://www.npmjs.org/package/${NODE_MODULE_NAME}"
 SRC_URI="http://registry.npmjs.org/${NODE_MODULE_NAME}/-/${NODE_MODULE_NAME}-${PV}.tgz"
 SLOT="${PV}"
+S="${WORKDIR}/package"
 
 DEPEND=""
 if [ -z ${NODEJS_MIN_VERSION} ]; then
@@ -76,8 +73,8 @@ for pkg in ${NODE_MODULE_DEPEND}; do
 done
 
 if [ ${EAPI:-0} == 5 ]; then
-	node-module-src_prepare() {
-		default-src_prepare
+	node-module_src_prepare() {
+		default_src_prepare
 		epatch_user
 	}
 fi
@@ -92,13 +89,13 @@ install_node_module_depend() {
 
 	local version="${1#*:}"
 	local name="${1%:*}"
-	dosym "${NODE_MODULE_INSTALL_PATH}/${name}/${version}" "${D}/${NODE_MODULE_INSTALL_PATH}/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
+	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
 }
 
-node-module-src_install() {
+node-module_src_install() {
 	einstalldocs
 
-	insinto "${NODE_MODULE_INSTALL_PATH}/${NODE_MODULE_NAME}/${SLOT}"
+	insinto "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}"
 	for f in ${NODE_MODULE_DEFAULT_FILES} ${NODE_MODULE_EXTRA_FILES}; do
 		if [ -e "$f" ]; then
 			doins -r "$f"
