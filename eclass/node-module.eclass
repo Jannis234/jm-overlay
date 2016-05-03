@@ -106,11 +106,18 @@ node-module_src_install() {
 	einstalldocs
 
 	insinto "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}"
-	for f in ${NODE_MODULE_DEFAULT_FILES} ${NODE_MODULE_EXTRA_FILES}; do
+	# Default files - might or might not be present
+	for f in ${NODE_MODULE_DEFAULT_FILES}; do
 		if [ -e "$f" ]; then
 			doins -r "$f"
 		fi
 	done
+	# These were manually added to the ebuild, fail if one doesn't exist
+	if [ "${NODE_MODULE_EXTRA_FILES}" ]; then
+		for f in ${NODE_MODULES_EXTRA_FILES}; do
+			doins -r "$f"
+		done
+	fi
 
 	for dep in ${NODE_MODULE_DEPEND}; do
 		install_node_module_depend "${dep}"
