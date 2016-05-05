@@ -9,7 +9,15 @@ NODE_MODULE_EXTRA_FILES="src"
 NODE_MODULE_DEPEND="q:1.4.1
 	semver:5.1.0
 	shelljs:0.5.3
-	underscore:1.8.3"
+	underscore:1.8.3
+	unorm:1.4.1
+	cordova-registry-mapper:1.1.15
+	ansi:0.3.1
+	osenv:0.1.3
+	bplist-parser:0.1.1
+	elementtree:0.1.6
+	glob:5.0.15
+	plist:1.2.0"
 
 inherit node-module
 
