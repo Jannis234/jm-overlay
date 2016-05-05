@@ -5,6 +5,8 @@
 EAPI=6
 
 NODE_MODULE_NAME="des.js"
+NODE_MODULE_DEPEND="minimalistic-assert:1.0.0
+	inherits:2.0.1"
 
 inherit node-module
 
