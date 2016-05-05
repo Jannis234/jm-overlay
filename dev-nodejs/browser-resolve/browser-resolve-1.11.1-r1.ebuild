@@ -5,6 +5,7 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="empty.js"
+NODE_MODULE_DEPEND="resolve:1.1.7"
 
 inherit node-module
 
