@@ -4,6 +4,8 @@
 
 EAPI=6
 
+NODE_MODULE_DEPEND="inherits:2.0.1"
+
 inherit node-module
 
 DESCRIPTION="Abstract base class for crypto-streams"
