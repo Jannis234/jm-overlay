@@ -4,6 +4,8 @@
 
 EAPI=6
 
+NODE_MODULE_DEPEND="util:0.10.3"
+
 inherit node-module
 
 DESCRIPTION="Commonjs assert - node.js api compatible"
