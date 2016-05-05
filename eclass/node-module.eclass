@@ -114,7 +114,7 @@ node-module_src_install() {
 	done
 	# These were manually added to the ebuild, fail if one doesn't exist
 	if [ "${NODE_MODULE_EXTRA_FILES}" ]; then
-		for f in ${NODE_MODULES_EXTRA_FILES}; do
+		for f in ${NODE_MODULE_EXTRA_FILES}; do
 			doins -r "$f"
 		done
 	fi
