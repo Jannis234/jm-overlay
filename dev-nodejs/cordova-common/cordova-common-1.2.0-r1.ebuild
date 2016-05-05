@@ -16,7 +16,9 @@ NODE_MODULE_DEPEND="bplist-parser:0.1.1
 	semver:5.1.0
 	shelljs:0.5.3
 	underscore:1.8.3
-	unorm:1.4.1"
+	unorm:1.4.1
+	ansi:0.3.1
+	glob:5.0.15"
 
 inherit node-module
 
