@@ -5,7 +5,10 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="duplex.js passthrough.js readable.js transform.js writable.js"
-NODE_MODULE_DEPEND="core-util-is:1.0.2"
+NODE_MODULE_DEPEND="core-util-is:1.0.2
+	string_decoder:0.10.31
+	isarray:0.0.1
+	inherits:2.0.1"
 
 inherit node-module
 

@@ -9,7 +9,8 @@ NODE_MODULE_DEPEND="core-util-is:1.0.2
 	isarray:1.0.0
 	process-nextick-args:1.0.6
 	string_decoder:0.10.31
-	util-deprecate:1.0.2"
+	util-deprecate:1.0.2
+	inherits:2.0.1"
 
 inherit node-module
 
