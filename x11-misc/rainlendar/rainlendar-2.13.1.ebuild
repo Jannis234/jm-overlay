@@ -16,7 +16,7 @@ SRC_URI="!pro? (
 		amd64? ( http://www.rainlendar.net/download/Rainlendar-Pro-${PV}-amd64.tar.bz2 )
 		x86? ( http://www.rainlendar.net/download/Rainlendar-Pro-${PV}-i386.tar.bz2 )
 	)
-	http://wiki.rainlendar.info/wikilogo.small.png -> ${PN}-logo.png"
+	http://www.rainlendar.net/download/Rainlendar.png"
 
 LICENSE="Rainlendar"
 SLOT="0"
@@ -48,7 +48,7 @@ QA_PREBUILT="${EROOT}opt/${PN}/rainlendar2
 
 src_unpack() {
 	default
-	cp "${DISTDIR}/${PN}-logo.png" "${WORKDIR}/${PN}.png"
+	cp "${DISTDIR}/Rainlendar.png" "${WORKDIR}/${PN}.png"
 }
 
 src_prepare() {
