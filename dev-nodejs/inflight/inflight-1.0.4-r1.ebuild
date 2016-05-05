@@ -4,7 +4,8 @@
 
 EAPI=6
 
-NODE_MODULE_DEPEND="wrappy:1.0.1"
+NODE_MODULE_DEPEND="wrappy:1.0.1
+	once:1.3.3"
 
 inherit node-module
 
