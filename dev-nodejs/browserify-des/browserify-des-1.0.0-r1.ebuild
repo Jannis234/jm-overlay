@@ -5,7 +5,8 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="modes.js"
-NODE_MODULE_DEPEND="cipher-base:1.0.2"
+NODE_MODULE_DEPEND="cipher-base:1.0.2
+	inherits:2.0.1"
 
 inherit node-module
 
