@@ -5,7 +5,8 @@
 EAPI=6
 
 NODE_MODULE_DEPEND="imurmurhash:0.1.4
-	slide:1.1.6"
+	slide:1.1.6
+	graceful-fs:4.1.3"
 
 inherit node-module
 
