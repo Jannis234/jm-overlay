@@ -4,7 +4,8 @@
 
 EAPI=6
 
-NODE_MODULE_DEPEND="os-homedir:1.0.1"
+NODE_MODULE_DEPEND="os-homedir:1.0.1
+	os-tmpdir:1.0.1"
 
 inherit node-module
 
