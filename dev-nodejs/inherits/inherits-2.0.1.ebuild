@@ -4,7 +4,7 @@
 
 EAPI=6
 
-NODE_MODULE_EXTRA_FILES="${PV}_browser.js"
+NODE_MODULE_EXTRA_FILES="${PN}_browser.js"
 
 inherit node-module
 
