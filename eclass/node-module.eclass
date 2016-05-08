@@ -89,6 +89,7 @@ install_node_module_depend() {
 
 	local version="${1#*:}"
 	local name="${1%:*}"
+	einfo "Installing symlink to dependency ${name}:${version}"
 	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
 }
 
@@ -98,6 +99,7 @@ install_node_module_depend() {
 install_node_module_binary() {
 	[[ ${#} -eq 2 ]] || die "Invalid arguments to install_node_module_binary"
 
+	einfo "Installing symlink to executable $1"
 	chmod +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" || die
 	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
 }
