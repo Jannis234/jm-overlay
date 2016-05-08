@@ -5,7 +5,7 @@
 EAPI=6
 
 NODEJS_MIN_VERSION="0.8.0"
-NODE_MODULE_EXTRA_FILES="global.js make.js shell.js"
+NODE_MODULE_EXTRA_FILES="src global.js make.js shell.js"
 
 inherit node-module
 
