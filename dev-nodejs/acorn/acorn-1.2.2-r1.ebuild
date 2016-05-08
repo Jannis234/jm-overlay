@@ -5,7 +5,7 @@
 EAPI=6
 
 NODEJS_MIN_VERSION="0.4.0"
-NODE_MODULES_EXTRA_FILES="dist src"
+NODE_MODULE_EXTRA_FILES="dist src"
 
 inherit node-module
 
