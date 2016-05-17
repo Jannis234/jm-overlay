@@ -5,7 +5,7 @@
 EAPI=6
 
 NODEJS_MIN_VERSION="0.9.9"
-NODE_MODULE_EXTRA_FILES="bin src"
+NODE_MODULE_EXTRA_FILES="bin src doc"
 NODE_MODULE_DEPEND="underscore:1.7.0
 	q:1.0.1
 	ansi:0.3.1
@@ -29,19 +29,19 @@ DOCS=( README.md RELEASENOTES.md NOTICE CONTRIBUTING.md )
 
 src_install() {
 	rm bin/cordova.cmd || die # Only needed on windows
+
+	for lang in ${DOC_LINGUAS}; do
+		use doc && dodoc -r doc/$lang
+		rm -r doc/$lang || die
+	done
+	if use doc && use linguas_en; then
+		docinto en
+		dodoc doc/readme.md doc/bash.md
+	fi
+	rm doc/readme.md doc/bash.md || die
+
 	node-module_src_install
 	install_node_module_binary "bin/cordova" "/usr/bin/cordova"
-
-	if use doc; then
-		docinto cli
-		for lang in ${DOC_LINGUAS}; do
-			dodoc -r doc/$lang
-		done
-		if use linguas_en; then
-			docinto cli/en
-			dodoc doc/readme.md doc/bash.md
-		fi
-	fi
 
 	use bash-completion && newbashcomp "scripts/cordova.completion" "cordova"
 }
