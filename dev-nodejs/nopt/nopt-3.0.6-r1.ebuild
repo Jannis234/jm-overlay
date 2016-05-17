@@ -4,7 +4,7 @@
 
 EAPI=6
 
-NODE_MODULE_DEP="abbrev:1.0.7"
+NODE_MODULE_DEPEND="abbrev:1.0.7"
 
 inherit node-module
 
