@@ -5,6 +5,8 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="npa.js"
+NODE_MODULE_DEPEND="semver:5.1.0
+	hosted-git-info:2.1.4"
 
 inherit node-module
 
