@@ -3,9 +3,8 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_{3,4} )
 PYTHON_REQ_USE="readline"
-DISTUTILS_SINGLE_IMPL=1
 
 inherit distutils-r1
 
