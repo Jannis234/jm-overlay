@@ -9,6 +9,7 @@ NODE_MODULE_EXTRA_FILES="src templates"
 NODE_MODULE_DEPEND="aliasify:1.9.0
 	cordova-app-hello-world:3.10.0
 	cordova-common:1.3.0
+	cordova-fetch:1.0.0
 	cordova-js:4.1.4
 	cordova-registry-mapper:1.1.15
 	cordova-serve:1.0.0
