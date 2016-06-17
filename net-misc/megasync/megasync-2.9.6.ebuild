@@ -22,7 +22,7 @@ RDEPEND="dev-libs/crypto++
 	sys-libs/zlib
 	dev-db/sqlite:3
 	net-dns/c-ares
-	net-misc/curl[ssl]
+	net-misc/curl[ssl,curl_ssl_openssl]
 	dev-qt/qtcore:4
 	dev-qt/qtgui:4
 	dev-qt/qtdbus:4"
