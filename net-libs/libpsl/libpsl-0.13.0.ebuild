@@ -39,7 +39,7 @@ multilib_src_configure() {
 	if use icu; then
 		idnalib="libicu"
 	else
-		idnalib=$(usex idn2 libidn2 libidn)
+		idnalib=$(usex libidn2 libidn2 libidn)
 	fi
 
 	if multilib_is_native_abi; then
