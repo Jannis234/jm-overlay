@@ -14,7 +14,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IMPACK_LINGUAS=( de )
-IUSE="aot ${IMPACK_LINGUAS[@]/#/linguas_}"
+IUSE="aot ${IMPACK_LINGUAS[@]/#/l10n_}"
 
 RDEPEND=">=dev-lang/mono-3
 	dev-dotnet/gtk-sharp:3"
@@ -37,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-	use linguas_de || rm bin/Release/Locale/deu.xml
+	use l10n_de || rm bin/Release/Locale/deu.xml
 
 	emake install PREFIX="${D}/usr"
 	if use aot; then
