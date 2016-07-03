@@ -21,8 +21,11 @@ SRC_URI="!pro? (
 LICENSE="Rainlendar"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-RAINLENDAR_LINGUAS=( bs ca_ES cs_CZ da_DK de_DE es_ES et_EE fi_FI fr_FR he_IL hi_IN hu_HU hy id_ID it_IT ja_JP ko_KR lt_LT nb_NO nl_NL pl_PL pt_BR pt_PT ro_RO ru_RU sk_SK sr_SR sv_SE th_TH tr_TR uk_UA zh_CN zh_TW )
-IUSE="pro ${RAINLENDAR_LINGUAS[@]/#/linguas_}"
+RAINLENDAR_LANGS="bs ca:ca_ES cs:cs_CZ da:da_DK de:de_DE es:es_ES et:et_EE fi:fi_FI fr:fr_FR he:he_IL hi:hi_IN hu:hu_HU hy id:id_ID it:it_IT ja:ja_JP ko:ko_KR lt:lt_LT nb:nb_NO nl:nl_NL pl:pl_PL pt-BR:pt_BR pt-PT:pt_PT ro:ro_RO ru:ru_RU sk:sk_SK sr:sr_SR sv:sv_SE th:th_TH tr:tr_TR uk:uk_UA zh-CN:zh_CN zh-TW:zh_TW"
+IUSE="pro"
+for lang in $RAINLENDAR_LANGS; do
+	IUSE="${IUSE} l10n_${lang%:*}"
+done
 
 DEPEND=""
 RDEPEND="x11-libs/libX11
@@ -54,9 +57,9 @@ src_unpack() {
 src_prepare() {
 	default
 
-	for locale in ${RAINLENDAR_LINGUAS[@]}; do
-		if ! use linguas_${locale}; then
-			rm -r locale/${locale} || die
+	for locale in ${RAINLENDAR_LANGS}; do
+		if ! use l10n_${locale%:*}; then
+			rm -r locale/${locale#*:} || die
 		fi
 	done
 }
