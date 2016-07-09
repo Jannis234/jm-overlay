@@ -1,0 +1,197 @@
+diff -ru audacious-plugins-3.7.1_orig/src/lyricwiki/lyricwiki.cc audacious-plugins-3.7.1/src/lyricwiki/lyricwiki.cc
+--- audacious-plugins-3.7.1_orig/src/lyricwiki/lyricwiki.cc	2016-07-09 16:32:38.129330329 +0200
++++ audacious-plugins-3.7.1/src/lyricwiki/lyricwiki.cc	2016-07-09 16:39:21.154793333 +0200
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include <glib.h>
++#include <glib/gstdio.h>
+ #include <string.h>
+ #include <gtk/gtk.h>
+ #include <libxml/parser.h>
+@@ -39,7 +40,7 @@
+ {
+ public:
+     static constexpr PluginInfo info = {
+-        N_("LyricWiki Plugin"),
++        N_("LyricWiki Plugin (Offline)"),
+         PACKAGE
+     };
+ 
+@@ -130,7 +131,14 @@
+                 {
+                     g_free (ret);
+                     ret = g_strdup (_("No lyrics available"));
+-                }
++                } else {
++                    StringBuf title_buf = filename_normalize (str_copy (state.title));
++                    StringBuf artist_buf = filename_normalize (str_copy (state.artist));
++                    
++                    g_mkdir (str_printf ("%s/.cache/audacious/lyricwiki", g_get_home_dir ()), 0755);
++                    g_file_set_contents (str_printf ("%s/.cache/audacious/lyricwiki/%s_%s.lrc", g_get_home_dir (),
++                                                    (const char *) artist_buf, (const char *) title_buf), ret, -1, NULL);
++				}
+ 
+                 g_regex_unref (reg);
+             }
+@@ -297,15 +305,18 @@
+     vfs_async_file_get_contents (uri, get_lyrics_step_3, nullptr);
+ }
+ 
+-static void get_lyrics_step_1 ()
++static void get_lyrics_step_1 (const char * uri1, const Index<char> & buf, void *)
+ {
+-    if (! state.artist || ! state.title)
+-    {
+-        update_lyrics_window (_("Error"), nullptr, _("Missing song metadata"), false);
+-        return;
+-    }
+-
+-    StringBuf title_buf = str_encode_percent (state.title);
++    if (! state.uri || strcmp(state.uri, uri1))
++	    return;
++	
++	if (buf.len ())
++	{
++	    update_lyrics_window (state.title, state.artist, str_copy (buf.begin (), buf.len ()), true);
++		return;
++	}
++	
++	StringBuf title_buf = str_encode_percent (state.title);
+     StringBuf artist_buf = str_encode_percent (state.artist);
+ 
+     state.uri = String (str_printf ("http://lyrics.wikia.com/api.php?"
+@@ -316,6 +327,22 @@
+     vfs_async_file_get_contents (state.uri, get_lyrics_step_2, nullptr);
+ }
+ 
++static void get_lyrics_step_0 ()
++{
++    if (! state.artist || ! state.title)
++    {
++        update_lyrics_window (_("Error"), nullptr, _("Missing song metadata"), false);
++        return;
++    }
++
++    StringBuf title_buf = filename_normalize (str_copy (state.title));
++    StringBuf artist_buf = filename_normalize (str_copy (state.artist));
++
++    state.uri = String (str_printf ("file://%s/.cache/audacious/lyricwiki/%s_%s.lrc", g_get_home_dir (), (const char *) artist_buf, (const char *) title_buf));
++
++    vfs_async_file_get_contents (state.uri, get_lyrics_step_1, nullptr);
++}
++
+ static GtkTextView * textview;
+ static GtkWidget * edit_button;
+ static GtkTextBuffer * textbuffer;
+@@ -405,7 +432,7 @@
+ 
+     state.uri = String ();
+ 
+-    get_lyrics_step_1 ();
++    get_lyrics_step_0 ();
+ }
+ 
+ static void destroy_cb ()
+diff -ru audacious-plugins-3.7.1_orig/src/lyricwiki/Makefile audacious-plugins-3.7.1/src/lyricwiki/Makefile
+--- audacious-plugins-3.7.1_orig/src/lyricwiki/Makefile	2016-07-09 16:32:38.129330329 +0200
++++ audacious-plugins-3.7.1/src/lyricwiki/Makefile	2016-07-09 16:33:08.839758929 +0200
+@@ -1,4 +1,4 @@
+-PLUGIN = lyricwiki${PLUGIN_SUFFIX}
++PLUGIN = lyricwiki-offline${PLUGIN_SUFFIX}
+ 
+ SRCS = lyricwiki.cc
+ 
+diff -ru audacious-plugins-3.7.1_orig/src/lyricwiki-qt/lyricwiki.cc audacious-plugins-3.7.1/src/lyricwiki-qt/lyricwiki.cc
+--- audacious-plugins-3.7.1_orig/src/lyricwiki-qt/lyricwiki.cc	2016-07-09 16:32:38.137330180 +0200
++++ audacious-plugins-3.7.1/src/lyricwiki-qt/lyricwiki.cc	2016-07-09 16:41:36.928238371 +0200
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include <glib.h>
++#include <glib/gstdio.h>
+ #include <string.h>
+ 
+ #include <QContextMenuEvent>
+@@ -66,7 +67,7 @@
+ {
+ public:
+     static constexpr PluginInfo info = {
+-        N_("LyricWiki Plugin"),
++        N_("LyricWiki Plugin (Offline)"),
+         PACKAGE
+     };
+ 
+@@ -148,6 +149,13 @@
+                 {
+                     g_free (ret);
+                     ret = g_strdup (_("No lyrics available"));
++                } else {
++                    StringBuf title_buf = filename_normalize (str_copy (state.title));
++                    StringBuf artist_buf = filename_normalize (str_copy (state.artist));
++
++                    g_mkdir (str_printf ("%s/.cache/audacious/lyricwiki", g_get_home_dir ()), 0755);
++                    g_file_set_contents (str_printf ("%s/.cache/audacious/lyricwiki/%s_%s.lrc", g_get_home_dir (),
++                                                    (const char *) artist_buf, (const char *) title_buf), ret, -1, NULL);
+                 }
+ 
+                 g_regex_unref (reg);
+@@ -314,11 +322,14 @@
+     vfs_async_file_get_contents (uri, get_lyrics_step_3, nullptr);
+ }
+ 
+-static void get_lyrics_step_1 ()
++static void get_lyrics_step_1 (const char * uri1, const Index<char> & buf, void *)
+ {
+-    if (! state.artist || ! state.title)
++    if (! state.uri || strcmp(state.uri, uri1))
++        return;
++
++    if (buf.len ())
+     {
+-        update_lyrics_window (_("Error"), nullptr, _("Missing song metadata"));
++        update_lyrics_window (state.title, state.artist, str_copy (buf.begin (), buf.len ()), true);
+         return;
+     }
+ 
+@@ -333,6 +344,22 @@
+     vfs_async_file_get_contents (state.uri, get_lyrics_step_2, nullptr);
+ }
+ 
++static void get_lyrics_step_0 ()
++{
++    if (! state.artist || ! state.title)
++    {
++        update_lyrics_window (_("Error"), nullptr, _("Missing song metadata"), false);
++        return;
++    }
++
++    StringBuf title_buf = filename_normalize (str_copy (state.title));
++    StringBuf artist_buf = filename_normalize (str_copy (state.artist));
++
++    state.uri = String (str_printf ("file://%s/.cache/audacious/lyricwiki/%s_%s.lrc", g_get_home_dir (), (const char *) artist_buf, (const char *) title_buf));
++
++    vfs_async_file_get_contents (state.uri, get_lyrics_step_1, nullptr);
++}
++
+ static QTextEdit * textedit;
+ 
+ static void update_lyrics_window (const char * title, const char * artist, const char * lyrics)
+@@ -368,7 +395,7 @@
+ 
+     state.uri = String ();
+ 
+-    get_lyrics_step_1 ();
++    get_lyrics_step_0 ();
+ }
+ 
+ static void lw_cleanup (QObject * object = nullptr)
+diff -ru audacious-plugins-3.7.1_orig/src/lyricwiki-qt/Makefile audacious-plugins-3.7.1/src/lyricwiki-qt/Makefile
+--- audacious-plugins-3.7.1_orig/src/lyricwiki-qt/Makefile	2016-07-09 16:32:38.137330180 +0200
++++ audacious-plugins-3.7.1/src/lyricwiki-qt/Makefile	2016-07-09 16:33:20.748537208 +0200
+@@ -1,4 +1,4 @@
+-PLUGIN = lyricwiki-qt${PLUGIN_SUFFIX}
++PLUGIN = lyricwiki-qt-offline${PLUGIN_SUFFIX}
+ 
+ SRCS = lyricwiki.cc
+ 
