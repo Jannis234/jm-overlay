@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="softfloat">Build and install mov-only softfloat libraries</flag>
+		<flag name="postproc">Install python-based assembly post-processors</flag>
+	</use>
+</pkgmetadata>
