@@ -5,6 +5,9 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="build"
+NODE_MODULE_DEPEND="punycode:1.4.1
+	chalk:1.1.3
+	lodash:3.10.1"
 
 inherit node-module
 
