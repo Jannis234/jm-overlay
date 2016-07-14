@@ -2,6 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-MISC-FREE wcwidth.cpp ConvertUTF.cpp
+MISC-FREE MoVfuscator wcwidth.cpp ConvertUTF.cpp
 
 EULA Rainlendar MEGA-Code-Review UT4-PreAlpha-EULA zynamics-bindiff-eula
