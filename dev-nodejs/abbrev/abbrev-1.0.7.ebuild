@@ -12,7 +12,6 @@ DESCRIPTION="Like ruby's abbrev module, but in js"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="${DEPEND}
 	test? ( dev-util/tap )"

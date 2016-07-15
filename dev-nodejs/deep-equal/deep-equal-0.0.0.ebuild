@@ -13,7 +13,7 @@ DESCRIPTION="Node's assert.deepEqual algorithm"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE="test examples"
 
 DEPEND="${DEPEND}
 	test? ( dev-util/tap )"
