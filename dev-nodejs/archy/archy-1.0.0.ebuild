@@ -4,17 +4,25 @@
 
 EAPI=6
 
+NODE_MODULE_HAS_TEST="1"
+NODE_MODULE_TEST_DEPEND="tape:0.1.1"
+
 inherit node-module
 
 DESCRIPTION="Render nested hierarchies \"npm ls\" style with unicode pipes"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE="examples test"
 
 DOCS=( readme.markdown )
 
 src_install() {
 	node-module_src_install
 	use examples && dodoc -r examples
+}
+
+src_test() {
+	node-module_src_test
+	tap test || die "Tests failed"
 }
