@@ -32,7 +32,7 @@ esac
 
 inherit eutils
 
-EXPORT_FUNCTIONS src_install
+EXPORT_FUNCTIONS src_install src_test
 
 # @ECLASS-VARIABLE: NODE_MODULE_NAME
 # @DESCRIPTION:
@@ -53,6 +53,17 @@ NODE_MODULE_DEFAULT_FILES="index.js ${NODE_MODULE_NAME}.js package.json lib"
 # @DESCRIPTION:
 # A list of packages that this Node.js module depends on
 # Entries should have the format "module:version"
+# @ECLASS_VARIABLE: NODE_MODULE_HAS_TEST
+# @DESCRIPTION:
+# Set this variable to indicate that the ebuild implements src_test()
+# This will only set up DEPEND and IUSE correctly, you must still
+# implement src_test() yourself. If this is not set, a dummy src_test()
+# function that does nothing is exported
+# @ECLASS_VARIABLE: NODE_MODULE_TEST_DEPEND
+# @DESCRIPTION:
+# Similar to NODE_MODULE_DEPEND, this contains a list of dependencies
+# that are needed for src_test(). This will be ignored if NODE_MODULE_HAS_TEST
+# is not set.
 # @ECLASS_VARIABLE: NODEJS_MIN_VERSION
 # @DESCRIPTION:
 # Set this if your module needs a specific version of Node.js to work
@@ -71,6 +82,15 @@ fi
 for pkg in ${NODE_MODULE_DEPEND}; do
 	RDEPEND="${RDEPEND} dev-nodejs/${pkg}"
 done
+
+if [ ! -z ${NODE_MODULE_HAS_TEST} ]; then
+	IUSE="test"
+	DEPEND="test? ( ${RDEPEND}"
+	for pkg in ${NODE_MODULE_TEST_DEPEND}; do
+		DEPEND="${DEPEND} dev-nodejs/${pkg}"
+	done
+	DEPEND="${DEPEND} )"
+fi
 
 if [ ${EAPI:-0} == 5 ]; then
 	node-module_src_prepare() {
@@ -94,6 +114,22 @@ install_node_module_depend() {
 	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
 }
 
+# @FUNCTION: install_node_module_build_depend
+# @USAGE: <module>
+# @DESCRIPTION:
+# Creates a symlink to the specified Node.js module
+# into the build directory
+install_node_module_build_depend() {
+	[[ ${#} -eq 1 ]] || die "Invalid arguments to install_node_module_build_depend"
+
+	local version="${1#*:}"
+	local name="${1%:*}"
+	einfo "Creating symlink to dependency ${name}:${version}"
+	[ -e "${EROOT}usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
+	mkdir -p "node_modules" || die
+	ln -s "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "node_modules/${name}" || die
+}
+
 # @FUNCTION: install_node_module_binary
 # @USAGE: <path> <target>
 # Installs a symlink to a binary inside the Node.js module
@@ -105,6 +141,18 @@ install_node_module_binary() {
 	chmod +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" || die
 	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
 }
+
+if [ -z ${NODE_MODULE_HAS_TEST} ]; then
+	# Don't run the default src_test() function which will often cause errors if a Makefile is present
+	node-module_src_test() { :; }
+else
+	# This does not run any tests by itself, it only sets up dependencies
+	node-module_src_test() {
+		for dep in ${NODE_MODULE_DEPEND} ${NODE_MODULE_TEST_DEPEND}; do
+			install_node_module_build_depend "${dep}"
+		done
+	}
+fi
 
 node-module_src_install() {
 	einstalldocs
