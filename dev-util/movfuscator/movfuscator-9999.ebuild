@@ -23,8 +23,14 @@ TEST_REPO_URI="https://github.com/kokke/tiny-AES128-C"
 DEPEND="amd64? ( sys-devel/gcc:=[multilib] )
 	x86? ( sys-devel/gcc:= )
 	examples? (
-		dev-libs/openssl:0
-		sys-libs/ncurses:0=
+		amd64? (
+			dev-libs/openssl:0[abi_x86_32]
+			sys-libs/ncurses:0=[abi_x86_32]
+		)
+		x86? (
+			dev-libs/openssl:0
+			sys-libs/ncurses:0=
+		)
 	)"
 RDEPEND="${DEPEND}
 	postproc? ( dev-lang/python:* )"
@@ -124,7 +130,10 @@ src_install() {
 
 src_test() {
 	./build/movcc validation/aes/aes.c validation/aes/test.c -o validation/aes/aes -s || die
-	./validation/aes/aes
+	./validation/aes/aes | tee testout # Return code does not depend on test result, we need to parse the output
+	if [ "$(grep FAILURE testout)" ]; then
+		die "Tests failed"
+	fi
 }
 
 pkg_postinst() {
