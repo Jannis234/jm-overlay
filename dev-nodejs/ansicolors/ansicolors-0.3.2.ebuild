@@ -12,7 +12,6 @@ DESCRIPTION="Functions that surround a string with ansicolor codes so it prints 
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 
