@@ -4,12 +4,22 @@
 
 EAPI=6
 
+NODE_MODULE_HAS_TEST="1"
+
 inherit node-module
 
 DESCRIPTION="Contains parsers and serializers for ASN.1 (currently BER only)"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+
+DEPEND="${DEPEND}
+	test? ( dev-util/tap )"
 
 DOCS=( README.md )
+
+src_test() {
+	node-module_src_test
+	install_node_module_build_depend "tap:0"
+	tap tst || die "Tests failed"
+}
