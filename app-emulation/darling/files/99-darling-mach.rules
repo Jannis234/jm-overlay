@@ -1,0 +1,2 @@
+KERNEL=="mach", GROUP="darling", MODE="0660"
+
