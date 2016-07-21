@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="32bit">Build 32bit libraries to run 32bit OS X binaries</flag>
+		<flag name="framework-appkit">Build the AppKit framework</flag>
+		<flag name="framework-coreaudio">Build the CoreAudio framework</flag>
+	</use>
+</pkgmetadata>
