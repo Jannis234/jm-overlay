@@ -10,10 +10,13 @@ DESCRIPTION="MacOS translation layer for Linux"
 HOMEPAGE="https://www.darlinghq.org/"
 EGIT_REPO_URI="https://github.com/darlinghq/darling.git"
 
-LICENSE="GPL-3"
+LICENSE="GPL-3 GPL-2 BSD BSD-2 BSD-4 Apache-2.0 PSF-2 MIT LGPL-2.1 APSL-2 Info-ZIP openssl ZLIB public-domain"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 IUSE="32bit framework-coreaudio framework-appkit pulseaudio alsa"
+
+# Incompatible licenses from all the bundled components
+RESTRICT="bindist"
 
 REQUIRED_USE="pulseaudio? ( framework-coreaudio )
 	alsa? ( framework-coreaudio )
