@@ -126,8 +126,8 @@ install_node_module_build_depend() {
 	local name="${1%:*}"
 	einfo "Creating symlink to dependency ${name}:${version}"
 	[ -e "${EROOT}usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
-	mkdir -p "node_modules" || die
-	ln -s "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "node_modules/${name}" || die
+	dodir "node_modules"
+	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "node_modules/${name}"
 }
 
 # @FUNCTION: install_node_module_binary
@@ -138,7 +138,7 @@ install_node_module_binary() {
 
 	einfo "Installing symlink to executable $1"
 	[ -e "${S}/$1" ] || die "Executable $1 not found"
-	chmod +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" || die
+	fperms +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1"
 	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
 }
 
