@@ -138,7 +138,7 @@ install_node_module_binary() {
 
 	einfo "Installing symlink to executable $1"
 	[ -e "${S}/$1" ] || die "Executable $1 not found"
-	chmod +x "${D}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" || die
+	fperms +x "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1"
 	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
 }
 
