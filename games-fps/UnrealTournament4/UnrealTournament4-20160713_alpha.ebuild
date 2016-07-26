@@ -9,7 +9,7 @@ inherit check-reqs eutils
 # The official name of the game is just "UnrealTournament" without any number at the end
 # The ebuild is still named UnrealTournament4 to avoid confusion with games-fps/unreal-tournament (UT99)
 MyPN="UnrealTournament"
-Build_Version="2984440"
+Build_Version="3045522"
 
 DESCRIPTION="Futuristic FPS (Pre-Alpha version)"
 HOMEPAGE="https://unrealtournament.com/"
@@ -27,7 +27,7 @@ RDEPEND="virtual/opengl"
 RESTRICT="fetch mirror bindist splitdebug"
 
 S="${WORKDIR}/LinuxNoEditor"
-CHECKREQS_DISK_BUILD="19G"
+CHECKREQS_DISK_BUILD="20G"
 
 QA_PREBUILT="opt/${MyPN}/Engine/Binaries/*
 	opt/${MyPN}/Engine/Plugins/*
@@ -48,7 +48,7 @@ src_install() {
 	local dir="/opt/${MyPN}"
 
 	dodir "${dir}"
-	# Use mv instead of doins to avoid copying about 15G of data
+	# Use mv instead of doins to avoid copying about 20G of data
 	mv ./* "${D}/${dir}/" || die
 
 	chmod +x "${D}/${dir}/Engine/Binaries/Linux/UE4-Linux-Shipping" || die
