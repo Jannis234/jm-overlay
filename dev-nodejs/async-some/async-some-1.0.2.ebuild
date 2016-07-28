@@ -6,6 +6,7 @@ EAPI=6
 
 NODE_MODULE_EXTRA_FILES="some.js"
 NODE_MODULE_DEPEND="dezalgo:1.0.3"
+NODE_MODULE_HAS_TEST="1"
 
 inherit node-module
 
@@ -13,6 +14,14 @@ DESCRIPTION="Short-circuited, asynchronous version of Array.protototype.some"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+
+DEPEND="${DEPEND}
+	test? ( dev-util/tap )"
 
 DOCS=( README.md )
+
+src_test() {
+	node-module_src_test
+	install_node_module_build_depend "tap:0"
+	tap test || die "Tests failed"
+}
