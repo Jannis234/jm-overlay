@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +icu -libidn -libidn2 +builtin-psl +idn"
 REQUIRED_USE="builtin-psl? ( ^^ ( icu libidn libidn2 ) )
-	idn? ( ^^ ( icu libidn libidn2 ) )
-	!builtin-psl? ( !idn? ( !icu !libidn !libidn2 ) )"
+	idn? ( ^^ ( icu libidn libidn2 ) )"
 
-RDEPEND="icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
+RDEPEND="idn? (
+	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
 	libidn? (
 		net-dns/libidn[${MULTILIB_USEDEP}]
 		dev-libs/libunistring[${MULTILIB_USEDEP}]
@@ -26,9 +26,19 @@ RDEPEND="icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
 	libidn2? (
 		net-dns/libidn2[${MULTILIB_USEDEP}]
 		dev-libs/libunistring[${MULTILIB_USEDEP}]
-	)"
+	) )"
 DEPEND="${RDEPEND}
-	doc? ( dev-util/gtk-doc )"
+	doc? ( dev-util/gtk-doc )
+	builtin-psl? (
+	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
+	libidn? (
+		net-dns/libidn[${MULTILIB_USEDEP}]
+		dev-libs/libunistring[${MULTILIB_USEDEP}]
+	)
+	libidn2? (
+		net-dns/libidn2[${MULTILIB_USEDEP}]
+		dev-libs/libunistring[${MULTILIB_USEDEP}]
+	) )"
 
 src_prepare() {
 	multilib_copy_sources
