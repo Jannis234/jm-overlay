@@ -157,7 +157,7 @@ fi
 node-module_src_install() {
 	einstalldocs
 
-	insinto "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}"
+	insinto "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}"
 	# Default files - might or might not be present
 	for f in ${NODE_MODULE_DEFAULT_FILES}; do
 		if [ -e "$f" ]; then
