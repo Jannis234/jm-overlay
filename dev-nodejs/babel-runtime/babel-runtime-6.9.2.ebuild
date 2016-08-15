@@ -1,0 +1,19 @@
+# Copyright 1999-2016 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+EAPI=6
+
+NODE_MODULE_EXTRA_FILES="core-js core-js.js helpers regenerator"
+NODE_MODULE_DEPEND="regenerator-runtime:0.9.5
+	core-js:2.4.1"
+
+inherit node-module
+
+DESCRIPTION="Babel selfContained runtime"
+
+LICENSE="MIT"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
+
+DOCS=( README.md )
