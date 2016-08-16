@@ -4,7 +4,7 @@
 
 EAPI=6
 
-NODEJS_MIB_VERSION="0.6"
+NODEJS_MIN_VERSION="0.6"
 
 inherit node-module
 
