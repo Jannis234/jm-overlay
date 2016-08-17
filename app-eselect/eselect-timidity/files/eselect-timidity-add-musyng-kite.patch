@@ -1,0 +1,10 @@
+--- timidity.eselect-20110513_orig	2016-08-17 13:54:22.050198026 +0200
++++ timidity.eselect-20110513	2016-08-17 13:54:43.825784711 +0200
+@@ -17,6 +17,7 @@
+ 			"${TIMIDITYDIR}/eawpatches" \
+ 			"${TIMIDITYDIR}/shompatches" \
+ 			"${TIMIDITYDIR}/freepats" \
++			"${TIMIDITYDIR}/musyng-kite" \
+ 		; do
+ 		if [[ -d ${f} ]] ; then
+ 			echo $(basename ${f} )
