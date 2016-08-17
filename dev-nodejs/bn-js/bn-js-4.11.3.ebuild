@@ -6,6 +6,7 @@ EAPI=6
 
 NODE_MODULE_NAME="bn.js"
 NODE_MODULE_EXTRA_FILES="util"
+NODE_MODULE_HAS_TEST="1"
 
 inherit node-module
 
@@ -13,6 +14,12 @@ DESCRIPTION="Big number implementation in pure javascript"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
+DEPEND="${DEPEND}
+	test? ( dev-util/mocha )"
 DOCS=( README.md )
+
+src_test() {
+	node-module_src_test
+	mocha test || die "Tests failed"
+}
