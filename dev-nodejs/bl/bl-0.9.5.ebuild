@@ -4,7 +4,10 @@
 
 EAPI=6
 
+NODE_MODULE_HAS_TEST="1"
 NODE_MODULE_DEPEND="readable-stream:1.0.34"
+NODE_MODULE_TEST_DEPEND="tape:4.6.0
+	hash_file:0.1.1"
 
 inherit node-module
 
@@ -12,6 +15,15 @@ DESCRIPTION="Buffer List: Collect buffers, access with a standard readable Buffe
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
+DEPEND="${DEPEND}
+	test? ( dev-util/tap )"
 DOCS=( README.md )
+
+src_test() {
+	node-module_src_test
+	# Uses an external service, but the (empty) file needs to stay here for the other tests
+	echo > test/sauce.js || die
+	sed -i "s/\/tmp\///g" test/*.js || die # Fix sandbox violation
+	tap test || die "Tests failed"
+}
