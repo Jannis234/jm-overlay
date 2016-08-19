@@ -21,8 +21,6 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RESTRICT="test" # Broken
-
 DOCS=( readme.markdown )
 
 src_install() {

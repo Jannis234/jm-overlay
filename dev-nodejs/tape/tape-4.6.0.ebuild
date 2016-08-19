@@ -24,7 +24,6 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RESTRICT="test" # Broken
 RDEPEND="${RDEPEND}
 	dev-nodejs/string-prototype-trim:1.1.2"
 DOCS=( readme.markdown )

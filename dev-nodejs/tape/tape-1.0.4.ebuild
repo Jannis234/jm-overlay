@@ -5,8 +5,9 @@
 EAPI=6
 
 NODE_MODULE_DEPEND="deep-equal:0.0.0
+	defined:0.0.0
 	jsonify:0.0.0
-	defined:0.0.0"
+	through:2.3.8"
 
 inherit node-module
 
