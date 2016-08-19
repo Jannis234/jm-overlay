@@ -17,7 +17,7 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="${DEPEND}
-	test? ( dev-util/tap )"
+	test? ( dev-util/tap:0 )"
 DOCS=( README.md )
 
 src_test() {

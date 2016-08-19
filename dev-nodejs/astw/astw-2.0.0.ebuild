@@ -20,7 +20,7 @@ IUSE="test examples"
 DOCS=( readme.markdown )
 
 DEPEND="${DEPEND}
-	test? ( dev-util/tap )"
+	test? ( dev-util/tap:0 )"
 
 src_install() {
 	node-module_src_install
