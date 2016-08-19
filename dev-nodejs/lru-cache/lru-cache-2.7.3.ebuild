@@ -14,7 +14,7 @@ LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="${DEPEND}
-	dev-util/tap"
+	test? ( dev-util/tap )"
 
 DOCS=( README.md CONTRIBUTORS )
 
