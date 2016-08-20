@@ -4,12 +4,10 @@
 
 EAPI=6
 
+NODEJS_MIN_VERSION="0.5.8"
 NODE_MODULE_DEPEND="inherits:2.0.1"
 
 inherit node-module
-
-RDEPEND="dev-nodejs/inherits:2.0.1
-	|| ( =net-libs/nodejs-0.4* >=net-libs/nodejs-0.5.8 )"
 
 DESCRIPTION="A stream of blocks"
 

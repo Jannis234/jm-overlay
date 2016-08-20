@@ -11,7 +11,7 @@ inherit node-module
 RDEPEND="${RDEPEND}
 	dev-nodejs/lodash_getnative:3.9.1"
 
-DESCRIPTION="The modern build of lodash’s _.debounce as a module"
+DESCRIPTION="The modern build of lodash's _.debounce as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"

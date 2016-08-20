@@ -10,7 +10,7 @@ NODE_MODULE_DEPEND="mute-stream:0.0.5
 
 inherit node-module
 
-DESCRIPTION="Readline Façade fixing bugs and issues found in releases 0.8 and 0.10"
+DESCRIPTION="Readline Facade fixing bugs and issues found in releases 0.8 and 0.10"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"

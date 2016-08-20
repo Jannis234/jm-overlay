@@ -4,6 +4,7 @@
 
 EAPI=6
 
+NODEJS_MIN_VERSION="0.10"
 NODE_MODULE_DEPEND="lodash-node:2.4.1"
 
 inherit node-module
@@ -12,8 +13,5 @@ DESCRIPTION="An XML builder for node.js"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-
-RDEPEND="${RDEPEND}
-	|| ( =net-libs/nodejs-0.8* >=net-libs/nodejs-0.10 )"
 
 DOCS=( README.md )

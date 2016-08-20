@@ -8,7 +8,7 @@ NODE_MODULE_NAME="lodash._isiterateecall"
 
 inherit node-module
 
-DESCRIPTION="The modern build of lodash’s internal isIterateeCall as a module"
+DESCRIPTION="The modern build of lodash's internal isIterateeCall as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"

@@ -8,7 +8,7 @@ NODE_MODULE_NAME="lodash.memoize"
 
 inherit node-module
 
-DESCRIPTION="The modern build of lodash’s _.memoize as a module"
+DESCRIPTION="The modern build of lodash's _.memoize as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"

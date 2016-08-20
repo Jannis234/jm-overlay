@@ -8,7 +8,7 @@ NODE_MODULE_NAME="lodash._basecopy"
 
 inherit node-module
 
-DESCRIPTION="The modern build of lodash’s internal baseCopy as a module"
+DESCRIPTION="The modern build of lodash's internal baseCopy as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
