@@ -5,7 +5,9 @@
 EAPI=6
 
 NODE_MODULE_EXTRA_FILES="bplistCreator.js"
+NODE_MODULE_HAS_TEST="1"
 NODE_MODULE_DEPEND="stream-buffers:0.2.6"
+NODE_MODULE_TEST_DEPEND="bplist-parser:0.0.4"
 
 inherit node-module
 
@@ -13,6 +15,13 @@ DESCRIPTION="Binary Mac OS X Plist (property list) creator"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
+DEPEND="${DEPEND}
+	test? ( dev-util/nodeunit )"
 DOCS=( README.md )
+
+src_test() {
+	node-module_src_test
+	install_node_module_build_depend "nodeunit:0"
+	nodeunit || die "Tests failed"
+}
