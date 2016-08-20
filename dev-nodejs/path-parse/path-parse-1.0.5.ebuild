@@ -13,7 +13,6 @@ DESCRIPTION="Node.js path.parse() ponyfill"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="${DEPEND}
 	dev-util/uglifyjs"

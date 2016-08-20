@@ -15,6 +15,5 @@ DESCRIPTION="A thing for ignoring files based on globs"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

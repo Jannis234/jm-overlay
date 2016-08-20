@@ -13,7 +13,6 @@ DESCRIPTION="XML Serialization and Parsing module based on Python's ElementTree"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGES.md )
 

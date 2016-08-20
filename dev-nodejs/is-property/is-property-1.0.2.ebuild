@@ -10,6 +10,5 @@ DESCRIPTION="Tests if a JSON property can be accessed using . syntax"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

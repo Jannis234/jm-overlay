@@ -14,7 +14,6 @@ DESCRIPTION="A simple utility for getting a hash of a file"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="${DEPEND}
 	test? ( dev-util/mocha )"

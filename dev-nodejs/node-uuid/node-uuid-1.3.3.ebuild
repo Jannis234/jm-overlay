@@ -12,6 +12,5 @@ DESCRIPTION="Rigorous implementation of RFC4122 (v1 and v4) UUIDs"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,7 +12,6 @@ DESCRIPTION="The lodash method _.keys exported as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="${RDEPEND}
 	dev-nodejs/lodash-isarguments:3.0.9

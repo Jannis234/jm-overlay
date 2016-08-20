@@ -13,6 +13,5 @@ DESCRIPTION="Require any supported file as a node module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG )

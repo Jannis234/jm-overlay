@@ -16,6 +16,5 @@ DESCRIPTION="JavaScript parser, mangler/compressor and beautifier toolkit"
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

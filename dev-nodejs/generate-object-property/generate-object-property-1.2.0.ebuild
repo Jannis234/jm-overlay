@@ -12,6 +12,5 @@ DESCRIPTION="Generate safe JS code that can used to reference a object property"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

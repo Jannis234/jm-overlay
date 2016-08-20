@@ -13,6 +13,5 @@ DESCRIPTION="An incremental implementation of MurmurHash3"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

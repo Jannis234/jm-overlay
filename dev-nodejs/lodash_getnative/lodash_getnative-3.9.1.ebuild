@@ -12,6 +12,5 @@ DESCRIPTION="The modern build of lodash’s internal getNative as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

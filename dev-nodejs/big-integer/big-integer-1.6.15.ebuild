@@ -14,6 +14,5 @@ DESCRIPTION="An arbitrary length integer library for Javascript"
 
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

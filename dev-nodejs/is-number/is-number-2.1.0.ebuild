@@ -13,6 +13,5 @@ DESCRIPTION="Returns true if the value is a number"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

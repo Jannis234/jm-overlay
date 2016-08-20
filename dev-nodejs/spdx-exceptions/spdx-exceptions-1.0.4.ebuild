@@ -12,6 +12,5 @@ DESCRIPTION="List of SPDX standard license exceptions"
 
 LICENSE="CC-BY-3.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="The semantic version parser used by npm"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

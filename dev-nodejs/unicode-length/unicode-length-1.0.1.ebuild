@@ -14,4 +14,3 @@ DESCRIPTION="Get the length of unicode strings"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""

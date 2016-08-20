@@ -18,7 +18,6 @@ DESCRIPTION="Test for inclusion or exclusion of paths using pkg-conf and globs"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

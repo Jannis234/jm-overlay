@@ -10,7 +10,6 @@ DESCRIPTION="A querystring parser that supports nesting and arrays, with a depth
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CONTRIBUTING.md CHANGELOG.md )
 

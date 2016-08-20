@@ -12,6 +12,5 @@ DESCRIPTION="Run a function exactly one time"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

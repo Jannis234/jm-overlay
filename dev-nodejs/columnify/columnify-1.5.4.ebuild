@@ -14,7 +14,6 @@ DESCRIPTION="Render data in text columns. Supports in-column text-wrap"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )
 

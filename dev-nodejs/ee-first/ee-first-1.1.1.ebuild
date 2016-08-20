@@ -10,6 +10,5 @@ DESCRIPTION="Return the first event in a set of ee/event pairs"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

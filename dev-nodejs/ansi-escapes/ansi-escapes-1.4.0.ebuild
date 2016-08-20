@@ -12,6 +12,5 @@ DESCRIPTION="ANSI escape codes for manipulating the terminal"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

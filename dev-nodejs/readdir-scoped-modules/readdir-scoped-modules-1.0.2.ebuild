@@ -16,6 +16,5 @@ DESCRIPTION="Like fs.readdir but handling @org/module dirs as if they were a sin
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

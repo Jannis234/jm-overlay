@@ -25,7 +25,6 @@ DESCRIPTION="Simple, flexible, fun test framework"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( CHANGELOG.md )
 

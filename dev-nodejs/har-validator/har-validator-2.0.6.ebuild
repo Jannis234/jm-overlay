@@ -16,6 +16,5 @@ DESCRIPTION="Extremely fast HTTP Archive (HAR) validator using JSON Schema"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

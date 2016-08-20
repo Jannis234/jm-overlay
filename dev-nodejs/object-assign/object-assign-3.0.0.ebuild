@@ -12,6 +12,5 @@ DESCRIPTION="ES6 Object.assign() ponyfill"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

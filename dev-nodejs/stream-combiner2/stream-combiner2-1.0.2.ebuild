@@ -13,6 +13,5 @@ DESCRIPTION="This is a sequel to stream-combiner for streams2"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

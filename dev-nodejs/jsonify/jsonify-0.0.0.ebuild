@@ -10,6 +10,5 @@ DESCRIPTION="JSON without touching any globals"
 
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.markdown )

@@ -12,6 +12,5 @@ DESCRIPTION="The Node.js util.deprecate() function with browser support"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

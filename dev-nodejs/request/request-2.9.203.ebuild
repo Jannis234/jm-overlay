@@ -13,6 +13,5 @@ DESCRIPTION="Simplified HTTP request client"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

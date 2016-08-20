@@ -10,6 +10,5 @@ DESCRIPTION="Maps old plugin ids to new plugin names for fetching from npm"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -15,7 +15,6 @@ DESCRIPTION="The modern build of lodash’s _.debounce as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

@@ -12,6 +12,5 @@ DESCRIPTION="Manipulate the HTTP Vary header"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

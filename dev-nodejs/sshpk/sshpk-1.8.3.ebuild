@@ -20,6 +20,5 @@ DESCRIPTION="A library for finding and using SSH public keys"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

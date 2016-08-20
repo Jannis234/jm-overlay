@@ -12,6 +12,5 @@ DESCRIPTION="Returns true if the given string is a POSIX bracket expression"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

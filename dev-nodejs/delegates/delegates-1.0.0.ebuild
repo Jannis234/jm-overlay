@@ -10,7 +10,6 @@ DESCRIPTION="Delegate methods and accessors to another property"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )
 

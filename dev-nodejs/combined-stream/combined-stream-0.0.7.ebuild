@@ -13,6 +13,5 @@ DESCRIPTION="A stream that emits multiple other streams one after another"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )

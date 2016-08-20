@@ -13,7 +13,6 @@ DESCRIPTION="Object.prototype.hasOwnProperty.call shortcut"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT="test" # Broken
 DOCS=( README.mkd )

@@ -13,6 +13,5 @@ DESCRIPTION="Generates and consumes source maps"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

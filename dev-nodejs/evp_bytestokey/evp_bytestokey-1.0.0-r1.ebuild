@@ -12,6 +12,5 @@ DESCRIPTION="The super secure key derivation algorithm from openssl"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

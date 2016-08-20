@@ -13,6 +13,5 @@ DESCRIPTION="Get the name of a Windows version from the release number: 5.1.2600
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

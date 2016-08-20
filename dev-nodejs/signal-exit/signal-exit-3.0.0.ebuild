@@ -12,6 +12,5 @@ DESCRIPTION="When you want to fire an event no matter how a process exits"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

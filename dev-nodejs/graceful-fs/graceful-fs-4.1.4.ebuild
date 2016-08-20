@@ -13,6 +13,5 @@ DESCRIPTION="A drop-in replacement for fs, making various improvements"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Return an array free of duplicate values. Fastest ES5 implementatio
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

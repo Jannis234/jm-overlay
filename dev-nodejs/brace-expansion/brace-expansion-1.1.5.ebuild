@@ -13,6 +13,5 @@ DESCRIPTION="Brace expansion as known from sh/bash"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

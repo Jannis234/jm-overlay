@@ -10,7 +10,6 @@ DESCRIPTION="Growl unobtrusive notifications"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 # Doesn't verify if the tests succeeded
 # Needs to run inside a desktop session to do anything (relies on notify-send)

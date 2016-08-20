@@ -12,6 +12,5 @@ DESCRIPTION="Lowercase the keys of an object"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

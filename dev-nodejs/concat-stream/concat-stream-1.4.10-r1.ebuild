@@ -15,6 +15,5 @@ DESCRIPTION="Stream that concatenates strings or binary data and calls a callbac
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

@@ -10,6 +10,5 @@ DESCRIPTION="Normalizes Git URLs. For npm, but you can use it too"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

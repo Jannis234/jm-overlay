@@ -15,6 +15,5 @@ DESCRIPTION="Wraps a transform and provides caching"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

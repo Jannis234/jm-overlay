@@ -13,6 +13,5 @@ DESCRIPTION="Cross platform child_process#spawn"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

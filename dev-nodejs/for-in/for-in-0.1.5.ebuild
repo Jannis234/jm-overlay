@@ -12,6 +12,5 @@ DESCRIPTION="Iterate over the own and inherited enumerable properties of an obje
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Give me a string and I'll tell you if it's a valid npm package name
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

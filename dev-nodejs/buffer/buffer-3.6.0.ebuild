@@ -14,6 +14,5 @@ DESCRIPTION="Node.js Buffer API, for the browser"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

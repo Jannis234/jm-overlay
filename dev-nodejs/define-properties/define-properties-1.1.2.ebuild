@@ -14,6 +14,5 @@ DESCRIPTION="Define multiple non-enumerable properties at once"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

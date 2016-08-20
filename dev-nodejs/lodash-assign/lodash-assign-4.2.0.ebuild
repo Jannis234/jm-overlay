@@ -12,6 +12,5 @@ DESCRIPTION="The lodash method _.assign exported as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

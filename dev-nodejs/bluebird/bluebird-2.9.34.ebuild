@@ -12,6 +12,5 @@ DESCRIPTION="Full featured Promises/A+ implementation with exceptionally good pe
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md changelog.md )

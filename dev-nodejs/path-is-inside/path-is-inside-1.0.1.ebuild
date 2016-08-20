@@ -10,6 +10,5 @@ DESCRIPTION="Tests whether one path is inside another path"
 
 LICENSE="WTFPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

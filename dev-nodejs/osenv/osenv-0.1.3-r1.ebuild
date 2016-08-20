@@ -13,6 +13,5 @@ DESCRIPTION="Look up environment settings specific to different operating system
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

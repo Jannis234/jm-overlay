@@ -16,7 +16,6 @@ DESCRIPTION="Portable Unix shell commands for Node.js"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="${RDEPEND}"
 DOCS=( README.md MAINTAINERS )

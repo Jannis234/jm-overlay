@@ -13,6 +13,5 @@ DESCRIPTION="Returns true if the value is an object and not an array or null"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

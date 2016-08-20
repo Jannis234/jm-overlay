@@ -15,7 +15,6 @@ DESCRIPTION="The mighty option parser used by yargs"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

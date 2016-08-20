@@ -13,6 +13,5 @@ DESCRIPTION="Handle configuration once and for all"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.markdown )

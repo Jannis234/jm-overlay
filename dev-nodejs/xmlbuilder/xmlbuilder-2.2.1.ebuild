@@ -12,7 +12,6 @@ DESCRIPTION="An XML builder for node.js"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="${RDEPEND}
 	|| ( =net-libs/nodejs-0.8* >=net-libs/nodejs-0.10 )"

@@ -12,7 +12,6 @@ DESCRIPTION="The ultimate javascript content-type utility"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md SOURCES.md )
 

@@ -18,6 +18,5 @@ DESCRIPTION="Core istanbul API for JS code coverage"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

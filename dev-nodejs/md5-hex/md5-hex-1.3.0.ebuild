@@ -14,6 +14,5 @@ DESCRIPTION="Create a MD5 hash with hex encoding"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

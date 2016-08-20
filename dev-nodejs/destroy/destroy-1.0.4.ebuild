@@ -10,6 +10,5 @@ DESCRIPTION="Destroy a stream if possible"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

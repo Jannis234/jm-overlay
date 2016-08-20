@@ -10,6 +10,5 @@ DESCRIPTION="Caseless object set/get/has, very useful when working with HTTP hea
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

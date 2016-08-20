@@ -13,6 +13,5 @@ DESCRIPTION="Returns an array with only the unique values from the first array"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

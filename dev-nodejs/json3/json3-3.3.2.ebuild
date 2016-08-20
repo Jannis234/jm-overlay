@@ -10,6 +10,5 @@ DESCRIPTION="A modern JSON implementation compatible with nearly all JavaScript 
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

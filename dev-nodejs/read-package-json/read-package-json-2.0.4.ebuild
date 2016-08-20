@@ -16,6 +16,5 @@ DESCRIPTION="The thing npm uses to read package.json files"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -10,7 +10,6 @@ DESCRIPTION="Foreach component + npm package"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )
 

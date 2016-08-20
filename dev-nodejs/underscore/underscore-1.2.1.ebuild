@@ -12,6 +12,5 @@ DESCRIPTION="JavaScript's functional programming helper library"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README )

@@ -13,6 +13,5 @@ DESCRIPTION="Does a shallow comparison of two objects"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

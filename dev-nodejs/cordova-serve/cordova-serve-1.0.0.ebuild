@@ -17,6 +17,5 @@ DESCRIPTION="Apache Cordova server support for cordova-lib and cordova-browser"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md RELEASENOTES.md )

@@ -12,6 +12,5 @@ DESCRIPTION="A comprehensive library for mime-type mapping"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

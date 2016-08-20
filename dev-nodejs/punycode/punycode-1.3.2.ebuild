@@ -10,6 +10,5 @@ DESCRIPTION="A robust Punycode converter that fully complies to RFC 3492 and RFC
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

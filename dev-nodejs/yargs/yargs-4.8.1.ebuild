@@ -30,7 +30,6 @@ DESCRIPTION="Yargs the modern, pirate-themed, successor to optimist"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
 YARGS_L10N="de en es fr id it ja ko nb pirate pl pt_BR:pt-BR pt tr zh zh_CN:zh-CN"
 for l in $YARGS_L10N; do
 	IUSE+=" l10n_${l#*:}"

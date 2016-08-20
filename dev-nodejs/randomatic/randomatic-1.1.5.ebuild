@@ -13,6 +13,5 @@ DESCRIPTION="Generate randomized strings of a specified length, fast"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

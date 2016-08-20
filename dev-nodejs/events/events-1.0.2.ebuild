@@ -12,6 +12,5 @@ DESCRIPTION="Node's event emitter for all engines"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )

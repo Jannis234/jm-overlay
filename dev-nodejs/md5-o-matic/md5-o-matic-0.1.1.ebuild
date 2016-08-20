@@ -10,6 +10,5 @@ DESCRIPTION="Fast and simple MD5 hashing utility with zero module dependencies"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

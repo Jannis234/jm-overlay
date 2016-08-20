@@ -12,6 +12,5 @@ DESCRIPTION="Convert a username/group name to a uid/gid number"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

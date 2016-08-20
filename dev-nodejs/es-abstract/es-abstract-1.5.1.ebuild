@@ -17,7 +17,6 @@ DESCRIPTION="ECMAScript spec abstract operations"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

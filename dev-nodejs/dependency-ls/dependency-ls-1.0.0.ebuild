@@ -12,6 +12,5 @@ DESCRIPTION="This module returns a promise containing an object of top level nod
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

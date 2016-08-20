@@ -12,6 +12,5 @@ DESCRIPTION="Regular expression for matching file names, with or without extensi
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

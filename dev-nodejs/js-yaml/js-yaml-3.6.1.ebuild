@@ -13,7 +13,6 @@ DESCRIPTION="YAML 1.2 parser and serializer"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-util/uglifyjs"
 

@@ -10,6 +10,5 @@ DESCRIPTION="A set of utilities to work with JSON / JSON5 documents"
 
 LICENSE="WTFPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

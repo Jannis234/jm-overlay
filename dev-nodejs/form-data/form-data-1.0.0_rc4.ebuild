@@ -19,6 +19,5 @@ DESCRIPTION="A module to create readable \"multipart/form-data\" streams"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

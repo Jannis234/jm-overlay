@@ -38,7 +38,6 @@ DESCRIPTION="Apache Cordova tools core lib and API"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md RELEASENOTES.md )
 

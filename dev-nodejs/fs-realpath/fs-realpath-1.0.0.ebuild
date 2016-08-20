@@ -13,6 +13,5 @@ DESCRIPTION="Node's fs.realpath, fall back to the JS implementation if the nativ
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

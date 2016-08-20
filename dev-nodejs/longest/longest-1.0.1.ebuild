@@ -12,6 +12,5 @@ DESCRIPTION="Get the longest item in an array"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

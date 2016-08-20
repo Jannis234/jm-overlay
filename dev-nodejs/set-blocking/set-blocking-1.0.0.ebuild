@@ -10,6 +10,5 @@ DESCRIPTION="Set blocking stdio and stderr ensuring that terminal output does no
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

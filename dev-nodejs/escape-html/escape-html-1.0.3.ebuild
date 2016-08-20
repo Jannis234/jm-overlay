@@ -10,6 +10,5 @@ DESCRIPTION="Escape string for use in HTML"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )

@@ -14,6 +14,5 @@ DESCRIPTION="Parse SPDX license expressions"
 
 LICENSE="MIT CC-BY-3.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -14,6 +14,5 @@ DESCRIPTION="Get the name of the current operating system"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

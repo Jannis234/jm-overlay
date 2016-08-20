@@ -12,6 +12,5 @@ DESCRIPTION="Strips glob magic from a string to provide the parent path"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

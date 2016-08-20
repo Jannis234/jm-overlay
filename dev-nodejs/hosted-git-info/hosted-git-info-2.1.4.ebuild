@@ -12,6 +12,5 @@ DESCRIPTION="Provides metadata from repository urls for Github, Bitbucket and Gi
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

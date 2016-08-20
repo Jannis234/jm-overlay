@@ -14,6 +14,5 @@ DESCRIPTION="Higher-level content negotiation"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

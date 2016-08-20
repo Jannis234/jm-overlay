@@ -16,7 +16,6 @@ DESCRIPTION="Single function that returns the sha1sum"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

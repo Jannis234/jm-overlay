@@ -12,6 +12,5 @@ DESCRIPTION="JavaScript Unicode 8.0 Normalization - NFC, NFD, NFKC, NFKD"
 
 LICENSE="|| ( MIT GPL-2 )"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -14,6 +14,5 @@ DESCRIPTION="Unicode symbols with Windows CMD fallbacks"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

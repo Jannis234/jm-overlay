@@ -13,6 +13,5 @@ DESCRIPTION="Like npm-package-arg, but more so, producing full file paths"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

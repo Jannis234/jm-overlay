@@ -14,6 +14,5 @@ DESCRIPTION="Readline Façade fixing bugs and issues found in releases 0.8 and 0
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

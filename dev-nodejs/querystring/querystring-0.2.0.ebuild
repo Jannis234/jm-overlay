@@ -13,6 +13,5 @@ DESCRIPTION="Node's querystring module for all engines"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )

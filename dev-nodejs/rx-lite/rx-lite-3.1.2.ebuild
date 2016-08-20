@@ -14,7 +14,6 @@ DESCRIPTION="Lightweight library for composing asynchronous and event-based oper
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )
 

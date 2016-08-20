@@ -13,6 +13,5 @@ DESCRIPTION="Various hash functions that could be run by both browser and node"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

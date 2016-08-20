@@ -12,6 +12,5 @@ DESCRIPTION="RFC6265 Cookies and Cookie Jar for node.js"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

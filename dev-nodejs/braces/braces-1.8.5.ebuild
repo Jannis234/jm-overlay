@@ -15,6 +15,5 @@ DESCRIPTION="Fastest brace expansion for node.js"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

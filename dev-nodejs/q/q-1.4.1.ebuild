@@ -13,6 +13,5 @@ DESCRIPTION="A library for promises (CommonJS/Promises/A,B,D)"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGES.md )

@@ -18,6 +18,5 @@ DESCRIPTION="Read all installed packages in a folder, return a tree structure wi
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Node.js os.tmpdir() ponyfill"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

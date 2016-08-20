@@ -13,6 +13,5 @@ DESCRIPTION="Provide descriptive errors in development but generic errors in pro
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

@@ -13,7 +13,6 @@ DESCRIPTION="Utilities for writing browserify transforms"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-lang/coffee-script"
 DOCS=( README.md CHANGELOG.md )

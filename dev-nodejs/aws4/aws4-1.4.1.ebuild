@@ -12,6 +12,5 @@ DESCRIPTION="Signs and prepares requests using AWS Signature Version 4"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

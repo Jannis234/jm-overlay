@@ -17,6 +17,5 @@ DESCRIPTION="Terminal string styling done right. Much color."
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

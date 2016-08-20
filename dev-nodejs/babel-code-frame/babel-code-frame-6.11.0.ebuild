@@ -15,6 +15,5 @@ DESCRIPTION="Generate errors that contain a code frame that point to source loca
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

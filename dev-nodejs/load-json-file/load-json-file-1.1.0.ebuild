@@ -17,6 +17,5 @@ DESCRIPTION="Read and parse a JSON file"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

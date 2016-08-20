@@ -10,6 +10,5 @@ DESCRIPTION="Detect whether or not an object is a Typed Array"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

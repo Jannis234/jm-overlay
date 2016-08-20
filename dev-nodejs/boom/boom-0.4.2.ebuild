@@ -13,7 +13,6 @@ DESCRIPTION="HTTP-friendly error objects"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

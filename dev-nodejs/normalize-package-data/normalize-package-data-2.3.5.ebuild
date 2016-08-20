@@ -15,6 +15,5 @@ DESCRIPTION="Normalizes data that can be found in package.json files"
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md AUTHORS )

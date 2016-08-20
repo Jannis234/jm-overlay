@@ -12,6 +12,5 @@ DESCRIPTION="Recursively iterates over specified directory, require()'ing each f
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.markdown )

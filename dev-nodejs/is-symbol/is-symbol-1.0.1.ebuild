@@ -12,7 +12,6 @@ DESCRIPTION="Determine if a value is an ES6 Symbol or not"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

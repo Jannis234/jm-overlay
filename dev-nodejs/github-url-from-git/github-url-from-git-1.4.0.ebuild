@@ -10,7 +10,6 @@ DESCRIPTION="Parse a github git url and return the github repo url"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )
 

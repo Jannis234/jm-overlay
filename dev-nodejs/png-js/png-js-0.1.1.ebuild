@@ -12,7 +12,6 @@ DESCRIPTION="A PNG decoder in CoffeeScript"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 NODE_MODULE_DEFAULT_FILES="package.json png-node.js"

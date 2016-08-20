@@ -12,6 +12,5 @@ DESCRIPTION="io.js 2.3.0 os.homedir() ponyfill"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Prepend http:// to humanized URLs like todomvc.com and localhost"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

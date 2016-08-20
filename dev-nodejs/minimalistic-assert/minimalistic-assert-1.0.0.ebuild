@@ -10,6 +10,5 @@ DESCRIPTION="Minimalistic-assert ==="
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

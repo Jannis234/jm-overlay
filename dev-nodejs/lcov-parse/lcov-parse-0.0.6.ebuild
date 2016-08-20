@@ -10,6 +10,5 @@ DESCRIPTION="Parse lcov results files and return JSON"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

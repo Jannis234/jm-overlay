@@ -14,6 +14,5 @@ DESCRIPTION="Get the package.json of a package from the npm registry"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

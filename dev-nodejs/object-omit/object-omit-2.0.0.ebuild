@@ -15,6 +15,5 @@ DESCRIPTION="Return a copy of an object excluding the given key, or array of key
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

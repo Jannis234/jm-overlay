@@ -12,6 +12,5 @@ DESCRIPTION="Buffer-backed Streams for reading and writing"
 
 LICENSE="Unlicense"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

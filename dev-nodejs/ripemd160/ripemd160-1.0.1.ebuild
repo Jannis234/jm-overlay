@@ -10,6 +10,5 @@ DESCRIPTION="Compute ripemd160 of bytes or strings"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

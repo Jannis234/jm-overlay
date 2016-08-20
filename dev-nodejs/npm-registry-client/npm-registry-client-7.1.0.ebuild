@@ -24,6 +24,5 @@ DESCRIPTION="Client for the npm registry"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

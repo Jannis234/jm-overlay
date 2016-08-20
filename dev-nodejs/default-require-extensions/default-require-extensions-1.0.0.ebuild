@@ -14,6 +14,5 @@ DESCRIPTION="Node's default require extensions as a separate module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

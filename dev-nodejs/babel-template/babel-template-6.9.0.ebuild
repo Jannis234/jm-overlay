@@ -16,6 +16,5 @@ DESCRIPTION="Generate an AST from a string template"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

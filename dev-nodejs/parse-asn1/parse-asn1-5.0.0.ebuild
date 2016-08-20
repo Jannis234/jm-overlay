@@ -19,7 +19,6 @@ DESCRIPTION="Utility library for parsing asn1 files for use with browserify-sign
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

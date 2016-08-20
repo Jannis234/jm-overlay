@@ -16,6 +16,5 @@ DESCRIPTION="Hardwired configuration loader"
 
 LICENSE="|| ( BSD-2 MIT Apache-2.0 )"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

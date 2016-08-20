@@ -13,6 +13,5 @@ DESCRIPTION="A cache object that deletes the least-recently-used items"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

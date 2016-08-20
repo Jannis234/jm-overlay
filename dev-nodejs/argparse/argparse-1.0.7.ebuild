@@ -12,6 +12,5 @@ DESCRIPTION="Very powerful CLI arguments parser. Native port of python's argpars
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

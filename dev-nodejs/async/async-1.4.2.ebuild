@@ -10,6 +10,5 @@ DESCRIPTION="Higher-order functions and common patterns for asynchronous code"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( CHANGELOG.md )

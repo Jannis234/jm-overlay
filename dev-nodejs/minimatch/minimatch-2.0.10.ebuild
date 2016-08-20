@@ -13,6 +13,5 @@ DESCRIPTION="A glob matcher in javascript"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

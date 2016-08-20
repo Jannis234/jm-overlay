@@ -12,6 +12,5 @@ DESCRIPTION="This is the hello world app used by the \"cordova create\" command"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CONTRIBUTING.md NOTICE RELEASENOTES.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Strip comments from JSON. Lets you use comments in your JSON files!
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

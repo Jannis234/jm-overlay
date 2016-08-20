@@ -14,6 +14,5 @@ DESCRIPTION="A unified JavaScript layer for the Cordova suite of projects"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CONTRIBUTING.md RELEASENOTES.md NOTICE )

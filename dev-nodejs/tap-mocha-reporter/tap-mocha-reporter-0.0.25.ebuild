@@ -20,6 +20,5 @@ DESCRIPTION="Format a TAP stream using Mocha's set of reporters"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

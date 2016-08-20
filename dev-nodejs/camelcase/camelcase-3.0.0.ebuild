@@ -12,6 +12,5 @@ DESCRIPTION="Convert a dash/dot/underscore/space separated string to camelCase"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Repeat the given string n times. Fastest implementation for repeati
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

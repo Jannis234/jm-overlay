@@ -12,6 +12,5 @@ DESCRIPTION="Check if a number is a redirect HTTP status code"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

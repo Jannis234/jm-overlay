@@ -12,6 +12,5 @@ DESCRIPTION="Create simple ETags"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

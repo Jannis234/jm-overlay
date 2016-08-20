@@ -12,6 +12,5 @@ DESCRIPTION="The complete solution for node.js command-line programs"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )

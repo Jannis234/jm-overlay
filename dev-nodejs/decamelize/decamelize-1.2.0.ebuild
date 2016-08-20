@@ -12,6 +12,5 @@ DESCRIPTION="Convert a camelized string into a lowercased one with a custom sepa
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

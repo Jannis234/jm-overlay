@@ -74,6 +74,7 @@ SLOT="${PV}"
 S="${WORKDIR}/package"
 
 DEPEND=""
+IUSE=""
 if [ -z ${NODEJS_MIN_VERSION} ]; then
 	RDEPEND="net-libs/nodejs"
 else

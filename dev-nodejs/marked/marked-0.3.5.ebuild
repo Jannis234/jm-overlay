@@ -12,7 +12,6 @@ DESCRIPTION="A markdown parser built for speed"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-util/uglifyjs"
 

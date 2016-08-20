@@ -37,6 +37,5 @@ DESCRIPTION="Fast, unopinionated, minimalist web framework"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )

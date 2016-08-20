@@ -13,6 +13,5 @@ DESCRIPTION="Get the native type of a value"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

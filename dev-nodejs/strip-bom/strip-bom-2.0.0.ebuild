@@ -13,6 +13,5 @@ DESCRIPTION="Strip UTF-8 byte order mark (BOM) from a string/buffer"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

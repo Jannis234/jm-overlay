@@ -10,6 +10,5 @@ DESCRIPTION="Determines if an object can be used as an array"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

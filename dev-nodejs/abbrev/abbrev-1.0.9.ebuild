@@ -10,6 +10,5 @@ DESCRIPTION="Like ruby's abbrev module, but in js"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

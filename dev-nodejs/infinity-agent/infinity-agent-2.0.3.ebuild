@@ -12,6 +12,5 @@ DESCRIPTION="Creates HTTP/HTTPS Agent with Infinity maxSockets"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

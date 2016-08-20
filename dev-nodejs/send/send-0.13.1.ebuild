@@ -24,6 +24,5 @@ DESCRIPTION="Better streaming static file server with Range and conditional-GET 
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

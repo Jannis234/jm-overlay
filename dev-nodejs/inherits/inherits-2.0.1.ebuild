@@ -12,6 +12,5 @@ DESCRIPTION="Browser-friendly inheritance fully compatible with standard node.js
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

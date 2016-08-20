@@ -13,6 +13,5 @@ DESCRIPTION="Give me a string and I'll tell you if it's a valid npm package lice
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

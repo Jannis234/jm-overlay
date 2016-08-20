@@ -10,6 +10,5 @@ DESCRIPTION="This module exists to facilitate the t.match() method in http://npm
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

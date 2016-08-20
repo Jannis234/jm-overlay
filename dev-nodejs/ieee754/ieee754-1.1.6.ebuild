@@ -10,6 +10,5 @@ DESCRIPTION="Read/write IEEE754 floating point numbers from/to a Buffer or array
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

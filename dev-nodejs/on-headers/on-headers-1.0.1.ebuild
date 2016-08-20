@@ -12,6 +12,5 @@ DESCRIPTION="Execute a listener when a response is about to write headers"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

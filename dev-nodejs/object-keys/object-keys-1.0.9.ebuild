@@ -13,6 +13,5 @@ DESCRIPTION="An Object.keys replacement, in case Object.keys is not available"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

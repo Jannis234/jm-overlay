@@ -14,6 +14,5 @@ DESCRIPTION="Run a child as if it's the foreground process. Give it stdio. Exit 
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

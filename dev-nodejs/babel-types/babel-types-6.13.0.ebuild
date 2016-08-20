@@ -15,7 +15,6 @@ DESCRIPTION="Methods for building ASTs manually and for checking the types of AS
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 # Cyclic dependency
 PDEPEND="dev-nodejs/babel-traverse:6.13.0"

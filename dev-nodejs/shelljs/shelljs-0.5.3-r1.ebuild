@@ -13,7 +13,6 @@ DESCRIPTION="Portable Unix shell commands for Node.js"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=net-libs/nodejs-${NODEJS_MIN_VERSION}"
 DOCS=( README.md )

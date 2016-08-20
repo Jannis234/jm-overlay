@@ -12,7 +12,6 @@ DESCRIPTION="Is this value a JS Date object?"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

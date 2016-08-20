@@ -10,6 +10,5 @@ DESCRIPTION="Flatten an array of nested arrays into a single flat array"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

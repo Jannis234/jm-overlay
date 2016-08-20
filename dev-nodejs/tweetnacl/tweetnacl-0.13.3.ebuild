@@ -14,7 +14,6 @@ DESCRIPTION="Port of TweetNaCl cryptographic library to JavaScript"
 
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

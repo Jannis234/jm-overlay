@@ -10,6 +10,5 @@ DESCRIPTION="Find the module object for something that was require()d"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

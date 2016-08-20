@@ -12,6 +12,5 @@ DESCRIPTION="JSON Schema validation and specifications"
 
 LICENSE="|| ( BSD AFL-2.1 )"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

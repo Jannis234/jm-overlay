@@ -12,6 +12,5 @@ DESCRIPTION="General purpose node utilities"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CONTRIBUTING.md )

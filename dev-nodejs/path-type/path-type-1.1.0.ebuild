@@ -15,6 +15,5 @@ DESCRIPTION="Check if a path is a file, directory, or symlink"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

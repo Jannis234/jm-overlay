@@ -13,6 +13,5 @@ DESCRIPTION="Return true if a file path is absolute"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

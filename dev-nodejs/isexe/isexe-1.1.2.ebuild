@@ -12,6 +12,5 @@ DESCRIPTION="Minimal module to check if a file is executable"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

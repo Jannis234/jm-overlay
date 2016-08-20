@@ -12,7 +12,6 @@ DESCRIPTION="Recursive filesystem (and other) operations that Node *should* have
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )
 

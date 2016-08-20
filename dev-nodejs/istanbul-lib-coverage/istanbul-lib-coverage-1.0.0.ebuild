@@ -10,6 +10,5 @@ DESCRIPTION="Data library for istanbul coverage objects"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

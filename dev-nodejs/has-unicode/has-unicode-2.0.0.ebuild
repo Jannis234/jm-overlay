@@ -10,6 +10,5 @@ DESCRIPTION="Try to guess if your terminal supports unicode"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="An Error subclass that will chain nested Errors and dump nested sta
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

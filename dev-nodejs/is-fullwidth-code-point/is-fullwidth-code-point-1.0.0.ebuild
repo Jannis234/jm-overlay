@@ -13,6 +13,5 @@ DESCRIPTION="Check if the character represented by a given Unicode code point is
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

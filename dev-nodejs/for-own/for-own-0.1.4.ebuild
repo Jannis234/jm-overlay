@@ -13,6 +13,5 @@ DESCRIPTION="Iterate over the own enumerable properties of an object"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

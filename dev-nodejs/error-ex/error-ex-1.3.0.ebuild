@@ -12,6 +12,5 @@ DESCRIPTION="Easy error subclassing and stack customization"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

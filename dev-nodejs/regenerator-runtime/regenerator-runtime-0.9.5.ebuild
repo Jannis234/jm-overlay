@@ -12,4 +12,3 @@ DESCRIPTION="Runtime for Regenerator-compiled generator and async functions"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""

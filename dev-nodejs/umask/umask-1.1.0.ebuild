@@ -12,6 +12,5 @@ DESCRIPTION="Convert umask from string <-> number"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md ChangeLog )

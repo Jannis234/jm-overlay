@@ -13,6 +13,5 @@ DESCRIPTION="Convert extended globs to regex-compatible strings"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="A requirable version of Date.now()"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -10,6 +10,5 @@ DESCRIPTION="ES6 Symbols in your ES5"
 
 LICENSE="MPL-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

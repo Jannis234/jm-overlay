@@ -17,6 +17,5 @@ DESCRIPTION="Fill in a range of numbers or letters"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

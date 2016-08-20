@@ -12,6 +12,5 @@ DESCRIPTION="Returns true if the path appears to be relative"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

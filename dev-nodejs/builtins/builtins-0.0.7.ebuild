@@ -12,6 +12,5 @@ DESCRIPTION="List of node.js builtin modules"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )

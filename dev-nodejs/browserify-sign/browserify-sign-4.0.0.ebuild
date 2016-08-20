@@ -21,7 +21,6 @@ DESCRIPTION="Adds node crypto signing for browsers"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

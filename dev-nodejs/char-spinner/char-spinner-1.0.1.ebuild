@@ -12,6 +12,5 @@ DESCRIPTION="Put a little spinner on process.stderr, as unobtrusively as possibl
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

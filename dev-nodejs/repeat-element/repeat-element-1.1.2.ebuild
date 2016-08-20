@@ -12,6 +12,5 @@ DESCRIPTION="Create an array by repeating the given value n times"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

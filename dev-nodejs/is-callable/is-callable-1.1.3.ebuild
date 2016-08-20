@@ -12,7 +12,6 @@ DESCRIPTION="Is this JS value callable?"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

@@ -12,6 +12,5 @@ DESCRIPTION="Returns true if a string has an extglob"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

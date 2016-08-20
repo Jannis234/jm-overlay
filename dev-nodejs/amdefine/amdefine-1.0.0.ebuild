@@ -13,6 +13,5 @@ DESCRIPTION="Provide AMD's define() API for declaring modules in the AMD format"
 
 LICENSE="MIT BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

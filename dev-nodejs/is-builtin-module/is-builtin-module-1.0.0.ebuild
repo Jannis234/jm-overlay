@@ -13,6 +13,5 @@ DESCRIPTION="Check if a string matches the name of a Node.js builtin module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

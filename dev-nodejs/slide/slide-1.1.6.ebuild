@@ -10,6 +10,5 @@ DESCRIPTION="A flow control lib small enough to fit on in a slide presentation"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

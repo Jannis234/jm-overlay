@@ -12,6 +12,5 @@ DESCRIPTION="ECC JS code based on JSBN"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

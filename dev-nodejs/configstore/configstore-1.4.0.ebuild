@@ -20,6 +20,5 @@ DESCRIPTION="Easily load and save config without having to think about where and
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

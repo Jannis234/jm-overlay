@@ -15,6 +15,5 @@ DESCRIPTION="Read a package.json file"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

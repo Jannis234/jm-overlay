@@ -13,6 +13,5 @@ DESCRIPTION="Provide access to win32 and posix path operations"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

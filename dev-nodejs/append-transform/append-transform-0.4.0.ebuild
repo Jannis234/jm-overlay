@@ -13,6 +13,5 @@ DESCRIPTION="Install a transform to require.extensions that always runs last"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

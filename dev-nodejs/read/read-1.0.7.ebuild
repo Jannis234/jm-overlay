@@ -13,6 +13,5 @@ DESCRIPTION="read(1) for node programs"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

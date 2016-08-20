@@ -14,6 +14,5 @@ DESCRIPTION="Parse the things that can be arguments to \"npm install\""
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

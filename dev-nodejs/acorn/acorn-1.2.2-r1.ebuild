@@ -13,6 +13,5 @@ DESCRIPTION="ECMAScript parser"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md AUTHORS )

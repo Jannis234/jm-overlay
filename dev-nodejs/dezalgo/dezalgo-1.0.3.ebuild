@@ -13,6 +13,5 @@ DESCRIPTION="Contain async insanity so that the dark pony lord doesn't eat souls
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

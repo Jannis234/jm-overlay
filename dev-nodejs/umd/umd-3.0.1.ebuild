@@ -10,6 +10,5 @@ DESCRIPTION="Universal Module Definition for use in automated build systems"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

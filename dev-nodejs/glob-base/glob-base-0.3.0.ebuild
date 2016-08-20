@@ -14,6 +14,5 @@ DESCRIPTION="Returns an object with the (non-glob) base path and the actual patt
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

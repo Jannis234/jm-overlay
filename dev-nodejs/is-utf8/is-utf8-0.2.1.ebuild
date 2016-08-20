@@ -10,6 +10,5 @@ DESCRIPTION="Detect if a buffer is utf8 encoded"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

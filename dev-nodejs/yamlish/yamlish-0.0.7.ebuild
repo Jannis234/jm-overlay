@@ -10,6 +10,5 @@ DESCRIPTION="Parser/encoder for the yamlish format"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

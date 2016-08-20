@@ -10,6 +10,5 @@ DESCRIPTION="Validates namespaces and java package names against identifier rule
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

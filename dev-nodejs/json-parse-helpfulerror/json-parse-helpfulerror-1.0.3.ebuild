@@ -12,6 +12,5 @@ DESCRIPTION="A drop-in replacement for JSON.parse that uses jju to give helpful 
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

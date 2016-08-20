@@ -12,6 +12,5 @@ DESCRIPTION="Returns true if the value is a primitive"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Properly escape JSON for usage as an object literal inside of a <sc
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

@@ -26,6 +26,5 @@ DESCRIPTION="Apache Cordova tools and platforms shared routines"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md RELEASENOTES.md )

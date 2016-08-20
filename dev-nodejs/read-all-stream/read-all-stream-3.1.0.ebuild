@@ -14,6 +14,5 @@ DESCRIPTION="Read all stream content and pass it to callback"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

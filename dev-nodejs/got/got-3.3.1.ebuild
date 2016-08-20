@@ -22,6 +22,5 @@ DESCRIPTION="Simplified HTTP/HTTPS requests"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

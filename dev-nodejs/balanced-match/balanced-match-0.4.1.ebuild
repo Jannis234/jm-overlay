@@ -10,6 +10,5 @@ DESCRIPTION="Match balanced character pairs, like \"{\" and \"}\""
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

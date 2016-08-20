@@ -27,7 +27,6 @@ DESCRIPTION="Glob matching for javascript/node.js"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

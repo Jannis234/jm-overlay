@@ -12,7 +12,6 @@ DESCRIPTION="Buffers events from a stream until you are ready to handle them"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md )
 

@@ -10,6 +10,5 @@ DESCRIPTION="Some shims for node buffers"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

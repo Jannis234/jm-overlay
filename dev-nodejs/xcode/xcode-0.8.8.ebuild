@@ -16,7 +16,6 @@ DESCRIPTION="Parser for xcodeproj/project.pbxproj files"
 
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md AUTHORS )
 

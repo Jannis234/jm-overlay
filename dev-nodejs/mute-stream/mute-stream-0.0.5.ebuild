@@ -12,6 +12,5 @@ DESCRIPTION="Bytes go in, but they don't come out (when muted)"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

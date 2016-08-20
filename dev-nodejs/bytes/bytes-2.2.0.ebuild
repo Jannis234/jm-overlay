@@ -10,6 +10,5 @@ DESCRIPTION="Utility to parse a string bytes to bytes and vice-versa"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )

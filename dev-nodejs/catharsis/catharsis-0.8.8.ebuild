@@ -14,4 +14,3 @@ DESCRIPTION="A JavaScript parser for Google Closure Compiler and JSDoc type expr
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""

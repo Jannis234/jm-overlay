@@ -12,6 +12,5 @@ DESCRIPTION="Standard library"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( CHANGELOG.md )

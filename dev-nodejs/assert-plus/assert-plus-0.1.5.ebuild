@@ -13,6 +13,5 @@ DESCRIPTION="Extra assertions on top of node's assert module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

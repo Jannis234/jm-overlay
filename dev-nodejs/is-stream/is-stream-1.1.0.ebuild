@@ -12,6 +12,5 @@ DESCRIPTION="Check if something is a Node.js stream"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

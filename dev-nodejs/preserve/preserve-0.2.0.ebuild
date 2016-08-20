@@ -12,6 +12,5 @@ DESCRIPTION="Temporarily substitute tokens in the given string with placeholders
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="The os module from node.js, but for browsers"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

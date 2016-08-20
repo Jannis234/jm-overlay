@@ -13,7 +13,6 @@ DESCRIPTION="Read and write binary structures and data types"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README CHANGELOG )
 

@@ -12,6 +12,5 @@ DESCRIPTION="Get the name and version of a OS X release from the Darwin version"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

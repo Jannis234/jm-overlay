@@ -10,6 +10,5 @@ DESCRIPTION="The string_decoder module from Node core"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

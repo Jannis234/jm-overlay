@@ -14,6 +14,5 @@ DESCRIPTION="Find a file by walking up parent directories"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

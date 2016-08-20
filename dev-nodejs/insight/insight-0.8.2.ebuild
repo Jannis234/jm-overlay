@@ -24,7 +24,6 @@ DESCRIPTION="Understand how your tool is being used by anonymously reporting usa
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )
 

@@ -14,6 +14,5 @@ DESCRIPTION="Write files in an atomic fashion w/configurable ownership"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

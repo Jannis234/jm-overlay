@@ -12,6 +12,5 @@ DESCRIPTION="Abstract base class for crypto-streams"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Resolve the path of a module like require.resolve() but from a give
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

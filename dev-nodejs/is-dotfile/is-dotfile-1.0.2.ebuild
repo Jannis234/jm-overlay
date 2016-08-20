@@ -12,6 +12,5 @@ DESCRIPTION="Return true if a file path is (or has) a dotfile"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -10,6 +10,5 @@ DESCRIPTION="The util.is* functions introduced in Node v0.12"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

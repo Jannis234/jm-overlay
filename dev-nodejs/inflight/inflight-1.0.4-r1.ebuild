@@ -13,6 +13,5 @@ DESCRIPTION="Add callbacks to requests in flight to avoid async duplication"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

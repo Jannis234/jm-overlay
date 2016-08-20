@@ -16,6 +16,5 @@ DESCRIPTION="Contains methods that aren't included in the vanilla Node.js fs pac
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

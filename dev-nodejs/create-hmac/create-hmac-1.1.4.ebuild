@@ -14,6 +14,5 @@ DESCRIPTION="Node style hmacs in the browser"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

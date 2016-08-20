@@ -12,6 +12,5 @@ DESCRIPTION="Itty bitty little widdle twinkie pinkie ES2015 Promise implementati
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

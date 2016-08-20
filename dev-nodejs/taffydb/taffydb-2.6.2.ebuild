@@ -17,6 +17,5 @@ S="${WORKDIR}/${P}"
 
 LICENSE="BSD-1"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

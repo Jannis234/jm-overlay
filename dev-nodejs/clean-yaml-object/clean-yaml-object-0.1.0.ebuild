@@ -12,6 +12,5 @@ DESCRIPTION="Clean up an object prior to serialization"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

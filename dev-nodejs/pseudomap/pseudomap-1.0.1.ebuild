@@ -12,6 +12,5 @@ DESCRIPTION="A thing that is a lot like ES6 \"Map\""
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -12,6 +12,5 @@ DESCRIPTION="A module which will endeavor to guess your terminal's level of colo
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

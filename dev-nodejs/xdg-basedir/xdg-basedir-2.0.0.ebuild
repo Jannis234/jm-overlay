@@ -13,6 +13,5 @@ DESCRIPTION="Get XDG Base Directory paths"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

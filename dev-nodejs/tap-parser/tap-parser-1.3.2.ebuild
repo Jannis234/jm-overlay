@@ -15,6 +15,5 @@ DESCRIPTION="Parse the test anything protocol"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.markdown )

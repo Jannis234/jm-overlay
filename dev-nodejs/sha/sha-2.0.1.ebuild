@@ -13,6 +13,5 @@ DESCRIPTION="Check and get file hashes"
 
 LICENSE="|| ( BSD-2 MIT )"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

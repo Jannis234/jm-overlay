@@ -15,4 +15,3 @@ DESCRIPTION="Istanbul reports"
 
 LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
-IUSE=""

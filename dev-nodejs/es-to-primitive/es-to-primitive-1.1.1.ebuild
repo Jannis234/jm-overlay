@@ -16,7 +16,6 @@ DESCRIPTION="ECMAScript ToPrimitive algorithm. Provides ES5 and ES6 versions."
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

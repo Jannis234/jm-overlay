@@ -10,6 +10,5 @@ DESCRIPTION="Opens stuff, like webpages and files and executables, cross-platfor
 
 LICENSE="WTFPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

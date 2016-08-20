@@ -17,7 +17,6 @@ DESCRIPTION="A library for manipulating IPv4 and IPv6 addresses in JavaScript"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

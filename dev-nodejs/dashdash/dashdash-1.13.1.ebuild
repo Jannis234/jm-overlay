@@ -13,6 +13,5 @@ DESCRIPTION="A light, featureful and explicit option parsing library"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

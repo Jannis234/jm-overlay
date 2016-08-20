@@ -10,6 +10,5 @@ DESCRIPTION="Determine if an object is a Stream"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

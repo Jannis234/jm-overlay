@@ -12,7 +12,6 @@ DESCRIPTION="The modern build of lodash’s _.create as a module"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="${RDEPEND}
 	dev-nodejs/lodash_basecreate:3.0.3

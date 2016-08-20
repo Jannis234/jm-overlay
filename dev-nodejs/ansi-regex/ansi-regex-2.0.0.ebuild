@@ -12,6 +12,5 @@ DESCRIPTION="Regular expression for matching ANSI escape codes"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Force V8 to use fast properties for an object"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

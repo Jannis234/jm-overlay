@@ -20,6 +20,5 @@ DESCRIPTION="Update notifications for your CLI app"
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

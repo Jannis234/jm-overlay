@@ -13,6 +13,5 @@ DESCRIPTION="Compressible Content-Type / mime checking"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

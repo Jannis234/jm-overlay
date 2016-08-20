@@ -10,6 +10,5 @@ DESCRIPTION="A dictionary of file extensions and associated module loaders"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG )

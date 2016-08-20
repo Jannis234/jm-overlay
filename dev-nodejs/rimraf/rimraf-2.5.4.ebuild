@@ -12,6 +12,5 @@ DESCRIPTION="A deep deletion module for node (like rm -rf)"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

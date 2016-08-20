@@ -13,6 +13,5 @@ DESCRIPTION="Resolve which handles browser field support in package.json"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

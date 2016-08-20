@@ -12,6 +12,5 @@ DESCRIPTION="Simple RFC 6838 media type parser and formatter"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md HISTORY.md )

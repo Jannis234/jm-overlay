@@ -10,6 +10,5 @@ DESCRIPTION="Get stdout window width, with two fallbacks, tty and then a default
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

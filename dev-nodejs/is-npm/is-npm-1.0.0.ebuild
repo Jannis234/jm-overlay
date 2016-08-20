@@ -12,6 +12,5 @@ DESCRIPTION="Check if your code is running as an npm script"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )

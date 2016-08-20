@@ -13,6 +13,5 @@ DESCRIPTION="The stream module from node core for browsers"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.markdown )

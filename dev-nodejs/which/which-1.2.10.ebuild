@@ -12,6 +12,5 @@ DESCRIPTION="Like which(1) unix command. Find the first instance of an executabl
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

@@ -12,6 +12,5 @@ DESCRIPTION="Put a bunch of emitted events in an array, for testing"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

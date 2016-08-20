@@ -12,7 +12,6 @@ DESCRIPTION="Node's constants module for the browser"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="net-libs/nodejs"
 DOCS=( README.md )

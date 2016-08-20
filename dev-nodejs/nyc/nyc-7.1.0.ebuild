@@ -37,7 +37,6 @@ DESCRIPTION="The Istanbul command line interface"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

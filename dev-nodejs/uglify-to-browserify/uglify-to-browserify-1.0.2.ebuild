@@ -10,6 +10,5 @@ DESCRIPTION="A transform to make UglifyJS work in browserify"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

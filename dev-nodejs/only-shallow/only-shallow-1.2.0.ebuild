@@ -10,6 +10,5 @@ DESCRIPTION="Like deeper and deepest, but less strict, and with 90s flavor"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

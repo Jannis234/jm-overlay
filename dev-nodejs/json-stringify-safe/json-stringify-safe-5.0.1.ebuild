@@ -12,7 +12,6 @@ DESCRIPTION="Like JSON.stringify, but doesn't blow up on circular refs"
 
 LICENSE="ISC"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )
 

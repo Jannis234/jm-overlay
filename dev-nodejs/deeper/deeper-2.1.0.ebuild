@@ -10,6 +10,5 @@ DESCRIPTION="JavaScript \"deep equality\" / structural equality tester with Node
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md CHANGELOG.md )

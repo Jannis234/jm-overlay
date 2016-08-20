@@ -10,7 +10,6 @@ DESCRIPTION="Check whether a string is a URL"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( Readme.md History.md )
 

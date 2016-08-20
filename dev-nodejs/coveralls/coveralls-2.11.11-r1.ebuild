@@ -18,7 +18,6 @@ DESCRIPTION="Takes json-cov output into stdin and POSTs to coveralls.io"
 
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

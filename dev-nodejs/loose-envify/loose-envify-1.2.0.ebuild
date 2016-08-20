@@ -13,6 +13,5 @@ DESCRIPTION="Fast selective process.env replacer using js-tokens instead of an A
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

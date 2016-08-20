@@ -12,7 +12,6 @@ DESCRIPTION="Higher-order functions for easier error handling"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )
 

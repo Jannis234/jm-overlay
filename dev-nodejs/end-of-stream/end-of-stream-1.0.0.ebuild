@@ -12,6 +12,5 @@ DESCRIPTION="Call a callback when a readable/writable/duplex stream has complete
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

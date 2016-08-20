@@ -10,6 +10,5 @@ DESCRIPTION="Https module compatability for browserify"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.markdown )

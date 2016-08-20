@@ -12,6 +12,5 @@ DESCRIPTION="Merge single level defaults over a config object"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

@@ -10,6 +10,5 @@ DESCRIPTION="A regex that tokenizes JavaScript"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md changelog.md )

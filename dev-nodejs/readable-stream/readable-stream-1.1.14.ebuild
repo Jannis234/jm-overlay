@@ -16,6 +16,5 @@ DESCRIPTION="Streams2, a user-land copy of the stream library from Node.js v0.10
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

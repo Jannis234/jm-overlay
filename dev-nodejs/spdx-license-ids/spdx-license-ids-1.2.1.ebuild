@@ -12,6 +12,5 @@ DESCRIPTION="A list of SPDX license identifiers"
 
 LICENSE="Unlicense"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( README.md )

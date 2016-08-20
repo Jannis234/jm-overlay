@@ -14,6 +14,5 @@ DESCRIPTION="Parse JSON with more helpful errors"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DOCS=( readme.md )
