@@ -9,7 +9,7 @@ inherit check-reqs eutils
 # The official name of the game is just "UnrealTournament" without any number at the end
 # The ebuild is still named UnrealTournament4 to avoid confusion with games-fps/unreal-tournament (UT99)
 MyPN="UnrealTournament"
-Build_Version="3045522"
+Build_Version="3101884"
 
 DESCRIPTION="Futuristic FPS (Pre-Alpha version)"
 HOMEPAGE="https://unrealtournament.com/"
