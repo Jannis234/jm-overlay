@@ -14,7 +14,7 @@ EGIT_COMMIT="aee1443420234446534ddbd3513ee1d480f5533c"
 LICENSE="MEGA-Code-Review BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt5"
+IUSE="qt5 libressl"
 
 RESTRICT="bindist"
 
@@ -22,7 +22,12 @@ RDEPEND="dev-libs/crypto++
 	sys-libs/zlib
 	dev-db/sqlite:3
 	net-dns/c-ares
-	net-misc/curl[ssl,curl_ssl_openssl]
+	!libressl? (
+		net-misc/curl[ssl,curl_ssl_openssl]
+	)
+	libressl? (
+		net-misc/curl[ssl,curl_ssl_libressl]
+	)
 	!qt5? (
 		dev-qt/qtcore:4
 		dev-qt/qtgui:4
@@ -40,6 +45,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
+
+	eapply "${FILESDIR}/megasync-libressl.patch"
 
 	cd src/MEGASync/mega || die
 	eautoreconf
