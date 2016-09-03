@@ -4,5 +4,6 @@
 	<use>
 		<flag name="softfloat">Build and install mov-only softfloat libraries</flag>
 		<flag name="postproc">Install python-based assembly post-processors</flag>
+		<flag name="libressl">Use dev-libs/libressl instead of dev-libs/openssl when building the examples</flag>
 	</use>
 </pkgmetadata>

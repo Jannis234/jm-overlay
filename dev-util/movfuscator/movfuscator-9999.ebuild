@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/xoreaxeaxeax/movfuscator"
 LICENSE="MoVfuscator LCC test? ( Unlicense ) examples? ( BSD )"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="+softfloat postproc test doc examples"
+IUSE="+softfloat postproc test doc examples libressl"
 
 MOVFUSCATOR_REPO_URI="https://github.com/xoreaxeaxeax/movfuscator.git"
 LCC_REPO_URI="https://github.com/drh/lcc"
@@ -24,11 +24,21 @@ DEPEND="amd64? ( sys-devel/gcc:=[multilib] )
 	x86? ( sys-devel/gcc:= )
 	examples? (
 		amd64? (
-			dev-libs/openssl:0[abi_x86_32]
+			!libressl? (
+				dev-libs/openssl:0[abi_x86_32]
+			)
+			libressl? (
+				dev-libs/libressl[abi_x86_32]
+			)
 			sys-libs/ncurses:0=[abi_x86_32]
 		)
 		x86? (
-			dev-libs/openssl:0
+			!libressl? (
+				dev-libs/openssl:0
+			)
+			libressl? (
+				dev-libs/libressl
+			)
 			sys-libs/ncurses:0=
 		)
 	)"
