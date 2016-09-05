@@ -24,21 +24,13 @@ DEPEND="amd64? ( sys-devel/gcc:=[multilib] )
 	x86? ( sys-devel/gcc:= )
 	examples? (
 		amd64? (
-			!libressl? (
-				dev-libs/openssl:0[abi_x86_32]
-			)
-			libressl? (
-				dev-libs/libressl[abi_x86_32]
-			)
+			!libressl? ( dev-libs/openssl:0=[abi_x86_32] )
+			libressl? ( dev-libs/libressl:0=[abi_x86_32] )
 			sys-libs/ncurses:0=[abi_x86_32]
 		)
 		x86? (
-			!libressl? (
-				dev-libs/openssl:0
-			)
-			libressl? (
-				dev-libs/libressl
-			)
+			!libressl? ( dev-libs/openssl:0= )
+			libressl? ( dev-libs/libressl:0= )
 			sys-libs/ncurses:0=
 		)
 	)"

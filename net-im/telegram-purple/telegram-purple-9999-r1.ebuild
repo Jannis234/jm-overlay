@@ -16,11 +16,11 @@ KEYWORDS=""
 IUSE="+webp libressl"
 
 DEPEND="net-im/pidgin
-	!libressl? ( dev-libs/openssl:0 )
-	libressl? ( dev-libs/libressl )
+	!libressl? ( dev-libs/openssl:0= )
+	libressl? ( dev-libs/libressl:0= )
 	webp? ( media-libs/libwebp )"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	econf $(use_enable libwebp)
+	econf $(use_enable webp libwebp)
 }
