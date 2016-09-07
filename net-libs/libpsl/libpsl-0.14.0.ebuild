@@ -13,19 +13,19 @@ SRC_URI="https://github.com/rockdaboot/${PN}/releases/download/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc +icu -libidn -libidn2 +builtin-psl +idn"
+IUSE="doc static-libs +icu -libidn -libidn2 +builtin-psl +idn"
 REQUIRED_USE="builtin-psl? ( ^^ ( icu libidn libidn2 ) )
 	idn? ( ^^ ( icu libidn libidn2 ) )"
 
 RDEPEND="idn? (
-	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
+	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP},static-libs?] )
 	libidn? (
-		net-dns/libidn[${MULTILIB_USEDEP}]
-		dev-libs/libunistring[${MULTILIB_USEDEP}]
+		net-dns/libidn[${MULTILIB_USEDEP},static-libs?]
+		dev-libs/libunistring[${MULTILIB_USEDEP},static-libs?]
 	)
 	libidn2? (
-		net-dns/libidn2[${MULTILIB_USEDEP}]
-		dev-libs/libunistring[${MULTILIB_USEDEP}]
+		net-dns/libidn2[${MULTILIB_USEDEP},static-libs?]
+		dev-libs/libunistring[${MULTILIB_USEDEP},static-libs?]
 	) )"
 DEPEND="${RDEPEND}
 	doc? ( dev-util/gtk-doc )
@@ -65,6 +65,7 @@ multilib_src_configure() {
 	econf \
 		${docconf} \
 		--disable-gtk-doc-pdf \
+		$(use_enable static-libs static) \
 		$(use_enable builtin-psl builtin ${idnalib}) \
 		$(use_enable idn runtime ${idnalib})
 }
