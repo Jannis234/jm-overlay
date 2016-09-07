@@ -1,0 +1,24 @@
+diff -ru citra_orig/CMakeLists.txt citra/CMakeLists.txt
+--- citra_orig/CMakeLists.txt	2016-09-07 12:15:38.533233894 +0200
++++ citra/CMakeLists.txt	2016-09-07 12:18:21.849379376 +0200
+@@ -37,6 +37,8 @@
+ option(ENABLE_SDL2 "Enable the SDL2 frontend" ON)
+ option(CITRA_USE_BUNDLED_SDL2 "Download bundled SDL2 binaries" OFF)
+ 
++option(USE_SYSTEM_BOOST "Use system-wide boost libraries")
++
+ option(ENABLE_QT "Enable the Qt frontend" ON)
+ option(CITRA_USE_BUNDLED_QT "Download bundled Qt binaries" OFF)
+ 
+@@ -118,10 +120,9 @@
+ endif()
+ 
+ find_package(Boost 1.57.0 QUIET)
+-if (Boost_FOUND)
++if (USE_SYSTEM_BOOST)
+     include_directories(${Boost_INCLUDE_DIRS})
+ else()
+-    message(STATUS "Boost 1.57.0 or newer not found, falling back to externals")
+     include_directories(externals/boost)
+ endif()
+ 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="system-boost">Use the system-wide version of dev-libs/boost</flag>
+		<flag name="sdl2">Enable the SDL2 based interface</flag>
+		<flag name="qt5">Enable the Qt5 based interface</flag>
+	</use>
+</pkgmetadata>
