@@ -96,7 +96,7 @@ src_install() {
 
 	dodoc ../../README.md
 	udev_dorules "${FILESDIR}/99-darling-mach.rules"
-	newinitd "${FILESDIR}/darling-binfmt.initd" "darling-binfmt"
+	newinitd "${FILESDIR}/darling-binfmt-r1.initd" "darling-binfmt"
 
 	linux-mod_src_install
 }
