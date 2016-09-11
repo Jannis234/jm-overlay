@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit git-r3 flag-o-matic linux-mod udev user
+inherit git-r3 flag-o-matic
 
 DESCRIPTION="MacOS translation layer for Linux"
 HOMEPAGE="https://www.darlinghq.org/"
@@ -21,8 +21,7 @@ RESTRICT="bindist"
 REQUIRED_USE="pulseaudio? ( framework-coreaudio )
 	alsa? ( framework-coreaudio )
 	framework-coreaudio? ( || ( alsa pulseaudio ) )"
-RDEPEND="virtual/udev
-	virtual/libudev
+CDEPEND="virtual/libudev
 	sys-fs/fuse
 	framework-coreaudio? (
 		alsa? ( media-libs/alsa-lib )
@@ -35,15 +34,20 @@ RDEPEND="virtual/udev
 			pulseaudio? ( media-sound/pulseaudio[abi_x86_32] )
 		)
 	)"
-DEPEND="${RDEPEND}
+DEPEND="${CDEPEND}
 	>=dev-util/cmake-2.8
 	sys-devel/clang
 	sys-devel/bison
-	sys-devel/flex
-	virtual/linux-sources"
+	sys-devel/flex"
+RDEPEND="${CDEPEND}
+	~app-emulation/darling-mach-lkm-${PV}"
 
-MODULE_NAMES="darling-mach(misc:${S}/src/lkm)"
-BUILD_TARGETS="default"
+src_prepare() {
+	# Building darling can take forever, so avoid rebuilding the entire thing after
+	# every kernel update by splitting the kernel module into its own ebuild
+	eapply "${FILESDIR}/darling-split-lkm.patch"
+	eapply_user
+}
 
 src_configure() {
 	export CC=clang
@@ -74,15 +78,13 @@ src_configure() {
 src_compile() {
 	cd build/x86_64 || die
 	einfo "Building for x86_64"
-	emake
+	emake VERBOSE=1
 
 	if use 32bit; then
 		cd ../i386 || die
 		einfo "Building for i386"
-		emake
+		emake VERBOSE=1
 	fi
-
-	linux-mod_src_compile
 }
 
 src_install() {
@@ -95,18 +97,5 @@ src_install() {
 	fi
 
 	dodoc ../../README.md
-	udev_dorules "${FILESDIR}/99-darling-mach.rules"
 	newinitd "${FILESDIR}/darling-binfmt-r1.initd" "darling-binfmt"
-
-	linux-mod_src_install
-}
-
-pkg_postinst() {
-	enewgroup darling
-
-	ewarn "To use darling, you have to add yourself to the \"darling\" group"
-	ewarn "and load the \"darling-mach\" kernel module"
-	ewarn ""
-	ewarn "Note that the kernel module is likely to have stability/security problems!"
-	ewarn "Only add trusted users to the \"darling\" group!"
 }

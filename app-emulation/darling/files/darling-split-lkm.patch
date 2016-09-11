@@ -1,0 +1,15 @@
+diff -ru darling_orig/src/CMakeLists.txt darling/src/CMakeLists.txt
+--- darling_orig/src/CMakeLists.txt	2016-09-11 00:29:51.044705466 +0200
++++ darling/src/CMakeLists.txt	2016-09-11 00:30:04.673460425 +0200
+@@ -147,11 +147,3 @@
+ add_definitions(-D_USE_EXTENDED_LOCALES_)
+ add_subdirectory(external/libcxx)
+ 
+-#######################
+-# Linux kernel module #
+-#######################
+-
+-add_custom_target(lkm
+-	COMMAND gmake
+-	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lkm")
+-
