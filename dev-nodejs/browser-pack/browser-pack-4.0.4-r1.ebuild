@@ -11,6 +11,10 @@ NODE_MODULE_DEPEND="combine-source-map:0.3.0
 	JSONStream:1.1.1
 	defined:1.0.0
 	concat-stream:1.4.10"
+NODE_MODULE_HAS_TEST="1"
+NODE_MODULE_TEST_DEPEND="tape:3.6.1
+	parse-base64vlq-mappings:0.1.4
+	convert-source-map:0.3.5"
 
 inherit node-module
 
@@ -25,4 +29,9 @@ DOCS=( readme.markdown )
 src_install() {
 	node-module_src_install
 	use examples && dodoc -r example
+}
+
+src_test() {
+	node-module_src_test
+	tap test || die "Tests failed"
 }
