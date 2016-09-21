@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/sergey-dryabzhinsky/python-zstd"
 SRC_URI="https://github.com/sergey-dryabzhinsky/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/Cyan4973/zstd/archive/v${ZSTD_VERSION}.tar.gz -> zstd-${ZSTD_VERSION}.tar.gz"
 
-LICENSE="BSD-2 "
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
