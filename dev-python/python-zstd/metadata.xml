@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<use>
+		<flag name="legacy">Enable support for legacy zstd formats</flag>
+		<flag name="system-libzstd">Build against the system-wide libzstd, this removes any effect from the "legacy" USE flag</flag>
+	</use>
 </pkgmetadata>
