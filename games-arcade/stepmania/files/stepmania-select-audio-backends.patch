@@ -1,0 +1,83 @@
+diff -ru stepmania-5.0.12_orig/CMake/DefineOptions.cmake stepmania-5.0.12/CMake/DefineOptions.cmake
+--- stepmania-5.0.12_orig/CMake/DefineOptions.cmake	2016-09-22 15:30:46.585653678 +0200
++++ stepmania-5.0.12/CMake/DefineOptions.cmake	2016-09-22 15:32:15.409856429 +0200
+@@ -41,6 +41,11 @@
+ # Turn this option on to log every segment added or removed.
+ option(WITH_LOGGING_TIMING_DATA "Build with logging all Add and Erase Segment calls." OFF)
+ 
++option(WITH_ALSA "Enable ALSA sound" OFF)
++option(WITH_PULSEAUDIO "Enable PulseAudio sound" OFF)
++option(WITH_OSS "Enable OSS sound" OFF)
++option(WITH_JACK "Enable JACK sound" OFF)
++
+ if(NOT MSVC)
+   # Turn this option off to disable using FFMEPG.
+   option(WITH_FFMPEG "Build with FFMPEG." ON)
+diff -ru stepmania-5.0.12_orig/StepmaniaCore.cmake stepmania-5.0.12/StepmaniaCore.cmake
+--- stepmania-5.0.12_orig/StepmaniaCore.cmake	2016-09-22 15:30:46.939646512 +0200
++++ stepmania-5.0.12/StepmaniaCore.cmake	2016-09-22 15:35:03.872452142 +0200
+@@ -353,35 +353,51 @@
+     set(HAX_XRANDR FALSE)
+   endif()
+ 
+-  find_package(PulseAudio)
+-  if (PULSEAUDIO_FOUND)
+-    set(HAS_PULSE TRUE)
++  if (WITH_PULSEAUDIO)
++    find_package(PulseAudio)
++    if (PULSEAUDIO_FOUND)
++      set(HAS_PULSE TRUE)
++    else()
++      set(HAS_PULSE FALSE)
++    endif()
+   else()
+     set(HAS_PULSE FALSE)
+   endif()
+ 
+-  find_package(ALSA)
+-  if (ALSA_FOUND)
+-    set(HAS_ALSA TRUE)
++  if (WITH_ALSA)
++    find_package(ALSA)
++    if (ALSA_FOUND)
++      set(HAS_ALSA TRUE)
++    else()
++      set(HAS_ALSA FALSE)
++    endif()
+   else()
+     set(HAS_ALSA FALSE)
+   endif()
+ 
+-  find_package(JACK)
+-  if (JACK_FOUND)
+-    set(HAS_JACK TRUE)
++  if (WITH_JACK)
++    find_package(JACK)
++    if (JACK_FOUND)
++      set(HAS_JACK TRUE)
++    else()
++      set(HAS_JACK FALSE)
++    endif()
+   else()
+     set(HAS_JACK FALSE)
+   endif()
+ 
+-  find_package(OSS)
+-  if (OSS_FOUND)
+-    set(HAS_OSS TRUE)
++  if (WITH_OSS)
++    find_package(OSS)
++    if (OSS_FOUND)
++      set(HAS_OSS TRUE)
++    else()
++      set(HAS_OSS FALSE)
++    endif()
+   else()
+     set(HAS_OSS FALSE)
+   endif()
+ 
+-  if(NOT OSS_FOUND AND NOT JACK_FOUND AND NOT ALSA_FOUND AND NOT PULSE_FOUND)
++  if(NOT HAS_OSS AND NOT HAS_JACK AND NOT HAS_ALSA AND NOT HAS_PULSE)
+     message(FATAL_ERROR "No sound libraries found. You will require at least one.")
+   else()
+     message(STATUS "-- At least one sound library was found. Do not worry if any were not found at this stage.")

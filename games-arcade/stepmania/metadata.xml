@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="parport">Enable support for lights connected to the parallel port</flag>
+		<flag name="crash-handler">Enable the custom crash handler</flag>
+		<flag name="gles2">Enable support for OpenGL ES 2</flag>
+		<flag name="networking">Enable network-related functionality</flag>
+		<flag name="wav">Enable support for WAV audio files</flag>
+		<flag name="default-songs">Install the songs that are distributed with the game by default</flag>
+	</use>
+</pkgmetadata>
