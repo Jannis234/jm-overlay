@@ -1,23 +1,27 @@
 diff -ru citra_orig/CMakeLists.txt citra/CMakeLists.txt
---- citra_orig/CMakeLists.txt	2016-09-30 18:04:28.809595747 +0200
-+++ citra/CMakeLists.txt	2016-09-30 18:06:39.458096544 +0200
+--- citra_orig/CMakeLists.txt	2016-10-01 23:40:37.941506597 +0200
++++ citra/CMakeLists.txt	2016-10-01 23:43:36.387375123 +0200
 @@ -37,6 +37,8 @@
  option(ENABLE_SDL2 "Enable the SDL2 frontend" ON)
  option(CITRA_USE_BUNDLED_SDL2 "Download bundled SDL2 binaries" OFF)
  
-+option(USE_SYSTEM_BOOST "Use system-wide boost libraries")
++option(USE_SYSTEM_BOOST "Use system-wide boost libraries" OFF)
 +
  option(ENABLE_QT "Enable the Qt frontend" ON)
  option(CITRA_USE_BUNDLED_QT "Download bundled Qt binaries" OFF)
  
-@@ -118,8 +120,9 @@
+@@ -117,9 +119,12 @@
+     message(STATUS "libpng not found. Some debugging features have been disabled.")
  endif()
  
- find_package(Boost 1.57.0 QUIET)
+-find_package(Boost 1.57.0 QUIET)
 -if (NOT Boost_FOUND)
 -    message(STATUS "Boost 1.57.0 or newer not found, falling back to externals")
 +if (USE_SYSTEM_BOOST)
-+    set(Boost_INCLUDE_DIR ${Boost_INCLUDE_DIRS})
++    find_package(Boost 1.57.0 QUIET)
++    if (NOT Boost_FOUND)
++			message(FATAL_ERROR "Boost 1.57.0 or newer not found")
++    endif()
 +else()
      set(Boost_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/externals/boost")
  endif()
