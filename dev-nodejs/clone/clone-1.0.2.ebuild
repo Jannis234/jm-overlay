@@ -4,6 +4,7 @@
 
 EAPI=6
 
+NODE_MODULE_HAS_TEST="1"
 NODEJS_MIN_VERSION="0.8"
 
 inherit node-module
@@ -14,3 +15,10 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
 DOCS=( README.md )
+DEPEND="${DEPEND}
+	test? ( dev-util/nodeunit )"
+
+src_test() {
+	node-module_src_test
+	nodeunit test.js || die "Tests failed"
+}
