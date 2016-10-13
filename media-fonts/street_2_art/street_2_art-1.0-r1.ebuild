@@ -9,11 +9,12 @@ DESCRIPTION="The Street 2 Art font"
 HOMEPAGE="http://www.dafont.com/street-2-art.font"
 
 SRC_URI="http://dl.dafont.com/dl/?f=street_2_art -> street_2_art-${PV}.zip"
-LICENSE="free-noncomm"
+LICENSE="street_2_art"
 
 SLOT="0"
 KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE=""
+
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
@@ -23,8 +24,5 @@ FONT_SUFFIX="ttf"
 DOCS="Street_2_Art.pdf"
 
 src_prepare() {
-
-	cd "${WORKDIR}"
-	mv "Street 2 Art.pdf" "Street_2_Art.pdf"
-
+	mv "Street 2 Art.pdf" "Street_2_Art.pdf" || die
 }
