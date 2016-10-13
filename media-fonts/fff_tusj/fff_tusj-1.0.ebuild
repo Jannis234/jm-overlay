@@ -26,4 +26,5 @@ FONT_SUFFIX="ttf"
 
 src_prepare() {
 	rm "._FFF Tusj.ttf" || die
+	eapply_user
 }
