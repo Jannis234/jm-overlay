@@ -1,0 +1,22 @@
+diff -ru Dropbox-Uploader-1.0_orig/dropShell.sh Dropbox-Uploader-1.0/dropShell.sh
+--- Dropbox-Uploader-1.0_orig/dropShell.sh	2016-10-22 16:16:47.923921320 +0200
++++ Dropbox-Uploader-1.0/dropShell.sh	2016-10-22 16:18:04.120654604 +0200
+@@ -20,14 +20,10 @@
+ #
+ 
+ #Looking for dropbox uploader
+-if [ -f "./dropbox_uploader.sh" ]; then
+-    DU="./dropbox_uploader.sh"
+-else
+-    DU=$(which dropbox_uploader.sh)
+-    if [ $? -ne 0 ]; then
+-        echo "Dropbox Uploader not found!"
+-        exit 1
+-    fi
++DU=$(which dropbox-uploader)
++if [ $? -ne 0 ]; then
++    echo "Dropbox Uploader not found!"
++    exit 1
+ fi
+ 
+ #For MacOSX, install coreutils (which includes greadlink)

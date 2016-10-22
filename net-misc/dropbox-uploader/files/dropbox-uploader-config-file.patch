@@ -1,0 +1,14 @@
+diff -ru Dropbox-Uploader-1.0_orig/dropbox_uploader.sh Dropbox-Uploader-1.0/dropbox_uploader.sh
+--- Dropbox-Uploader-1.0_orig/dropbox_uploader.sh	2016-10-22 16:12:16.062442849 +0200
++++ Dropbox-Uploader-1.0/dropbox_uploader.sh	2016-10-22 16:16:23.345329974 +0200
+@@ -38,6 +38,10 @@
+ SHOW_PROGRESSBAR=0
+ SKIP_EXISTING_FILES=0
+ ERROR_STATUS=0
++# Allow the user to make changes to these values that are kept during updates of this package
++if [ -e /etc/dropbox_uploader.conf ]; then
++	source /etc/dropbox_uploader.conf
++fi
+ 
+ #Don't edit these...
+ API_MIGRATE_V2="https://api.dropboxapi.com/1/oauth2/token_from_oauth1"
