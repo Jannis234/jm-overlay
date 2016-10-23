@@ -17,7 +17,8 @@ S="${WORKDIR}/Dropbox-Uploader-${PV}"
 RESTRICT="test" # Needs to interact with dropbox
 
 DEPEND=""
-RDEPEND="app-shells/bash"
+RDEPEND="app-shells/bash
+	net-misc/curl[ssl]"
 
 src_prepare() {
 	eapply "${FILESDIR}/dropbox-uploader-config-file.patch"
