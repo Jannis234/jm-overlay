@@ -1,0 +1,36 @@
+diff -ru bash-onedrive-upload_orig/onedriveb.cfg bash-onedrive-upload/onedriveb.cfg
+--- bash-onedrive-upload_orig/onedriveb.cfg	2016-10-25 00:10:28.682615302 +0200
++++ bash-onedrive-upload/onedriveb.cfg	2016-10-25 00:19:07.835363119 +0200
+@@ -1,4 +1,4 @@
+-export refresh_token_file="${script_base_folder}/.refresh_token"
++export refresh_token_file=~/.onedrive_refresh_token
+ 
+ # Authentication config
+ export api_client_id=""
+@@ -24,3 +24,8 @@
+ export chunk_retries=5
+ # Retry every failed file (!= 200, 201) 3 times
+ export file_retries=3
++
++# Allow per-user overrides for system-wide installations
++if [ -e ~/.config/onedriveb.cfg ]; then
++        source ~/.config/onedriveb.cfg
++fi
+diff -ru bash-onedrive-upload_orig/onedrive.cfg bash-onedrive-upload/onedrive.cfg
+--- bash-onedrive-upload_orig/onedrive.cfg	2016-10-25 00:10:28.682615302 +0200
++++ bash-onedrive-upload/onedrive.cfg	2016-10-25 00:19:15.588208608 +0200
+@@ -1,4 +1,4 @@
+-export refresh_token_file="${script_base_folder}/.refresh_token"
++export refresh_token_file=~/.onedrive_refresh_token
+ 
+ # Authentication config
+ export api_client_id=""
+@@ -24,3 +24,8 @@
+ export chunk_retries=3
+ # Retry every failed file (!= 200, 201) 3 times
+ export file_retries=3
++
++# Allow per-user overrides for system-wide installations
++if [ -e ~/.config/onedrive.cfg ]; then
++	source ~/.config/onedrive.cfg
++fi

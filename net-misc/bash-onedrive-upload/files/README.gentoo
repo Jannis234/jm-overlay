@@ -1,0 +1,4 @@
+This package has been patched to allow for a system-wide installation.
+Instead of editing the global onedrive.cfg/onedriveb.cfg files,
+save your settings in ~/.config/onedrive.cfg and ~/.config/onedriveb.cfg.
+These are sourced when the script is run and will override the default values.
