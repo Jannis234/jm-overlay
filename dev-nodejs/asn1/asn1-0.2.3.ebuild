@@ -18,8 +18,7 @@ DEPEND="${DEPEND}
 
 DOCS=( README.md )
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	install_node_module_build_depend "tap:0"
 	tap tst || die "Tests failed"
 }

@@ -19,7 +19,6 @@ DOCS=( Readme.md History.md )
 
 src_compile() { :; }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	mocha || die "Tests failed"
 }

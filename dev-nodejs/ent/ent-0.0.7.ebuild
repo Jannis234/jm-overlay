@@ -25,7 +25,6 @@ src_install() {
 	use examples && dodoc -r examples
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	tap test || die "Tests failed"
 }

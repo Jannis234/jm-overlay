@@ -20,8 +20,7 @@ DEPEND="${DEPEND}
 	test? ( dev-util/tap:0 )"
 DOCS=( README.md )
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	sed -i "s/\/tmp\///g" test/*.js || die # Fix sandbox violation
 	tap test || die "Tests failed"
 }

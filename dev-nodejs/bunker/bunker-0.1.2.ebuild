@@ -25,8 +25,7 @@ src_install() {
 	use examples && dodoc -r example
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	install_node_module_build_depend "tap:0"
 	# Fixed in upstream git repo, but never actually released
 	sed -i "/unary-postfix/d" test/cover.js || die

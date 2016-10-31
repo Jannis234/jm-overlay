@@ -20,8 +20,7 @@ DEPEND="${DEPEND}
 	test? ( dev-util/nodeunit )"
 DOCS=( README.md )
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	install_node_module_build_depend "nodeunit:0"
 	nodeunit || die "Tests failed"
 }

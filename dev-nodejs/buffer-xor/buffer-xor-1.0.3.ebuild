@@ -18,7 +18,6 @@ DOCS=( README.md )
 DEPEND="${DEPEND}
 	test? ( dev-util/mocha )"
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	mocha || die "Tests failed"
 }

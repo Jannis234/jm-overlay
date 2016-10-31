@@ -56,9 +56,9 @@ NODE_MODULE_DEFAULT_FILES="index.js ${NODE_MODULE_NAME}.js package.json lib"
 # @ECLASS_VARIABLE: NODE_MODULE_HAS_TEST
 # @DESCRIPTION:
 # Set this variable to indicate that the ebuild implements src_test()
-# This will only set up DEPEND and IUSE correctly, you must still
-# implement src_test() yourself. If this is not set, a dummy src_test()
-# function that does nothing is exported
+# If you set this, you must also declare node_module_run_test() to
+# implement the actual testing
+# If this is not set, a dummy src_test() function that does nothing is exported
 # @ECLASS_VARIABLE: NODE_MODULE_TEST_DEPEND
 # @DESCRIPTION:
 # Similar to NODE_MODULE_DEPEND, this contains a list of dependencies
@@ -147,11 +147,14 @@ if [ -z ${NODE_MODULE_HAS_TEST} ]; then
 	# Don't run the default src_test() function which will often cause errors if a Makefile is present
 	node-module_src_test() { :; }
 else
-	# This does not run any tests by itself, it only sets up dependencies
 	node-module_src_test() {
+		if ! declare -f node_module_run_test > /dev/null; then
+			die "NODE_MODULE_HAS_TEST is set but node_module_run_test is not declared"
+		fi
 		for dep in ${NODE_MODULE_DEPEND} ${NODE_MODULE_TEST_DEPEND}; do
 			install_node_module_build_depend "${dep}"
 		done
+		node_module_run_test
 	}
 fi
 

@@ -22,7 +22,6 @@ src_compile() {
 	uglifyjs -m -o index.min.js index.js || die
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	node test.js || die "Tests failed"
 }

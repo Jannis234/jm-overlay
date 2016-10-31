@@ -33,8 +33,7 @@ src_install() {
 	use examples && dodoc -r examples img/example_*
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	install_node_module_build_depend "tap:0.7"
 	./bin/nodeunit || die "Tests failed"
 }

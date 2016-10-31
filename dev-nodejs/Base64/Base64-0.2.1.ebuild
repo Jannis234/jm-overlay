@@ -34,6 +34,6 @@ src_compile() {
 	fi
 }
 
-src_test() {
+node_module_run_test() {
 	mocha test || die "Tests failed"
 }

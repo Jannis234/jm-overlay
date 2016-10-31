@@ -31,8 +31,7 @@ src_install() {
 	install_node_module_depend "bn.js:4.11.3"
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	install_node_module_build_depend "bn.js:4.11.3"
 	tap test.js || die "Tests failed"
 }

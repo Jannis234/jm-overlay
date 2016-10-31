@@ -19,7 +19,6 @@ DOCS=( README.md )
 DEPEND="${DEPEND}
 	test? ( dev-util/tap:0 )"
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	tap test/index.js || die "Tests failed"
 }

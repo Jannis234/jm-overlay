@@ -19,7 +19,6 @@ DOCS=( README.md History.md )
 
 src_compile() { :; }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	node test.js || die "Tests failed"
 }

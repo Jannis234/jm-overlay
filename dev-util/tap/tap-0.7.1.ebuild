@@ -36,7 +36,6 @@ src_install() {
 	use examples && dodoc -r example
 }
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	node bin/tap.js test/*.* || die "Tests failed"
 }

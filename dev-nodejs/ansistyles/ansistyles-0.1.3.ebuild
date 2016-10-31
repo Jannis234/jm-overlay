@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 
 DOCS=( README.md )
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	node test/ansistyles.js || die "Tests failed"
 }

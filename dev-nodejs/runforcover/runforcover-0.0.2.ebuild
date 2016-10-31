@@ -17,7 +17,6 @@ KEYWORDS="~amd64 ~x86"
 
 DOCS=( README.markdown )
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	node test/index.js || die "Tests failed"
 }

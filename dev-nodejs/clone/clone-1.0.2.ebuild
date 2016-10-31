@@ -18,7 +18,6 @@ DOCS=( README.md )
 DEPEND="${DEPEND}
 	test? ( dev-util/nodeunit )"
 
-src_test() {
-	node-module_src_test
+node_module_run_test() {
 	nodeunit test.js || die "Tests failed"
 }
