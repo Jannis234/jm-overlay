@@ -4,8 +4,7 @@
 
 EAPI=6
 
-NODEJS_MIN_VERSION="0.4.0"
-NODE_MODULE_EXTRA_FILES="dist src"
+NODE_MODULE_EXTRA_FILES="xhtml.js inject.js"
 NODE_MODULE_DEPEND="acorn:3.3.0"
 
 inherit node-module
@@ -15,4 +14,4 @@ DESCRIPTION="ECMAScript parser"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
-DOCS=( README.md CHANGELOG.md AUTHORS )
+DOCS=( README.md )
