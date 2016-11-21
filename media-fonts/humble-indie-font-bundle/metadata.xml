@@ -2,7 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
-		<flag name="px437">Install fonts with the original DOS charset</flag>
-		<flag name="pxplus">Install fonts with unicode enhancements</flag>
+		<flag name="after-impact">Install the "After Impact" font</flag>
+		<flag name="bike-courier">Install the "Bike Courier" font</flag>
+		<flag name="halfvetica">Install the "Halfvetica" font</flag>
+		<flag name="cosmic-sans">Install the "Cosmic Sans" font</flag>
+		<flag name="sans-sans">Install the (non-free) "Sans Sans" font</flag>
+		<flag name="times-old-roman">Install the (non-free) "Times Old Roman" font</flag>
+		<flag name="unicharacter">Install the (non-free) "Unicharacter" font</flag>
 	</use>
 </pkgmetadata>
