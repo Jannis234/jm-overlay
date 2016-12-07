@@ -12,7 +12,8 @@ NODE_MODULE_DEPEND="combine-source-map:0.7.2
 	defined:1.0.0"
 NODE_MODULE_HAS_TEST="1"
 NODE_MODULE_TEST_DEPEND="concat-stream:1.5.1
-	parse-base64vlq-mappings:0.1.4"
+	parse-base64vlq-mappings:0.1.4
+	convert-source-map:1.1.3"
 
 inherit node-module
 
