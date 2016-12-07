@@ -5,7 +5,7 @@
 EAPI=6
 
 NODE_MODULE_DEPEND="defined:1.0.0
-	acorn:1.3.0"
+	acorn:3.3.0"
 
 inherit node-module
 
