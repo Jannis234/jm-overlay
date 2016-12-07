@@ -19,6 +19,8 @@ DEPEND="${DEPEND}
 	test? ( dev-util/tap:0 )"
 DOCS=( Readme.md History.md )
 
+src_compile() { :; }
+
 node_module_run_test() {
 	tap test || die "Tests failed"
 }
