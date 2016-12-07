@@ -9,7 +9,7 @@ NODE_MODULE_TEST_DEPEND="tape:2.3.3"
 
 inherit node-module
 
-DESCRIPTION="[].map(f) for older browsers"
+DESCRIPTION="[].reduce() for old browsers"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
