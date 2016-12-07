@@ -6,7 +6,7 @@ EAPI=6
 
 NODE_MODULE_HAS_TEST="1"
 NODE_MODULE_TEST_DEPEND="tape:4.6.3"
-NODE_MODULE_EXTRA_FILES="base64.min.js"
+NODE_MODULE_EXTRA_FILES="base64js.min.js"
 
 inherit node-module
 
