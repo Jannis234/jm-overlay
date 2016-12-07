@@ -11,7 +11,7 @@ NODE_MODULE_DEPEND="assert:1.3.0
 	buffer:4.9.1
 	concat-stream:1.5.2
 	console-browserify:1.1.0
-	constants-browserify:3.11.0
+	constants-browserify:1.0.0
 	crypto-browserify:3.11.0
 	defined:1.0.0
 	deps-sort:2.0.0
