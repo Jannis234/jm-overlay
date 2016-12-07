@@ -33,4 +33,4 @@ DESCRIPTION="Simplified HTTP request client"
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64 ~x86"
 
-DOCS=( README.md CHANGELOG.md CONTRIBUTING.md )
+DOCS=( README.md CHANGELOG.md )
