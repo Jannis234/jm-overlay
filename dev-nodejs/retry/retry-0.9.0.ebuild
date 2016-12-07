@@ -8,7 +8,7 @@ inherit node-module
 
 DESCRIPTION="Abstraction for exponential and custom retry strategies for failed operations"
 
-LICENSE="MIT	"
+LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
