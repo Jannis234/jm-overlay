@@ -6,6 +6,9 @@ EAPI=6
 
 NODEJS_MIN_VERSION="0.12"
 NODE_MODULE_EXTRA_FILES="es2015 source"
+NODE_MODULE_DEPEND="ansicolors:0.3.2
+	diff:2.2.3
+	editions:1.3.3"
 
 inherit node-module
 
