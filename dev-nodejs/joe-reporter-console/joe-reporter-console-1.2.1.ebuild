@@ -5,6 +5,7 @@
 EAPI=6
 
 NODEJS_MIN_VERSION="0.4"
+NODE_MODULE_EXTRA_FILES="out"
 NODE_MODULE_DEPEND="cli-color:0.2.3"
 
 inherit node-module
