@@ -5,6 +5,7 @@
 EAPI=6
 
 NODE_MODULE_DEPEND="jsbn:0.1.0"
+NODE_MODULE_HAS_TEST="1"
 
 inherit node-module
 
@@ -14,3 +15,7 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
 DOCS=( README.md )
+
+node_module_run_test() {
+	node test.js || die "Tests failed"
+}
