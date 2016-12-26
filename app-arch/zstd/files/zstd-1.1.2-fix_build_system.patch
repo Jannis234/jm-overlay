@@ -1,0 +1,90 @@
+diff -ru zstd-1.1.2_orig/lib/Makefile zstd-1.1.2/lib/Makefile
+--- zstd-1.1.2_orig/lib/Makefile	2016-12-26 11:48:39.660859336 +0100
++++ zstd-1.1.2/lib/Makefile	2016-12-26 11:50:49.608706093 +0100
+@@ -67,8 +67,8 @@
+ libzstd.a: ARFLAGS = rcs
+ libzstd.a: $(ZSTD_FILES)
+ 	@echo compiling static library
+-	@$(CC) $(FLAGS) -c $^
+-	@$(AR) $(ARFLAGS) $@ *.o
++	$(CC) $(FLAGS) -c $^
++	$(AR) $(ARFLAGS) $@ *.o
+ 
+ $(LIBZSTD): LDFLAGS += -shared -fPIC -fvisibility=hidden
+ $(LIBZSTD): $(ZSTD_FILES)
+@@ -77,10 +77,10 @@
+ 	@$(CC) $(FLAGS) -DZSTD_DLL_EXPORT=1 -shared $^ -o dll\libzstd.dll
+ 	dlltool -D dll\libzstd.dll -d dll\libzstd.def -l dll\libzstd.lib
+ else
+-	@$(CC) $(FLAGS) $^ $(LDFLAGS) $(SONAME_FLAGS) -o $@
++	$(CC) $(FLAGS) $^ $(LDFLAGS) $(SONAME_FLAGS) -o $@
+ 	@echo creating versioned links
+-	@ln -sf $@ libzstd.$(SHARED_EXT_MAJOR)
+-	@ln -sf $@ libzstd.$(SHARED_EXT)
++	ln -sf $@ libzstd.$(SHARED_EXT_MAJOR)
++	ln -sf $@ libzstd.$(SHARED_EXT)
+ endif
+ 
+ libzstd : $(LIBZSTD)
+@@ -88,8 +88,8 @@
+ lib: libzstd.a libzstd
+ 
+ clean:
+-	@$(RM) core *.o *.a *.gcda *.$(SHARED_EXT) *.$(SHARED_EXT).* libzstd.pc dll/libzstd.dll dll/libzstd.lib
+-	@$(RM) decompress/*.o
++	$(RM) core *.o *.a *.gcda *.$(SHARED_EXT) *.$(SHARED_EXT).* libzstd.pc dll/libzstd.dll dll/libzstd.lib
++	$(RM) decompress/*.o
+ 	@echo Cleaning library completed
+ 
+ #------------------------------------------------------------------------
+@@ -99,23 +99,23 @@
+ libzstd.pc:
+ libzstd.pc: libzstd.pc.in
+ 	@echo creating pkgconfig
+-	@sed -e 's|@PREFIX@|$(PREFIX)|' \
++	sed -e 's|@PREFIX@|$(PREFIX)|' \
+              -e 's|@LIBDIR@|$(LIBDIR)|' \
+              -e 's|@INCLUDEDIR@|$(INCLUDEDIR)|' \
+              -e 's|@VERSION@|$(VERSION)|' \
+              $< >$@
+ 
+-install: libzstd.a libzstd libzstd.pc
+-	@install -d -m 755 $(DESTDIR)$(LIBDIR)/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
+-	@install -m 755 libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)
+-	@cp -a libzstd.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)
+-	@cp -a libzstd.$(SHARED_EXT) $(DESTDIR)$(LIBDIR)
+-	@cp -a libzstd.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
+-	@install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)
+-	@install -m 644 zstd.h $(DESTDIR)$(INCLUDEDIR)
+-	@install -m 644 common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
+-	@install -m 644 deprecated/zbuff.h $(DESTDIR)$(INCLUDEDIR)     # prototypes generate deprecation warnings
+-	@install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)
++install: libzstd.pc
++	install -d -m 755 $(DESTDIR)$(LIBDIR)/pkgconfig/ $(DESTDIR)$(INCLUDEDIR)/
++	install -m 755 libzstd.$(SHARED_EXT_VER) $(DESTDIR)$(LIBDIR)
++	cp -a libzstd.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)
++	cp -a libzstd.$(SHARED_EXT) $(DESTDIR)$(LIBDIR)
++	cp -a libzstd.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
++	install -m 644 libzstd.a $(DESTDIR)$(LIBDIR)
++	install -m 644 zstd.h $(DESTDIR)$(INCLUDEDIR)
++	install -m 644 common/zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
++	install -m 644 deprecated/zbuff.h $(DESTDIR)$(INCLUDEDIR)     # prototypes generate deprecation warnings
++	install -m 644 dictBuilder/zdict.h $(DESTDIR)$(INCLUDEDIR)
+ 	@echo zstd static and shared library installed
+ 
+ uninstall:
+diff -ru zstd-1.1.2_orig/programs/Makefile zstd-1.1.2/programs/Makefile
+--- zstd-1.1.2_orig/programs/Makefile	2016-12-26 11:48:39.663859288 +0100
++++ zstd-1.1.2/programs/Makefile	2016-12-26 11:51:00.499519038 +0100
+@@ -21,11 +21,7 @@
+ 
+ ZSTDDIR = ../lib
+ 
+-ifeq ($(shell $(CC) -v 2>&1 | grep -c "gcc version "), 1)
+-ALIGN_LOOP = -falign-loops=32
+-else
+ ALIGN_LOOP =
+-endif
+ 
+ CPPFLAGS+= -I$(ZSTDDIR) -I$(ZSTDDIR)/common -I$(ZSTDDIR)/dictBuilder
+ CFLAGS  ?= -O3
