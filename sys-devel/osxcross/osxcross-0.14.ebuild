@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/tpoechtrager/osxcross"
 SRC_URI="${XCODE_URI}"
 EGIT_REPO_URI="https://github.com/tpoechtrager/osxcross.git"
 
-LICENSE="GPL-2 Xcode"
+LICENSE="GPL-2 APSL-2.0 Xcode"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="macports"
