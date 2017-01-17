@@ -1,0 +1,21 @@
+diff -ru googletest_orig/CMakeLists.txt googletest/CMakeLists.txt
+--- googletest_orig/CMakeLists.txt	2017-01-17 18:29:02.762349100 +0100
++++ googletest/CMakeLists.txt	2017-01-17 18:30:20.092833848 +0100
+@@ -5,6 +5,8 @@
+ # ctest.  You can select which tests to run using 'ctest -R regex'.
+ # For more options, run 'ctest --help'.
+ 
++option(LIBDIR "Install libraries into this directory" "lib")
++
+ # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to
+ # make it prominent in the GUI.
+ option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)
+@@ -103,7 +105,7 @@
+ #
+ # Install rules
+ install(TARGETS gtest gtest_main
+-  DESTINATION lib)
++		DESTINATION ${LIBDIR})
+ install(DIRECTORY ${gtest_SOURCE_DIR}/include/gtest
+   DESTINATION include)
+ 
