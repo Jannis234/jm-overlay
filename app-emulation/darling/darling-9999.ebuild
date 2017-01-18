@@ -46,6 +46,8 @@ src_prepare() {
 	# Building darling can take forever, so avoid rebuilding the entire thing after
 	# every kernel update by splitting the kernel module into its own ebuild
 	eapply "${FILESDIR}/darling-split-lkm.patch"
+	# Fix a sandbox violation during src_install()
+	eapply "${FILESDIR}/darling-ld.so-sandbox.patch"
 	eapply_user
 }
 
@@ -88,6 +90,8 @@ src_compile() {
 }
 
 src_install() {
+	export PORTAGE_INSTDIR="${ED}"
+
 	cd build/x86_64 || die
 	DESTDIR="${D}" emake install
 
@@ -98,4 +102,9 @@ src_install() {
 
 	dodoc ../../README.md
 	newinitd "${FILESDIR}/darling-binfmt-r1.initd" "darling-binfmt"
+}
+
+pkg_postinst() {
+	cd "${EROOT}usr/libexec/darling" || die
+	ldconfig -r . -X || die
 }
