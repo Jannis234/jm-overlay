@@ -1,0 +1,75 @@
+diff -ru tensorflow-0.12.1_orig/tensorflow/tensorboard/bower/BUILD tensorflow-0.12.1/tensorflow/tensorboard/bower/BUILD
+--- tensorflow-0.12.1_orig/tensorflow/tensorboard/bower/BUILD	2017-01-21 20:54:35.294101148 +0100
++++ tensorflow-0.12.1/tensorflow/tensorboard/bower/BUILD	2017-01-21 21:05:33.829411629 +0100
+@@ -36,7 +36,7 @@
+         "@iron_validatable_behavior//:iron_validatable_behavior",
+         "@lodash//:lodash",
+         "@neon_animation//:neon_animation",
+-        "@numericjs_numeric_min_js//file",
++        "numeric.min.js",
+         "@paper_behaviors//:paper_behaviors",
+         "@paper_button//:paper_button",
+         "@paper_checkbox//:paper_checkbox",
+@@ -67,10 +67,10 @@
+         "@plottable//:plottable",
+         "@polymer//:polymer",
+         "@promise_polyfill//:promise_polyfill",
+-        "@three_js_orbitcontrols_js//file",
+-        "@three_js_three_min_js//file",
++        "OrbitControls.js",
++        "three.min.js",
+         "@web_animations_js//:web_animations_js",
+         "@webcomponentsjs//:webcomponentsjs",
+-        "@weblas_weblas_js//file",
++        "weblas.js",
+     ],
+ )
+diff -ru tensorflow-0.12.1_orig/WORKSPACE tensorflow-0.12.1/WORKSPACE
+--- tensorflow-0.12.1_orig/WORKSPACE	2017-01-21 20:54:34.922107551 +0100
++++ tensorflow-0.12.1/WORKSPACE	2017-01-21 20:59:54.203423940 +0100
+@@ -25,6 +25,7 @@
+ new_http_archive(
+   name = "inception5h",
+   build_file = "models.BUILD",
++  strip_prefix = "inception5h",
+   url = "https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip",
+   sha256 = "d13569f6a98159de37e92e9c8ec4dae8f674fbf475f69fe6199b514f756d4364"
+ )
+@@ -248,11 +249,6 @@
+   strip_prefix = "neon-animation-1.2.2",
+ )
+ 
+-http_file(
+-  name = "numericjs_numeric_min_js",
+-  url = "https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js",
+-)
+-
+ new_http_archive(
+   name = "paper_behaviors",
+   build_file = "bower.BUILD",
+@@ -463,16 +459,6 @@
+   strip_prefix = "promise-polyfill-1.0.0",
+ )
+ 
+-http_file(
+-  name = "three_js_three_min_js",
+-  url = "https://raw.githubusercontent.com/mrdoob/three.js/r77/build/three.min.js",
+-)
+-
+-http_file(
+-  name = "three_js_orbitcontrols_js",
+-  url = "https://raw.githubusercontent.com/mrdoob/three.js/r77/examples/js/controls/OrbitControls.js",
+-)
+-
+ new_http_archive(
+   name = "web_animations_js",
+   build_file = "bower.BUILD",
+@@ -486,8 +472,3 @@
+   url = "https://github.com/webcomponents/webcomponentsjs/archive/v0.7.22.tar.gz",
+   strip_prefix = "webcomponentsjs-0.7.22",
+ )
+-
+-http_file(
+-  name = "weblas_weblas_js",
+-  url = "https://raw.githubusercontent.com/waylonflinn/weblas/v0.9.0/dist/weblas.js",
+-)
