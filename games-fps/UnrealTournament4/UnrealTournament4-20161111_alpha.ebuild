@@ -9,7 +9,7 @@ inherit check-reqs eutils
 # The official name of the game is just "UnrealTournament" without any number at the end
 # The ebuild is still named UnrealTournament4 to avoid confusion with games-fps/unreal-tournament (UT99)
 MyPN="UnrealTournament"
-Build_Version="3164292"
+Build_Version="3193528"
 
 DESCRIPTION="Futuristic FPS (Pre-Alpha version)"
 HOMEPAGE="https://unrealtournament.com/"
@@ -27,7 +27,7 @@ RDEPEND="virtual/opengl"
 RESTRICT="fetch mirror bindist splitdebug"
 
 S="${WORKDIR}/LinuxNoEditor"
-CHECKREQS_DISK_BUILD="20G"
+CHECKREQS_DISK_BUILD="25G"
 
 QA_PREBUILT="opt/${MyPN}/Engine/Binaries/*
 	opt/${MyPN}/Engine/Plugins/*
@@ -48,17 +48,17 @@ src_install() {
 	local dir="/opt/${MyPN}"
 
 	dodir "${dir}"
-	# Use mv instead of doins to avoid copying about 20G of data
+	# Use mv instead of doins to avoid copying >20G of data
 	mv ./* "${D}/${dir}/" || die
 
-	chmod +x "${D}/${dir}/Engine/Binaries/Linux/UE4-Linux-Shipping" || die
-	chmod +x "${D}/${dir}/Engine/Binaries/Linux/CrashReportClient" || die
+	fperms +x "${dir}/Engine/Binaries/Linux/UE4-Linux-Shipping"
+	fperms +x "${dir}/Engine/Binaries/Linux/CrashReportClient"
 	# Tries to write into the game's directory, not the user's home directory
 	rm "${D}/${dir}/Engine/Binaries/Linux/UE4-Linux-Test" || die
 
 	insinto "${dir}"
 	newins "${FILESDIR}/ut4_launcher.sh" "${MyPN}.sh"
-	chmod +x "${D}/${dir}/${MyPN}.sh" || die
+	fperms +x "${dir}/${MyPN}.sh"
 	make_wrapper "${MyPN}" "${dir}/${MyPN}.sh" "${EROOT}opt/${MyPN}"
 
 	newicon "${FILESDIR}/ut4_logo.png" "${MyPN}.png"
