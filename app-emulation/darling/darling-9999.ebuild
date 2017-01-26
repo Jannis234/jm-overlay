@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit git-r3 flag-o-matic
+inherit git-r3 flag-o-matic linux-info
 
 DESCRIPTION="MacOS translation layer for Linux"
 HOMEPAGE="https://www.darlinghq.org/"
@@ -18,6 +18,8 @@ IUSE="32bit framework-coreaudio framework-appkit pulseaudio alsa"
 # Incompatible licenses from all the bundled components
 RESTRICT="bindist"
 
+CONFIG_CHECK="~OVERLAY_FS"
+
 REQUIRED_USE="pulseaudio? ( framework-coreaudio )
 	alsa? ( framework-coreaudio )
 	framework-coreaudio? ( || ( alsa pulseaudio ) )"
@@ -27,11 +29,19 @@ CDEPEND="virtual/libudev
 		alsa? ( media-libs/alsa-lib )
 		pulseaudio? ( media-sound/pulseaudio )
 	)
+	framework-appkit? (
+		dev-qt/qtdeclarative:5
+		dev-qt/qtwidgets:5
+	)
 	32bit? (
 		virtual/libudev[abi_x86_32]
 		framework-coreaudio? (
 			alsa? ( media-libs/alsa-lib[abi_x86_32] )
 			pulseaudio? ( media-sound/pulseaudio[abi_x86_32] )
+		)
+		framework-appkit? (
+			dev-qt/qtdeclarative:5[abi_x86_32]
+			dev-qt/qtwidgets:5[abi_x86_32]
 		)
 	)"
 DEPEND="${CDEPEND}
@@ -46,8 +56,8 @@ src_prepare() {
 	# Building darling can take forever, so avoid rebuilding the entire thing after
 	# every kernel update by splitting the kernel module into its own ebuild
 	eapply "${FILESDIR}/darling-split-lkm.patch"
-	# Fix a sandbox violation during src_install()
-	eapply "${FILESDIR}/darling-ld.so-sandbox.patch"
+	# Don't do this in src_install (sandbox violation) allow the script to be installed
+	eapply "${FILESDIR}/darling-setup-ld-so.patch"
 	eapply_user
 }
 
@@ -100,11 +110,24 @@ src_install() {
 		DESTDIR="${D}" emake install
 	fi
 
+	sed -i "s|exit|cd ${EROOT}usr/libexec/darling|g" ../../src/setup-ld-so.sh || die
+	newsbin ../../src/setup-ld-so.sh darling-ldconfig
+
 	dodoc ../../README.md
 	newinitd "${FILESDIR}/darling-binfmt-r1.initd" "darling-binfmt"
 }
 
 pkg_postinst() {
-	cd "${EROOT}usr/libexec/darling" || die
-	ldconfig -r . -X || die
+	darling-ldconfig || die
+
+	elog "Darling maintains its own ld.so.conf and ld.so.cache"
+	elog "If you have problems because darling can't find some libraries,"
+	elog "try running \"darling-ldonfig\" as root"
+}
+
+pkg_prerm() {
+	# Delete files created during pkg_postinst
+	rm -f "${EROOT}usr/libexec/darling/etc/ld.so.cache"
+	rm -f "${EROOT}usr/libexec/darling/etc/ld.so.conf"
+	rm -rf "${EROOT}usr/libexec/darling/etc/ld.so.conf.d"
 }
