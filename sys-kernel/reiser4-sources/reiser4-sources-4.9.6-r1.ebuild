@@ -8,7 +8,7 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_GENPATCHES_VER="7"
 K_SECURITY_UNSUPPORTED="1"
-REISER4_VER="4.9.0"
+REISER4_VER="4.9.2"
 
 inherit kernel-2
 detect_version
