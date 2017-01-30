@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake-utils git-r3 flag-o-matic
 
 DESCRIPTION="Nintendo 3DS Emulator"
 HOMEPAGE="https://citra-emu.org/"
@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/citra-emu/citra.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc sdl2 qt5 system-boost"
+IUSE="doc sdl2 qt5 system-boost clang"
 
 REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
@@ -28,8 +28,13 @@ RDEPEND="virtual/opengl
 		dev-qt/qtwidgets:5
 	)"
 DEPEND="${DEPEND}
-	>=dev-util/cmake-2.8.11
-	doc? ( >=app-doc/doxygen-1.8.8[dot] )"
+	>=dev-util/cmake-3.1
+	doc? ( >=app-doc/doxygen-1.8.8[dot] )
+	!clang? ( >=sys-devel/gcc-5 )
+	clang? (
+		>=sys-devel/clang-3.8
+		>=sys-libs/libcxx-3.8
+	)"
 
 src_prepare() {
 	eapply "${FILESDIR}/citra-system-boost.patch"
@@ -37,6 +42,12 @@ src_prepare() {
 }
 
 src_configure() {
+	if use clang; then
+		export CC=clang
+		export CXX=clang++
+		append-cxxflags "-stdlib=libc++" # Upstream requires libcxx when building with clang
+	fi
+
 	local mycmakeargs=(
 		-DENABLE_QT="$(usex qt5)"
 		-DENABLE_SDL2="$(usex sdl2)"
