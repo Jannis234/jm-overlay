@@ -9,7 +9,7 @@ inherit cmake-multilib
 DESCRIPTION="library + tool that creates colorful video barcodes"
 HOMEPAGE="https://nordlicht.github.io/"
 SRC_URI="https://github.com/blinry/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	test? ( https://upload.wikimedia.org/wikipedia/commons/0/07/Sintel_excerpt.OGG -> ${PN}-testdata-r2.ogv )"
+	test? ( https://upload.wikimedia.org/wikipedia/commons/6/64/Sintel_excerpt.ogv -> ${PN}-testdata-r2.ogv )"
 
 LICENSE="GPL-2+ BSD BSD-2"
 SLOT="0"
