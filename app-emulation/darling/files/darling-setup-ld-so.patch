@@ -1,12 +1,13 @@
 diff -ru darling_orig/src/setup-ld-so.sh darling/src/setup-ld-so.sh
---- darling_orig/src/setup-ld-so.sh	2017-01-26 13:07:11.447614854 +0100
-+++ darling/src/setup-ld-so.sh	2017-01-26 13:14:29.067800033 +0100
-@@ -1,7 +1,6 @@
- #! /bin/bash
+--- darling_orig/src/setup-ld-so.sh	2017-02-13 23:11:16.791564748 +0100
++++ darling/src/setup-ld-so.sh	2017-02-13 23:11:36.819202347 +0100
+@@ -3,6 +3,9 @@
+ # This runs as root,
+ # with the current directory set to ${CMAKE_INSTALL_PREFIX}/libexec/darling
  
--# This runs as root,
--# with the current directory set to ${CMAKE_INSTALL_PREFIX}/libexec/darling
 +exit
- 
++mkdir -p ./etc/ld.so.conf.d
++
  for file in /etc/ld.so.conf $(find /etc/ld.so.conf.d/ -type f); do
      # Copy lines from e.g. /etc/ld.so.conf into ./etc/ld.so.conf,
+     # prepending "/Volumes/SystemRoot" to each line that starts with a slash
