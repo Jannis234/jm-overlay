@@ -7,7 +7,7 @@ EAPI=6
 inherit qmake-utils git-r3 autotools eutils
 
 DESCRIPTION="Automated syncing between your computers and your MEGA cloud drive"
-HOMEPAGE="https://mega.nz/ https://github.com/meganz/MEGAsync https://github.com/meganz/sdk"
+HOMEPAGE="https://mega.nz/ https://github.com/meganz/MEGAsync"
 EGIT_REPO_URI="https://github.com/meganz/MEGAsync.git"
 EGIT_COMMIT="2e03defad7e732afe5ffd6977eeb10558f25457b"
 
