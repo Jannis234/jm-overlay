@@ -5,12 +5,10 @@
 EAPI=6
 
 NODEJS_MIN_VERSION="0.4"
-NODE_MODULE_HAS_TEST="1"
-NODE_MODULE_TEST_DEPEND="tape:3.6.1"
 
 inherit node-module
 
-DESCRIPTION="Returns an arbitrary generator function"
+DESCRIPTION="Function that returns an arbitrary arrow function"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
@@ -18,7 +16,3 @@ KEYWORDS="~amd64 ~x86"
 DOCS=( README.md CHANGELOG.md )
 DEPEND="${DEPEND}
 	test? ( dev-util/tap:0 )"
-
-node_module_run_test() {
-	tap test || die "Tests failed"
-}
