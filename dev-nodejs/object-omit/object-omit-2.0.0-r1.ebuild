@@ -6,8 +6,8 @@ EAPI=6
 
 NODEJS_MIN_VERSION="0.10.0"
 NODE_MODULE_NAME="object.omit"
-NODE_MOUDLE_DEPEND="is-extenable:0.1.1
-	for-owm:0.1.4"
+NODE_MODULE_DEPEND="is-extendable:0.1.1
+	for-own:0.1.4"
 
 inherit node-module
 
