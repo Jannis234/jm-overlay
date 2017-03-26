@@ -1,3 +1,3 @@
 move dev-python/axolotl dev-python/python-axolotl
-move axolotl-curve25519 python-axolotl-curve25519
+move dev-python/axolotl-curve25519 dev-python/python-axolotl-curve25519
 
