@@ -1,0 +1,34 @@
+diff -ru CGP-1_orig/inc/html.inc.php CGP-1/inc/html.inc.php
+--- CGP-1_orig/inc/html.inc.php	2017-03-05 16:22:54.000000000 +0100
++++ CGP-1/inc/html.inc.php	2017-03-26 18:34:17.193360213 +0200
+@@ -99,18 +99,19 @@
+ 	$html_weburl = htmlentities($CONFIG['weburl']);
+ 
+ 	if ($footer) {
+-		$git = '/usr/bin/git';
+-		$changelog = $CONFIG['webdir'].'/doc/CHANGELOG';
++		#$git = '/usr/bin/git';
++		#$changelog = $CONFIG['webdir'].'/doc/CHANGELOG';
+ 
+-		$version = 'v?';
+-		if (file_exists($git) && is_dir($CONFIG['webdir'].'/.git')) {
+-			chdir($CONFIG['webdir']);
+-			$version = exec($git.' describe --tags');
+-		} elseif (file_exists($changelog)) {
+-			$changelog = file($changelog);
+-			$version = explode(' ', $changelog[0]);
+-			$version = 'v'.$version[0];
+-		}
++		#$version = 'v?';
++		#if (file_exists($git) && is_dir($CONFIG['webdir'].'/.git')) {
++		#	chdir($CONFIG['webdir']);
++		#	$version = exec($git.' describe --tags');
++		#} elseif (file_exists($changelog)) {
++		#	$changelog = file($changelog);
++		#	$version = explode(' ', $changelog[0]);
++		#	$version = 'v'.$version[0];
++		#}
++		$version = 'vEBUILD_VERSION_PLACEHOLDER';
+ 
+ 		echo <<<EOT
+ </div>
