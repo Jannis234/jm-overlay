@@ -9,7 +9,7 @@ inherit check-reqs eutils
 # The official name of the game is just "UnrealTournament" without any number at the end
 # The ebuild is still named UnrealTournament4 to avoid confusion with games-fps/unreal-tournament (UT99)
 MyPN="UnrealTournament"
-Build_Version="3193528"
+Build_Version="3361702"
 
 DESCRIPTION="Futuristic FPS (Pre-Alpha version)"
 HOMEPAGE="https://unrealtournament.com/"
@@ -53,6 +53,7 @@ src_install() {
 
 	fperms +x "${dir}/Engine/Binaries/Linux/UE4-Linux-Shipping"
 	fperms +x "${dir}/Engine/Binaries/Linux/CrashReportClient"
+	fperms +x "${dir}/Engine/Binaries/Linux/UnrealCEFSubProcess"
 	# Tries to write into the game's directory, not the user's home directory
 	rm "${D}/${dir}/Engine/Binaries/Linux/UE4-Linux-Test" || die
 
