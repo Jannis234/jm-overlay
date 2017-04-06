@@ -1,8 +1,8 @@
 diff -ru darling_orig/src/CMakeLists.txt darling/src/CMakeLists.txt
---- darling_orig/src/CMakeLists.txt	2016-09-11 00:29:51.044705466 +0200
-+++ darling/src/CMakeLists.txt	2016-09-11 00:30:04.673460425 +0200
-@@ -147,11 +147,3 @@
- add_definitions(-D_USE_EXTENDED_LOCALES_)
+--- darling_orig/src/CMakeLists.txt	2017-04-06 20:21:04.467890213 +0200
++++ darling/src/CMakeLists.txt	2017-04-06 20:21:19.941564429 +0200
+@@ -189,10 +189,3 @@
+ add_subdirectory(external/libcxxabi)
  add_subdirectory(external/libcxx)
  
 -#######################
@@ -12,4 +12,3 @@ diff -ru darling_orig/src/CMakeLists.txt darling/src/CMakeLists.txt
 -add_custom_target(lkm
 -	COMMAND gmake
 -	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lkm")
--
