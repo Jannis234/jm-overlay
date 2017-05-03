@@ -1,0 +1,30 @@
+diff -ru xorg-input-wizardpen-0.8.1_orig/src/wizardpen.c xorg-input-wizardpen-0.8.1/src/wizardpen.c
+--- xorg-input-wizardpen-0.8.1_orig/src/wizardpen.c	2017-05-03 11:42:43.212452332 +0200
++++ xorg-input-wizardpen-0.8.1/src/wizardpen.c	2017-05-03 11:47:21.850775572 +0200
+@@ -573,7 +573,7 @@
+ 
+     if (local->fd != -1)
+     {
+-        RemoveEnabledDevice (local->fd);
++        xf86RemoveEnabledDevice (local);
+         if (priv->buffer)
+         {
+             XisbFree(priv->buffer);
+@@ -581,7 +581,7 @@
+         }
+         xf86CloseSerial(local->fd);
+     }
+-    RemoveEnabledDevice (local->fd);
++    xf86RemoveEnabledDevice (local);
+     local->fd = -1;
+     return rc;
+ 
+@@ -679,7 +679,7 @@
+ 
+     if (local->fd != -1)
+     {
+-        RemoveEnabledDevice (local->fd);
++        xf86RemoveEnabledDevice (local);
+         if (priv->buffer)
+         {
+             XisbFree(priv->buffer);
