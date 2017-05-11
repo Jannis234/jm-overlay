@@ -56,6 +56,9 @@ src_prepare() {
 	sed -i -e "s/-g/\$\{USER_CFLAGS\}/g" \
 		-e "s/lcc all/lcc all CFLAGS=\"\$\{USER_CFLAGS\}\"/g" \
 		build.sh || die
+	sed -i -e "s|/usr/bin/cpp|$(which cpp)|g" \
+		-e "s|/usr/bin/ld|$(which ld)|g" \
+		movfuscator/host.c || die # These hardcodec paths may be wrong on gentoo
 }
 
 src_compile() {
