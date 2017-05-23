@@ -3,6 +3,8 @@
 <pkgmetadata>
 	<use>
 		<flag name="legacy">Enable support for legacy zstd formats</flag>
-		<flag name="system-libzstd">Build against the system-wide libzstd, this removes any effect from the "legacy" USE flag</flag>
+		<flag name="legacy-formats">Enable support for legacy zstd formats</flag>
+		<flag name="legacy-api">Enable APIs for working with files created by older versions of python-zstd</flag>
+		<flag name="system-libzstd">Build against the system-wide libzstd, this removes any effect from the "legacy-formats" USE flag</flag>
 	</use>
 </pkgmetadata>
