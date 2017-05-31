@@ -19,7 +19,7 @@ REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
 	media-libs/libpng:=
 	sys-libs/zlib
-	system-boost? ( >=dev-libs/boost-1.57.0:= )
+	system-boost? ( >=dev-libs/boost-1.63.0:= )
 	sdl2? ( media-libs/libsdl2 )
 	qt5? (
 		dev-qt/qtcore:5
@@ -28,7 +28,7 @@ RDEPEND="virtual/opengl
 		dev-qt/qtwidgets:5
 	)"
 DEPEND="${DEPEND}
-	>=dev-util/cmake-3.1
+	>=dev-util/cmake-3.6
 	doc? ( >=app-doc/doxygen-1.8.8[dot] )
 	!clang? ( >=sys-devel/gcc-5 )
 	clang? (
@@ -51,6 +51,8 @@ src_configure() {
 	local mycmakeargs=(
 		-DENABLE_QT="$(usex qt5)"
 		-DENABLE_SDL2="$(usex sdl2)"
+		-DCITRA_USE_BUNDLED_SDL2=OFF
+		-DCITRA_USE_BUNDLED_QT=OFF
 		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
 	)
 	cmake-utils_src_configure
