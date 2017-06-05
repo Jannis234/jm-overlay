@@ -13,10 +13,11 @@ SRC_URI="https://github.com/blinry/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2+ BSD BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="libav"
 
-RDEPEND="virtual/ffmpeg
-	dev-libs/popt"
+RDEPEND="dev-libs/popt
+	libav? ( media-video/libav:= )
+	!libav? ( media-video/ffmpeg:= )"
 DEPEND="${RDEPEND}
 	sys-apps/help2man"
 
