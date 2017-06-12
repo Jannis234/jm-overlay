@@ -4,7 +4,9 @@
 
 EAPI=6
 
-inherit multilib-minimal
+PYTHON_COMPAT=( python2_7 )
+
+inherit multilib-minimal python-any-r1
 
 DESCRIPTION="C library to handle the Public Suffix List"
 HOMEPAGE="https://github.com/rockdaboot/libpsl"
@@ -28,6 +30,7 @@ RDEPEND="idn? (
 		dev-libs/libunistring[${MULTILIB_USEDEP},static-libs?]
 	) )"
 DEPEND="${RDEPEND}
+	${PYTHON_DEPS}
 	doc? ( dev-util/gtk-doc )
 	builtin-psl? (
 	icu? ( dev-libs/icu:=[${MULTILIB_USEDEP}] )
@@ -41,6 +44,7 @@ DEPEND="${RDEPEND}
 	) )"
 
 src_prepare() {
+	sed -i "s/env python/env python2/g" src/psl-make-dafsa || die
 	multilib_copy_sources
 	eapply_user
 }
