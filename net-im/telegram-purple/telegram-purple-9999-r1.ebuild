@@ -21,6 +21,11 @@ DEPEND="net-im/pidgin
 	webp? ( media-libs/libwebp )"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	sed -i "s/-Werror//g" tgl/Makefile.in Makefile.mingw Makefile.tgl.mingw || die
+	eapply_user
+}
+
 src_configure() {
 	econf $(use_enable webp libwebp)
 }
