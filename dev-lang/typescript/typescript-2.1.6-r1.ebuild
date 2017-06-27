@@ -4,7 +4,7 @@
 
 EAPI=6
 
-NODEJS_MIN_VERSION="0.8.0"
+NODEJS_MIN_VERSION="4.2.0"
 NODE_MODULE_EXTRA_FILES="bin"
 
 inherit node-module
