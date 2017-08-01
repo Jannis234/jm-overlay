@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<use>
-		<flag name="qt5">Use Qt5 instead of Qt4</flag>
-	</use>
-</pkgmetadata>
