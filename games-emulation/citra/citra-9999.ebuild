@@ -19,6 +19,7 @@ REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
 	media-libs/libpng:=
 	sys-libs/zlib
+	net-misc/curl
 	system-boost? ( >=dev-libs/boost-1.63.0:= )
 	sdl2? ( media-libs/libsdl2 )
 	qt5? (
@@ -53,6 +54,7 @@ src_configure() {
 		-DENABLE_SDL2="$(usex sdl2)"
 		-DCITRA_USE_BUNDLED_SDL2=OFF
 		-DCITRA_USE_BUNDLED_QT=OFF
+		-DUSE_SYSTEM_CURL=1
 		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
 	)
 	cmake-utils_src_configure
