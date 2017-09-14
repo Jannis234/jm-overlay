@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI="6"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="46"
+K_GENPATCHES_VER="4"
 K_SECURITY_UNSUPPORTED="1"
-REISER4_VER="4.1.7"
+REISER4_VER="4.13.0"
 
 inherit kernel-2
 detect_version
