@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -14,7 +13,7 @@ HOMEPAGE="https://github.com/tpoechtrager/osxcross"
 SRC_URI="${XCODE_URI}"
 EGIT_REPO_URI="https://github.com/tpoechtrager/osxcross.git"
 
-LICENSE="GPL-2 APSL-2.0 Xcode"
+LICENSE="GPL-2 APSL-2 Xcode"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="macports"
@@ -24,7 +23,7 @@ EGIT_COMMMIT="a9317c18a3a457ca0a657f08cc4d0d43c6cf8953"
 RESTRICT="mirror bindist"
 
 # We don't need a "libressl" USE flag because MacPorts just uses the "openssl" binary, the library isn't needed
-CDEPEND=">=sys-devel/clang-3.2
+CDEPEND=">=sys-devel/clang-3.2:*
 	app-arch/xar"
 RDEPEND="${CDEPEND}
 	macports? (
@@ -33,7 +32,7 @@ RDEPEND="${CDEPEND}
 		|| ( dev-libs/openssl:0 dev-libs/libressl )
 	)"
 DEPEND="${CDEPEND}
-	app-shells/bash
+	app-shells/bash:0
 	app-arch/p7zip
 	app-arch/xz-utils"
 

@@ -16,7 +16,7 @@ IUSE="test"
 
 DEPEND="test? ( dev-util/valgrind )
 	sys-apps/texinfo"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 src_prepare() {
 	sed -i "s/install-lib install-copyright/install-lib/g" Makefile || die # Don't install the license

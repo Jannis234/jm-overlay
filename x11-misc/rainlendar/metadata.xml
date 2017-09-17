@@ -3,6 +3,5 @@
 <pkgmetadata>
 	<use>
 		<flag name="pro">Install the paid Rainlendar Pro version</flag>
-		<flag name="linguas_sr_SR">Serbian locale</flag>
 	</use>
 </pkgmetadata>

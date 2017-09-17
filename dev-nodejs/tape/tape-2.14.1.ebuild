@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -26,7 +25,7 @@ IUSE="examples test"
 
 DOCS=( readme.markdown )
 DEPEND="${DEPEND}
-	test? ( dev-uttil/tap:0.7 )"
+	test? ( dev-util/tap:0.7 )"
 
 src_install() {
 	node-module_src_install

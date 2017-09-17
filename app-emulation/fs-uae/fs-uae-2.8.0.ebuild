@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND="media-libs/libsdl2[video]
 	media-libs/openal
-	media-libs/libpng
+	media-libs/libpng:0
 	dev-libs/glib:2
 	sys-libs/zlib
 	x11-libs/libX11

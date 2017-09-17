@@ -17,10 +17,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc python java"
 
 RDEPEND="python? ( ${PYTHON_DEPS} )
-	java? ( >=virtual/jre-1.6 )"
+	java? ( >=virtual/jre-1.6:* )"
 DEPEND="${RDEPEND}
 	doc? ( sys-apps/texinfo )
-	java? ( >=virtual/jdk-1.6 )"
+	java? ( >=virtual/jdk-1.6:* )"
 
 src_prepare() {
 	sed -i "/-O6/d" Makefile || die
