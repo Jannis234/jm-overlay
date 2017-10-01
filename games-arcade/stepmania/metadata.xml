@@ -8,5 +8,6 @@
 		<flag name="networking">Enable network-related functionality</flag>
 		<flag name="wav">Enable support for WAV audio files</flag>
 		<flag name="default-songs">Install the songs that are distributed with the game by default</flag>
+		<flag name="system-ffmpeg">Do not use the bundled version of media-video/ffmpeg</flag>
 	</use>
 </pkgmetadata>
