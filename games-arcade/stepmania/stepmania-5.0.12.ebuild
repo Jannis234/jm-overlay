@@ -12,7 +12,7 @@ SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT default-songs? ( CC-BY-NC-4.0 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc +default-songs alsa oss pulseaudio jack +ffmpeg gles2 +gtk +mp3 +ogg +jpeg networking wav parport crash-handler cpu_flags_x86_sse2"
+IUSE="doc +default-songs alsa oss pulseaudio jack +ffmpeg gles2 +gtk +mp3 +ogg +jpeg +networking wav parport crash-handler cpu_flags_x86_sse2"
 
 REQUIRED_USE="|| ( alsa oss pulseaudio jack )"
 RDEPEND="virtual/opengl
@@ -60,7 +60,7 @@ src_configure() {
 		-DWITH_JACK="$(usex jack)"
 		-DWITH_OSS="$(usex oss)"
 		-DWITH_FFMPEG="$(usex ffmpeg)"
-		-DWITH_SYSTEM_FFMPEG="$(usex ffmpeg)"
+		-DWITH_SYSTEM_FFMPEG="NO"
 		-DWITH_GLES2="$(usex gles2)"
 		-DWITH_GTK2="$(usex gtk)"
 		-DWITH_MP3="$(usex mp3)"
