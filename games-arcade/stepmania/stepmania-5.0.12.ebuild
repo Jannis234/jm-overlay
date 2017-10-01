@@ -5,14 +5,17 @@ EAPI=6
 
 inherit cmake-utils versionator eutils
 
+FFMPEG_VER="2.1.3" # From CMake/SetupFfmpeg.cmake
+
 DESCRIPTION="Advanced rhythm game, designed for both home and arcade use"
 HOMEPAGE="http://www.stepmania.com/"
-SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	ffmpeg? ( !system-ffmpeg? ( https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VER}.tar.bz2 ) )"
 
 LICENSE="MIT default-songs? ( CC-BY-NC-4.0 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc +default-songs alsa oss pulseaudio jack +ffmpeg gles2 +gtk +mp3 +ogg +jpeg networking wav parport crash-handler cpu_flags_x86_sse2"
+IUSE="doc +default-songs alsa oss pulseaudio jack +ffmpeg gles2 +gtk +mp3 +ogg +jpeg networking wav parport crash-handler -system-ffmpeg cpu_flags_x86_sse2"
 
 REQUIRED_USE="|| ( alsa oss pulseaudio jack )"
 RDEPEND="virtual/opengl
@@ -28,7 +31,7 @@ RDEPEND="virtual/opengl
 	alsa? ( media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
 	jack? ( media-sound/jack-audio-connection-kit )
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( system-ffmpeg? ( <media-video/ffmpeg-3 ) )
 	gtk? (
 		x11-libs/gtk+:2
 		dev-libs/glib:2
@@ -43,6 +46,13 @@ RDEPEND="virtual/opengl
 	)"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
+
+src_unpack() {
+	default
+	if use ffmpeg && ! use system-ffmpeg; then
+		mv "${WORKDIR}/ffmpeg-${FFMPEG_VER}" "${S}/extern/ffmpeg-linux-${FFMPEG_VER}" || die
+	fi
+}
 
 src_prepare() {
 	eapply "${FILESDIR}/stepmania-select-audio-backends.patch"
@@ -60,7 +70,7 @@ src_configure() {
 		-DWITH_JACK="$(usex jack)"
 		-DWITH_OSS="$(usex oss)"
 		-DWITH_FFMPEG="$(usex ffmpeg)"
-		-DWITH_SYSTEM_FFMPEG="$(usex ffmpeg)"
+		-DWITH_SYSTEM_FFMPEG="$(usex ffmpeg $(usex system-ffmpeg) OFF)"
 		-DWITH_GLES2="$(usex gles2)"
 		-DWITH_GTK2="$(usex gtk)"
 		-DWITH_MP3="$(usex mp3)"
