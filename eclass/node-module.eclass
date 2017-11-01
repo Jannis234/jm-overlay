@@ -3,7 +3,7 @@
 
 # @ECLASS: node-module.eclass
 # @MAINTAINER:
-# Jannis Mast <jannis@hackbraten.men>
+# Jannis Mast <jannis@ctrl-c.xyz>
 # @BLURB: eclass for installing Node.js modules
 # @DESCRIPTION:
 # This eclass allows easy installation of Node.js modules
