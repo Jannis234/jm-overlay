@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit toolchain-funcs
+inherit toolchain-funcs multilib-minimal
 
 DESCRIPTION="Keccak-family hashing library"
 HOMEPAGE="https://github.com/maandree/libkeccak"
@@ -19,11 +19,20 @@ DEPEND="test? ( dev-util/valgrind )
 RDEPEND=""
 
 src_prepare() {
-	sed -i "s/install-lib install-copyright/install-lib/g" Makefile || die # Don't install the license
+	sed -i "/LICENSE/d" Makefile || die # Don't install the license
 	eapply_user
+	multilib_copy_sources
 }
 
-src_compile() {
+multilib_src_configure() {
+	sed -i "s|(PREFIX)/lib|(PREFIX)/$(get_libdir)|g" Makefile || die
+}
+
+multilib_src_compile() {
 	tc-export CC
-	emake
+	emake CFLAGS="${CFLAGS}" LDFLAGS=""
+}
+
+multilib_src_install() {
+	emake install PREFIX="${EPREFIX}/usr" DESTDIR="${D}"
 }
