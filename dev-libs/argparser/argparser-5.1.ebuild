@@ -31,7 +31,7 @@ src_prepare() {
 
 src_compile() {
 	tc-export CC
-	emake c
+	emake c C_OPTIMISE="${CFLAGS}"
 	use doc && emake doc
 	use python && emake python
 	use java && emake java
@@ -41,7 +41,7 @@ src_install() {
 	export DESTDIR="${D}"
 	dodoc README
 
-	emake install-c
+	emake install-c LIBC="${EPREFIX}/usr/$(get_libdir)"
 	use doc && emake install-doc
 	use java && java-pkg_dojar bin/ArgParser.jar
 
