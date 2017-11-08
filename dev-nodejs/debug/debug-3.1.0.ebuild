@@ -3,7 +3,7 @@
 
 EAPI=6
 
-NODE_MODULE_EXTRA_FILES="node.js"
+NODE_MODULE_EXTRA_FILES="node.js src"
 NODE_MODULE_DEPEND="ms:2.0.0"
 
 inherit node-module
