@@ -5,7 +5,7 @@ EAPI=6
 
 NODE_MODULE_DEPEND="to-fast-properties:1.0.3
 	esutils:2.0.2
-	lodash:4.17.0
+	lodash:4.17.4
 	babel-runtime:6.26.0"
 
 inherit node-module
