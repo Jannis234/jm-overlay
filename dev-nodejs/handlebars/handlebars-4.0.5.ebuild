@@ -19,3 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DOCS=( README.markdown CONTRIBUTING.md FAQ.md release-notes.md )
+
+src_install() {
+	node-module_src_install
+	use doc && dodoc docs/*
+}
