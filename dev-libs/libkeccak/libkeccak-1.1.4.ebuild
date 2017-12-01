@@ -9,7 +9,7 @@ DESCRIPTION="Keccak-family hashing library"
 HOMEPAGE="https://github.com/maandree/libkeccak"
 SRC_URI="https://github.com/maandree/libkeccak/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="AGPL-3+"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
