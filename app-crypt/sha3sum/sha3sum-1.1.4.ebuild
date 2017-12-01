@@ -19,7 +19,8 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	sed -i "/LICENSE/d" Makefile || die # Don't install the license
-	sed -i "s/-O3/\$(CFLAGS_CUSTOM)/g" Makefile || die
+	sed -i "s/-O3/\$(CFLAGS_CUSTOM)/g" config.mk || die
+	sed -i "s/-s -lkeccak/-lkeccak/g" config.mk || die
 	eapply_user
 }
 
