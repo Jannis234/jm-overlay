@@ -6,5 +6,7 @@
 		<flag name="system-boost">Use the system-wide version of dev-libs/boost</flag>
 		<flag name="sdl2">Enable the SDL2 based interface</flag>
 		<flag name="qt5">Enable the Qt5 based interface</flag>
+		<flag name="i18n">Enable UI translations (Qt5 interface only)</flag>
+		<flag name="telemetry">Allow transmitting anonymous usage data to the citra developers</flag>
 	</use>
 </pkgmetadata>

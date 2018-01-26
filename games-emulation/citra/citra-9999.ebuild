@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/citra-emu/citra.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc sdl2 qt5 system-boost clang"
+IUSE="doc sdl2 qt5 system-boost clang telemetry i18n"
 
 REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
@@ -26,6 +26,7 @@ RDEPEND="virtual/opengl
 		dev-qt/qtgui:5
 		dev-qt/qtopengl:5
 		dev-qt/qtwidgets:5
+		i18n? ( dev-qt/linguist-tools )
 	)"
 DEPEND="${DEPEND}
 	>=dev-util/cmake-3.6
@@ -53,7 +54,9 @@ src_configure() {
 		-DENABLE_SDL2="$(usex sdl2)"
 		-DCITRA_USE_BUNDLED_SDL2=OFF
 		-DCITRA_USE_BUNDLED_QT=OFF
-		-DUSE_SYSTEM_CURL=1
+		-DCITRA_USE_BUNDLED_CURL=OFF
+		-DENABLE_QT_TRANSLATION="$(usex i18n)"
+		-DENABLE_WEB_SERVICE="$(usex telemetry)"
 		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
 	)
 	cmake-utils_src_configure
@@ -70,4 +73,10 @@ src_install() {
 	cmake-utils_src_install
 	dodoc README.md CONTRIBUTING.md
 	use doc && dodoc -r doc-build/html
+}
+
+pkg_postinst() {
+	if use i18n; then
+		elog "Translations only work with the Qt5 interface"
+	fi
 }
