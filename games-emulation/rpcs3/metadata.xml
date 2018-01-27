@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="llvm">Enable LLVM based recompilation (recommended)</flag>
+		<flag name="gdb">Enable debugging with sys-devel/gdb</flag>
+		<flag name="vulkan">Enable vulkan video output</flag>
+		<flag name="evdev">Enable evdev for input</flag>
+	</use>
+</pkgmetadata>
