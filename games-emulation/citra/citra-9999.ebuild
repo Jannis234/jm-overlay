@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,19 +7,22 @@ inherit cmake-utils git-r3 flag-o-matic
 
 DESCRIPTION="Nintendo 3DS Emulator"
 HOMEPAGE="https://citra-emu.org/"
+
 EGIT_REPO_URI="https://github.com/citra-emu/citra.git"
+# These are used by citra and externals/dynarmic which seems to break with git-r3.eclass
+EGIT_SUBMODULES=("*" "-externals/fmt" "-externals/xbyak")
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc sdl2 qt5 system-boost clang telemetry i18n"
+IUSE="doc sdl2 qt5 clang telemetry i18n"
 
 REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
 	media-libs/libpng:=
 	sys-libs/zlib
 	net-misc/curl
-	system-boost? ( >=dev-libs/boost-1.63.0:= )
+	>=dev-libs/boost-1.63.0:=
 	sdl2? ( media-libs/libsdl2 )
 	qt5? (
 		dev-qt/qtcore:5
@@ -37,9 +40,12 @@ DEPEND="${DEPEND}
 		>=sys-libs/libcxx-3.8
 	)"
 
-src_prepare() {
-	eapply "${FILESDIR}/citra-system-boost.patch"
-	cmake-utils_src_prepare
+src_unpack() {
+	git-r3_src_unpack
+
+	for i in fmt xbyak; do
+		cp -a "${S}/externals/$i" "${S}/externals/dynarmic/externals/" || die
+	done
 }
 
 src_configure() {
@@ -57,7 +63,6 @@ src_configure() {
 		-DCITRA_USE_BUNDLED_CURL=OFF
 		-DENABLE_QT_TRANSLATION="$(usex i18n)"
 		-DENABLE_WEB_SERVICE="$(usex telemetry)"
-		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
 	)
 	cmake-utils_src_configure
 }
