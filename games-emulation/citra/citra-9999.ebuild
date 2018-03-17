@@ -15,14 +15,17 @@ EGIT_SUBMODULES=("*" "-externals/fmt" "-externals/xbyak")
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc sdl2 qt5 clang telemetry i18n"
+IUSE="system-boost doc sdl2 qt5 clang telemetry i18n"
 
 REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
 	media-libs/libpng:=
 	sys-libs/zlib
 	net-misc/curl
-	>=dev-libs/boost-1.63.0:=
+	system-boost? (
+		clang? ( >=dev-libs/boost-1.63.0:= )
+		!clang? ( >=dev-libs/boost-1.66.0:= )
+	)
 	sdl2? ( media-libs/libsdl2 )
 	qt5? (
 		dev-qt/qtcore:5
@@ -56,6 +59,12 @@ src_unpack() {
 	done
 }
 
+src_prepare() {
+	eapply "${FILESDIR}/citra-system-boost.patch"
+	eapply_user
+	cmake-utils_src_prepare
+}
+
 src_configure() {
 	if use clang; then
 		export CC=clang
@@ -71,6 +80,7 @@ src_configure() {
 		-DCITRA_USE_BUNDLED_CURL=OFF
 		-DENABLE_QT_TRANSLATION="$(usex i18n)"
 		-DENABLE_WEB_SERVICE="$(usex telemetry)"
+		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
 	)
 	cmake-utils_src_configure
 }
