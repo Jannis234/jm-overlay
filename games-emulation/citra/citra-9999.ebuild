@@ -32,12 +32,12 @@ RDEPEND="virtual/opengl
 		i18n? ( dev-qt/linguist-tools )
 	)"
 DEPEND="${DEPEND}
-	>=dev-util/cmake-3.6
+	>=dev-util/cmake-3.8
 	doc? ( >=app-doc/doxygen-1.8.8[dot] )
-	!clang? ( >=sys-devel/gcc-5 )
+	!clang? ( >=sys-devel/gcc-7 )
 	clang? (
-		>=sys-devel/clang-3.8
-		>=sys-libs/libcxx-3.8
+		>=sys-devel/clang-5
+		>=sys-libs/libcxx-5
 	)"
 
 src_unpack() {
