@@ -40,6 +40,14 @@ DEPEND="${DEPEND}
 		>=sys-libs/libcxx-5
 	)"
 
+pkg_pretend() {
+	if ! use clang; then
+		if [[ $(gcc-major-version) -lt 7 ]]; then
+			die "Need GCC 7 of newer to compile citra"
+		fi
+	fi
+}
+
 src_unpack() {
 	git-r3_src_unpack
 
