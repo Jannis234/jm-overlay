@@ -1,13 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="18"
+K_GENPATCHES_VER="1"
 K_SECURITY_UNSUPPORTED="1"
-REISER4_VER="4.13.0"
+REISER4_VER="4.16.0"
 
 inherit kernel-2
 detect_version
