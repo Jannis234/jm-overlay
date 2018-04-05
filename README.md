@@ -16,5 +16,5 @@ egencache --update --repo=jm-overlay
 
 # Quality of this overlay
 Everything in this overlay should be considered experimental!
-While I try to keep the quality of the ebuilds as high as I can, Gentoo can run in many different configurations and I can't test all of the myself. If you have any problems or suggestions, feel free to report them on github.
+While I try to keep the quality of the ebuilds as high as I can, Gentoo can run in many different configurations and I can't test all of them myself. If you have any problems or suggestions, feel free to report them on github.
 
