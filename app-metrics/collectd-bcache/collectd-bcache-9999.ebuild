@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${PYTHON_DEPS}
-	app-admin/collectd[collectd_plugins_exec]"
+	app-metrics/collectd[collectd_plugins_exec]"
 
 src_install() {
 	do_install() {
