@@ -19,6 +19,7 @@ NODE_MODULE_DEPEND="aws-sign2:0.7.0
 	oauth-sign:0.8.2
 	performance-now:2.1.0
 	qs:6.5.2
+	safe-buffer:5.1.2
 	tough-cookie:2.3.4
 	tunnel-agent:0.6.0
 	uuid:3.2.1"

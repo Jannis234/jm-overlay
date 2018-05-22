@@ -3,7 +3,8 @@
 
 EAPI=6
 
-NODE_MODULE_DEPEND="lodash:4.17.10"
+NODE_MODULE_DEPEND="lodash:4.17.10
+	request:2.87.0"
 NODE_MODULE_EXTRA_FILES="configure errors.js"
 NODEJS_MIN_VERSION="0.10.0"
 
