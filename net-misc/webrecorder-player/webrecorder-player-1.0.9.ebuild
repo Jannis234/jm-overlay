@@ -51,26 +51,27 @@ src_unpack() {
 
 src_prepare() {
 	sed -i "s/\"webrecorder\"/\"webrecorder-player\"/g" main.js || die # Run the correct binary (renaming the file would break python-exec)
+	mv "${WORKDIR}/${P}" "./webrecorder" || die
 	eapply_user
-	cd "${WORKDIR}/${P}/webrecorder" || die
+	cd "webrecorder/webrecorder" || die
 	rmdir "webrecorder/config/webarchives" || die
 	rm -r test || die
 	distutils-r1_src_prepare
 }
 
 src_configure() {
-	cd "${WORKDIR}/${P}/webrecorder" || die
+	cd "webrecorder/webrecorder" || die
 	distutils-r1_src_configure
 }
 
 src_compile() {
 	mkdir node_modules || die
-	cd "${WORKDIR}/${P}/webrecorder" || die
+	cd "webrecorder/webrecorder" || die
 	distutils-r1_src_compile
 }
 
 src_install() {
-	cd "${WORKDIR}/${P}/webrecorder" || die
+	cd "webrecorder/webrecorder" || die
 	distutils-r1_src_install
 	rm "${ED}/usr/bin"/* || die
 
