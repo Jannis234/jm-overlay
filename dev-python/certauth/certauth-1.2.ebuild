@@ -9,7 +9,7 @@ inherit distutils-r1 git-r3
 DESCRIPTION="Simple CertificateAuthority and host certificate creation"
 HOMEPAGE="https://github.com/ikreymer/certauth https://pypi.org/project/certauth/"
 EGIT_REPO_URI="https://github.com/ikreymer/certauth.git"
-EGIT_COMMIT="44db4a557e7bed0bf006c9a59b3c53d8a20fb670"
+EGIT_COMMIT="63fc0e8981e90aa8b99665c5849108f5d7ce7277"
 
 LICENSE="MIT"
 SLOT="0"
