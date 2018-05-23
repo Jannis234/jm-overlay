@@ -37,6 +37,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i -e "s/jinja2<2.9/jinja2/g" \
+		-e "s/gevent==1.2.2/gevent>=1.2.2/g" \
+		-e "s/webassets==0.12.1/webassets>=0.12.1/g" requirements.txt || die
 	rm -r tests || die # Build system wants to install tests
 }
 
