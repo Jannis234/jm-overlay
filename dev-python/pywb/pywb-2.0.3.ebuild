@@ -4,11 +4,12 @@
 EAPI=6
 
 PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
-inherit distutils-r1
+inherit distutils-r1 git-r3
 
 DESCRIPTION="Core Python Web Archiving Toolkit for replay and recording of web archives"
 HOMEPAGE="https://github.com/webrecorder/pywb"
-SRC_URI="https://github.com/webrecorder/pywb/archive/${PV}.tar.gz -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/webrecorder/pywb.git"
+EGIT_COMMIT="98cdf366266262733ca4fbc3895b547ad0418940"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -41,7 +42,7 @@ src_prepare() {
 
 python_compile_all() {
 	if use doc; then
-		cd doc || die
+		cd docs || die
 		emake html
 	fi
 }
@@ -50,5 +51,5 @@ python_install_all() {
 	distutils-r1_python_install_all
 
 	dodoc README.rst CHANGES.rst
-	use doc && dodoc -r doc/_build/html
+	use doc && dodoc -r docs/_build/html
 }
