@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: node-module.eclass
@@ -22,7 +22,7 @@ case ${EAPI:-0} in
 		inherit multilib
 		EXPORT_FUNCTIONS src_prepare
 		;;
-	6)
+	6|7)
 		;;
 	*)
 		die "EAPI=${EAPI} is not supported by node-module.eclass"
@@ -110,8 +110,8 @@ install_node_module_depend() {
 	local version="${1#*:}"
 	local name="${1%:*}"
 	einfo "Installing symlink to dependency ${name}:${version}"
-	[ -e "${EROOT}usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
-	dosym "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
+	[ -e "${EROOT%/}/usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
+	dosym "${EROOT%/}/usr/$(get_libdir)/node/${name}/${version}" "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/node_modules/${name}"
 }
 
 # @FUNCTION: install_node_module_build_depend
@@ -125,9 +125,9 @@ install_node_module_build_depend() {
 	local version="${1#*:}"
 	local name="${1%:*}"
 	einfo "Creating symlink to dependency ${name}:${version}"
-	[ -e "${EROOT}usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
+	[ -e "${EROOT%/}/usr/$(get_libdir)/node/${name}/${version}" ] || die "Node.js module ${name}:${version} not found"
 	mkdir -p "node_modules" || die
-	ln -s "${EROOT}usr/$(get_libdir)/node/${name}/${version}" "node_modules/${name}" || die
+	ln -s "${EROOT%/}/usr/$(get_libdir)/node/${name}/${version}" "node_modules/${name}" || die
 }
 
 # @FUNCTION: install_node_module_binary
@@ -139,7 +139,7 @@ install_node_module_binary() {
 	einfo "Installing symlink to executable $1"
 	[ -e "${S}/$1" ] || die "Executable $1 not found"
 	fperms +x "/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1"
-	dosym "${EROOT}usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
+	dosym "${EROOT%/}/usr/$(get_libdir)/node/${NODE_MODULE_NAME}/${SLOT}/$1" "$2"
 }
 
 if [ -z ${NODE_MODULE_HAS_TEST} ]; then
