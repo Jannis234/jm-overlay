@@ -27,6 +27,7 @@ RDEPEND="virtual/opengl
 	qt5? (
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
+		dev-qt/qtmultimedia:5
 		dev-qt/qtopengl:5
 		dev-qt/qtwidgets:5
 		i18n? ( dev-qt/linguist-tools )
