@@ -22,14 +22,12 @@ RDEPEND="virtual/opengl
 	media-libs/libpng:=
 	sys-libs/zlib
 	net-misc/curl
-	system-boost? (
-		clang? ( >=dev-libs/boost-1.63.0:= )
-		!clang? ( >=dev-libs/boost-1.66.0:= )
-	)
+	system-boost? ( >=dev-libs/boost-1.66.0:= )
 	sdl2? ( media-libs/libsdl2 )
 	qt5? (
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
+		dev-qt/qtmultimedia:5
 		dev-qt/qtopengl:5
 		dev-qt/qtwidgets:5
 		i18n? ( dev-qt/linguist-tools )
