@@ -1,0 +1,32 @@
+diff -ru cpu_features-0.2.0_orig/CMakeLists.txt cpu_features-0.2.0/CMakeLists.txt
+--- cpu_features-0.2.0_orig/CMakeLists.txt	2018-09-07 15:54:51.000000000 +0200
++++ cpu_features-0.2.0/CMakeLists.txt	2018-09-07 18:48:35.595942086 +0200
+@@ -16,6 +16,8 @@
+ # it prominent in the GUI.
+ option(BUILD_SHARED_LIBS "Build library as shared." OFF)
+ 
++option(BUILD_PROGRAM "Build list_cpu_features" OFF)
++
+ #
+ # library : cpu_features
+ #
+@@ -133,13 +135,18 @@
+ #
+ 
+ include(GNUInstallDirs)
+-install(TARGETS cpu_features list_cpu_features
++install(TARGETS cpu_features
+   EXPORT CpuFeaturesTargets
+   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpu_features
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
++if(BUILD_PROGRAM)
++	install(TARGETS list_cpu_features
++		RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}	
++	)
++endif()
+ install(EXPORT CpuFeaturesTargets
+   NAMESPACE CpuFeatures::
+   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/CpuFeatures
