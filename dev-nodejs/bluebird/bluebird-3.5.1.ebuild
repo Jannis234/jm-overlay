@@ -9,7 +9,7 @@ inherit node-module
 
 DESCRIPTION="Full featured Promises/A+ implementation with exceptionally good performance"
 
-eICENSE="MIT"
+LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
 
 DOCS=( README.md changelog.md )

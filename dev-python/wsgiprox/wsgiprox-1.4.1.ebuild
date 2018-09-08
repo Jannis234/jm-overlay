@@ -6,7 +6,7 @@ EAPI=6
 PYTHON_COMPAT=( python2_7 python3_{4,5,6} pypy pypy3 )
 inherit distutils-r1 git-r3
 
-DESCRIPTION=""
+DESCRIPTION="Python WSGI Middleware for adding HTTP/S proxy support to any WSGI Application"
 HOMEPAGE="https://github.com/webrecorder/wsgiprox https://pypi.org/project/wsgiprox"
 EGIT_REPO_URI="https://github.com/webrecorder/wsgiprox.git"
 EGIT_COMMIT="c44c92ff1af6fd51a162a6e387b599b2a597235b"

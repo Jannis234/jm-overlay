@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 DESCRIPTION="Side-scrolling skateboarding video game"
 HOMEPAGE="http://www.roll7.co.uk/#!olliolli/c1ic0"
@@ -29,9 +29,9 @@ RDEPEND="!bundled-libs? (
 
 RESTRICT="mirror bindist splitdebug"
 
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/linux32
-	${GAMES_PREFIX_OPT#/}/${PN}/libopenal.so.1
-	${GAMES_PREFIX_OPT#/}/${PN}/libphysfs.so.1"
+QA_PREBUILT="${EROOT}/opt/${PN}/linux32
+	${EROOT}/opt/${PN}/libopenal.so.1
+	${EROOT}/opt/${PN}/libphysfs.so.1"
 
 S="${WORKDIR}/linux32"
 
@@ -53,10 +53,11 @@ src_prepare() {
 	# Bundled libraries that are not used by the game
 	rm libpng12.so.0 libSDL2-2.0.so.0 libSDL2_image-2.0.so.0 || die
 	rm run.sh || die
+	eapply_user
 }
 
 src_install() {
-	local dir=${GAMES_PREFIX_OPT}/${PN}
+	local dir=${EROOT}/opt/${PN}
 
 	insinto ${dir}
 	doins ./*
@@ -64,8 +65,6 @@ src_install() {
 
 	newicon "${WORKDIR}"/${PN}.png ${PN}.png
 
-	games_make_wrapper ${PN} ${dir}/linux32 ${dir} ${dir}
+	make_wrapper ${PN} ${dir}/linux32 ${dir} ${dir}
 	make_desktop_entry ${PN} "OlliOlli" "/usr/share/pixmaps/${PN}.png"
-
-	prepgamesdirs
 }

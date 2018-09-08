@@ -14,11 +14,11 @@ detect_version
 detect_arch
 
 KEYWORDS="~amd64 ~x86"
-HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches http://sourceforge.net/projects/reiser4/"
+HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches https://sourceforge.net/projects/reiser4/"
 IUSE="experimental"
 
 DESCRIPTION="Full sources including the Gentoo and Reiser4 patchsets for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
-REISER4_URI="http://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-${REISER4_VER}.patch.gz"
+REISER4_URI="https://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-${REISER4_VER}.patch.gz"
 GENPATCHES_URI="https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.base.tar.xz
 	https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.extras.tar.xz
 	https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.experimental.tar.xz"

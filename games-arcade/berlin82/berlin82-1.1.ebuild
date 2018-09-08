@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 DESCRIPTION="Infinite police chase arcade game"
 HOMEPAGE="https://spalt_er.itch.io/berlin82"
@@ -25,12 +25,12 @@ RDEPEND="virtual/opengl
 
 RESTRICT="fetch mirror bindist splitdebug"
 
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/berlin82.x86
-	${GAMES_PREFIX_OPT#/}/${PN}/berlin82.x86_64
-	${GAMES_PREFIX_OPT#/}/${PN}/berlin82_Data/Plugins/x86/ScreenSelector.so
-	${GAMES_PREFIX_OPT#/}/${PN}/berlin82_Data/Plugins/x86_64/ScreenSelector.so
-	${GAMES_PREFIX_OPT#/}/${PN}/berlin82_Data/Mono/x86/libmono.so
-	${GAMES_PREFIX_OPT#/}/${PN}/berlin82_Data/Mono/x86_64/libmono.so"
+QA_PREBUILT="${EROOT}/opt/${PN}/berlin82.x86
+	${EROOT}/opt/${PN}/berlin82.x86_64
+	${EROOT}/opt/${PN}/berlin82_Data/Plugins/x86/ScreenSelector.so
+	${EROOT}/opt/${PN}/berlin82_Data/Plugins/x86_64/ScreenSelector.so
+	${EROOT}/opt/${PN}/berlin82_Data/Mono/x86/libmono.so
+	${EROOT}/opt/${PN}/berlin82_Data/Mono/x86_64/libmono.so"
 
 S="${WORKDIR}/${PN}-linux"
 
@@ -43,18 +43,17 @@ pkg_nofetch() {
 src_prepare() {
 	use x86 || rm -r ./berlin82.x86 ./berlin82_Data/Plugins/x86 ./berlin82_Data/Mono/x86
 	use amd64 || rm -r ./berlin82.x86_64 ./berlin82_Data/Plugins/x86_64 ./berlin82_Data/Mono/x86_64
+	eapply_user
 }
 
 src_install() {
-	local dir=${GAMES_PREFIX_OPT}/${PN}
+	local dir=${EROOT}/opt/${PN}
 	local exec=$(usex amd64 berlin82.x86_64 berlin82.x86)
 
 	insinto ${dir}
 	doins -r ./*
 	chmod +x "${D}"/${dir}/${exec} || die
 
-	games_make_wrapper ${PN} ${dir}/${exec} ${dir} ${dir}
+	make_wrapper ${PN} ${dir}/${exec} ${dir} ${dir}
 	make_desktop_entry ${PN} "Berlin'82" "${GAMES_PREFIX_OPT}/${PN}/berlin82_Data/Resources/UnityPlayer.png"
-
-	prepgamesdirs
 }

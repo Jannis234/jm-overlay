@@ -31,7 +31,6 @@ RDEPEND="virtual/opengl
 		dev-qt/qtmultimedia:5
 		dev-qt/qtopengl:5
 		dev-qt/qtwidgets:5
-		i18n? ( dev-qt/linguist-tools )
 	)"
 DEPEND="${DEPEND}
 	>=dev-util/cmake-3.8
@@ -40,7 +39,8 @@ DEPEND="${DEPEND}
 	clang? (
 		>=sys-devel/clang-5
 		>=sys-libs/libcxx-5
-	)"
+	)
+	qt5? ( i18n? ( dev-qt/linguist-tools:5 ) )"
 
 pkg_pretend() {
 	if ! use clang; then

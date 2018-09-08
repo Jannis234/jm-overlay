@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 MyPV="${PV:4:4}${PV:0:4}"
 
@@ -18,8 +18,7 @@ KEYWORDS="-* ~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="
-	x86? (
+RDEPEND="x86? (
 		virtual/opengl
 		x11-libs/libX11
 		x11-libs/libXext
@@ -30,13 +29,12 @@ RDEPEND="
 		x11-libs/libX11[abi_x86_32(-)]
 		x11-libs/libXext[abi_x86_32(-)]
 		x11-libs/libXcursor[abi_x86_32(-)]
-	)
-"
+	)"
 
 RESTRICT="strip mirror bindist splitdebug"
 S="${WORKDIR}/${PN}"
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/GirlsLikeRobots
-	${GAMES_PREFIX_OPT#/}/${PN}/GirlsLikeRobots_Data/Mono/*/libmono.so"
+QA_PREBUILT="${EROOT}/opt/${PN}/GirlsLikeRobots
+	${EROOT}/opt/${PN}/GirlsLikeRobots_Data/Mono/*/libmono.so"
 
 pkg_nofetch() {
 	einfo "Please buy and download ${PN}-${MyPV}.tgz from"
@@ -50,7 +48,7 @@ src_unpack() {
 }
 
 src_install() {
-	local dir="${GAMES_PREFIX_OPT}/${PN}"
+	local dir="${EROOT}/opt/${PN}"
 
 	insinto ${dir}
 	doins -r *
@@ -58,8 +56,6 @@ src_install() {
 	newicon "${WORKDIR}/${PN}.png" ${PN}.png
 
 	chmod +x "${D}/${dir}/GirlsLikeRobots" || die
-	games_make_wrapper ${PN} ${dir}/GirlsLikeRobots ${dir} ${dir}
+	make_wrapper ${PN} ${dir}/GirlsLikeRobots ${dir} ${dir}
 	make_desktop_entry ${PN} "Girls Like Robots" "/usr/share/pixmaps/${PN}.png"
-
-	prepgamesdirs
 }

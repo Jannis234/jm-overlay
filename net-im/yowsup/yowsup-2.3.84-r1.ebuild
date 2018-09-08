@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,14 +17,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+encryption"
 
-RDEPEND=">=dev-python/axolotl-0.1.7[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/python-axolotl-0.1.7[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/configargparse[${PYTHON_USEDEP}]
 	encryption? (
-		dev-libs/protobuf[${PYTHON_USEDEP}]
+		dev-python/protobuf-python[${PYTHON_USEDEP}]
 		dev-python/pycrypto[${PYTHON_USEDEP}]
-		dev-python/axolotl-curve25519[${PYTHON_USEDEP}]
+		dev-python/python-axolotl-curve25519[${PYTHON_USEDEP}]
 	)"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"

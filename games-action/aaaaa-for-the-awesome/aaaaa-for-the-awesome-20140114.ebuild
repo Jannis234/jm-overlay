@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 DESCRIPTION="A Reckless Disregard for Gravity"
 HOMEPAGE="http://www.dejobaan.com/awesome/"
@@ -32,9 +32,9 @@ RDEPEND="virtual/opengl
 
 RESTRICT="fetch mirror bindist splitdebug"
 S="${WORKDIR}"
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/Awesome/Awesome.*
-	${GAMES_PREFIX_OPT#/}/Awesome/Awesome_Data/Mono/*/libmono.so
-	${GAMES_PREFIX_OPT#/}/Awesome/Awesome_Data/Plugins/*/*.so"
+QA_PREBUILT="${EROOT}/opt/Awesome/Awesome.*
+	${EROOT}/opt/Awesome/Awesome_Data/Mono/*/libmono.so
+	${EROOT}/opt/Awesome/Awesome_Data/Plugins/*/*.so"
 
 pkg_nofetch() {
 	einfo "Please buy and download ${SRC_URI} from"
@@ -43,7 +43,7 @@ pkg_nofetch() {
 }
 
 src_install() {
-	local dir="${GAMES_PREFIX_OPT}/Awesome"
+	local dir="${EROOT}/opt/Awesome"
 
 	insinto ${dir}
 	doins -r *
@@ -51,8 +51,6 @@ src_install() {
 	use x86 && filename="Awesome.x86"
 	use amd64 && filename="Awesome.x86_64"
 	chmod +x "${D}/${dir}/${filename}" || die
-	games_make_wrapper awesome ${dir}/${filename} ${dir} ${dir}
+	make_wrapper awesome "${dir}/${filename}" "${dir}" "${dir}"
 	make_desktop_entry awesome "Aaaaa for the Awesome" "${dir}/Awesome_Data/Resources/UnityPlayer.png"
-
-	prepgamesdirs
 }

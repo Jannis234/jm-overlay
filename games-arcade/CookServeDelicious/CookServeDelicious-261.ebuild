@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 DESCRIPTION="The most intense cooking game ever made"
 HOMEPAGE="http://www.vertigogaming.net/CSD/"
@@ -34,7 +34,7 @@ RDEPEND="x86? (
 
 RESTRICT="fetch strip mirror bindist"
 S="${WORKDIR}/CSDSteamBuild"
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/runner"
+QA_PREBUILT="${EROOT}/opt/${PN}/runner"
 
 pkg_nofetch() {
 	einfo "Please buy and download CSDLinux_${PV}.zip from"
@@ -43,14 +43,12 @@ pkg_nofetch() {
 }
 
 src_install() {
-	local dir="${GAMES_PREFIX_OPT}/${PN}"
+	local dir="${EROOT}/opt/${PN}"
 
 	insinto ${dir}
 	doins -r *
 	chmod +x "${D}/${dir}/runner" || die
 
-	games_make_wrapper ${PN} ${dir}/runner ${dir} ${dir}
+	make_wrapper ${PN} ${dir}/runner ${dir} ${dir}
 	make_desktop_entry ${PN} "Cook, Serve, Delicious!" "${dir}/assets/icon.png"
-
-	prepgamesdirs
 }

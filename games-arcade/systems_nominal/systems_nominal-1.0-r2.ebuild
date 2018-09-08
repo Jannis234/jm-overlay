@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit games
+inherit eutils desktop
 
 DESCRIPTION="Keyboard action game"
 HOMEPAGE="http://www.nerdcubed.co.uk/games/"
@@ -44,9 +44,9 @@ RDEPEND="
 
 RESTRICT="mirror bindist splitdebug"
 
-QA_PREBUILT="${GAMES_PREFIX_OPT#/}/${PN}/systemsnominal
-	${GAMES_PREFIX_OPT#/}/${PN}/libffmpegsumo.so"
-QA_PRESTRIPPED="${GAMES_PREFIX_OPT#/}/${PN}/systemsnominal"
+QA_PREBUILT="${EROOT}/opt/${PN}/systemsnominal
+	${EROOT}/opt/${PN}/libffmpegsumo.so"
+QA_PRESTRIPPED="${EROOT}/opt/${PN}/systemsnominal"
 
 S="${WORKDIR}"
 
@@ -56,12 +56,13 @@ src_unpack() {
 }
 
 src_prepare() {
+	eapply_user
 	use x86 || rm -rf ./linux32
 	use amd64 || rm -rf ./linux64
 }
 
 src_install() {
-	local dir=${GAMES_PREFIX_OPT}/${PN}
+	local dir="${EROOT}/opt/${PN}"
 
 	insinto ${dir}
 	use x86 && doins ./linux32/*
@@ -70,8 +71,6 @@ src_install() {
 
 	newicon ${PN}.ico ${PN}.ico # Game's website doens't have any icons for this game, so we'll use the website's icon
 
-	games_make_wrapper ${PN} ${dir}/systemsnominal ${dir} ${dir}
+	make_wrapper ${PN} ${dir}/systemsnominal ${dir} ${dir}
 	make_desktop_entry ${PN} "Systems Nominal" "/usr/share/pixmaps/${PN}.ico"
-
-	prepgamesdirs
 }
