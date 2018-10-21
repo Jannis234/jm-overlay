@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-multilib eutils
 
@@ -21,5 +21,6 @@ DOCS="README.md"
 
 src_prepare() {
 	sed -i "s/DESTINATION lib/DESTINATION \$\{CMAKE_INSTALL_LIBDIR\}/" CMakeLists.txt || die
-	epatch_user
+	eapply_user
+	cmake-utils_src_prepare
 }
