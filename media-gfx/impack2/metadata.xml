@@ -3,6 +3,7 @@
 <pkgmetadata>
 	<use>
 		<flag name="bmp">Add support for BMP images</flag>
+		<flag name="brotli">Enable brotli compression support</flag>
 		<flag name="zstd">Enable zstd compression support</flag>
 	</use>
 </pkgmetadata>
