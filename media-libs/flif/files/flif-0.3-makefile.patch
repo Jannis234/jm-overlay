@@ -1,0 +1,68 @@
+diff -ru FLIF-0.3_orig/src/Makefile FLIF-0.3/src/Makefile
+--- FLIF-0.3_orig/src/Makefile	2017-04-28 17:46:54.000000000 +0200
++++ FLIF-0.3/src/Makefile	2019-03-15 02:10:19.750365858 +0100
+@@ -36,21 +36,21 @@
+ 
+ # Command-line FLIF encoding/decoding tool - LGPLv3
+ flif: $(FILES_H) $(FILES_CPP) flif.cpp
+-	$(CXX) -std=gnu++11 $(CXXFLAGS) $(OPTIMIZATIONS) -g0 -Wall $(FILES_CPP) flif.cpp $(LDFLAGS) -o flif
++	$(CXX) -std=gnu++11 $(CXXFLAGS) $(OPTIMIZATIONS) -Wall $(FILES_CPP) flif.cpp $(LDFLAGS) -o flif
+ 
+ # Command-line FLIF decoding tool - Apache2 (not built by default)
+ dflif: $(FILES_H) $(FILES_CPP) flif.cpp
+-	$(CXX) -std=gnu++11 $(CXXFLAGS) $(OPTIMIZATIONS) -DDECODER_ONLY -g0 -Wall $(FILES_CPP) flif.cpp $(LDFLAGS) -o dflif
++	$(CXX) -std=gnu++11 $(CXXFLAGS) $(OPTIMIZATIONS) -DDECODER_ONLY -Wall $(FILES_CPP) flif.cpp $(LDFLAGS) -o dflif
+ 
+ # Decoder-only library - Apache2 (not built by default)
+ libflif_dec$(LIBEXT): $(FILES_H) $(FILES_CPP) library/flif_dec.h library/flif-interface-private_dec.hpp library/flif-interface_dec.cpp
+ 	echo $(OS)
+-	$(CXX) -std=gnu++11 $(CXXFLAGS) $(LIB_OPTIMIZATIONS) -DDECODER_ONLY -g0 -Wall -shared -fPIC $(FILES_CPP) library/flif-interface_dec.cpp $(LDFLAGS) -Wl,$(SONAME),libflif_dec$(LIBEXTV) -o libflif_dec$(LIBEXTV)
++	$(CXX) -std=gnu++11 $(CXXFLAGS) $(LIB_OPTIMIZATIONS) -DDECODER_ONLY -Wall -shared -fPIC $(FILES_CPP) library/flif-interface_dec.cpp $(LDFLAGS) -Wl,$(SONAME),libflif_dec$(LIBEXTV) -o libflif_dec$(LIBEXTV)
+ 	ln -sf libflif_dec$(LIBEXTV) libflif_dec$(LIBEXT)
+ 
+ # Decoder + encoder library - LGPL
+ libflif$(LIBEXT): $(FILES_H) $(FILES_CPP) library/*.h library/*.hpp library/*.cpp
+-	$(CXX) -std=gnu++11 $(CXXFLAGS) $(LIB_OPTIMIZATIONS) -g0 -Wall -shared -fPIC $(FILES_CPP) library/flif-interface.cpp $(LDFLAGS) -Wl,$(SONAME),libflif$(LIBEXTV) -o libflif$(LIBEXTV)
++	$(CXX) -std=gnu++11 $(CXXFLAGS) $(LIB_OPTIMIZATIONS) -Wall -shared -fPIC $(FILES_CPP) library/flif-interface.cpp $(LDFLAGS) -Wl,$(SONAME),libflif$(LIBEXTV) -o libflif$(LIBEXTV)
+ 	ln -sf libflif$(LIBEXTV) libflif$(LIBEXT)
+ 
+ libflif.dbg$(LIBEXT): $(FILES_H) $(FILES_CPP) library/*.h library/*.hpp library/*.cpp
+@@ -59,23 +59,19 @@
+ 
+ # Example application: simple FLIF viewer - public domain
+ viewflif: libflif$(LIBEXT) viewflif.c
+-	$(CC) -std=gnu11 -O3 -ggdb3 $(shell sdl2-config --cflags) -Wall -Ilibrary/ viewflif.c -L. -lflif $(shell sdl2-config --libs) -o viewflif
++	$(CC) -std=gnu11 $(OPTIMIZATIONS) $(shell sdl2-config --cflags) -Wall -Ilibrary/ viewflif.c -L. -lflif $(shell sdl2-config --libs) -o viewflif
+ 
+ 
+ install: flif libflif$(LIBEXT)
+-	install -d $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/share/man/man1
++	install -d $(PREFIX)/bin $(PREFIX)/$(LIBDIR) $(PREFIX)/share/man/man1
+ 	install -m 755 flif $(PREFIX)/bin
+-	strip -x $(PREFIX)/bin/flif
+-	install -m 755 libflif$(LIBEXT) libflif$(LIBEXTV) $(PREFIX)/lib
+-	strip -x $(PREFIX)/lib/libflif$(LIBEXT) \
+-	  $(PREFIX)/lib/libflif$(LIBEXTV)
++	install -m 755 libflif$(LIBEXT) libflif$(LIBEXTV) $(PREFIX)/$(LIBDIR)
+ 	install -m 644 ../doc/flif.1 $(PREFIX)/share/man/man1
+ 	install -m 755 ../tools/gif2flif $(PREFIX)/bin
+ 	install -m 755 ../tools/apng2flif $(PREFIX)/bin
+ 
+ install-viewflif:
+ 	install -m 755 viewflif $(PREFIX)/bin
+-	strip -x $(PREFIX)/bin/viewflif
+ 
+ install-dev:
+ 	install -d $(PREFIX)/include
+@@ -83,10 +79,7 @@
+ 
+ install-decoder: decoder
+ 	install -m 755 dflif $(PREFIX)/bin
+-	strip -x $(PREFIX)/bin/dflif
+-	install -m 755 libflif_dec$(LIBEXT) libflif_dec$(LIBEXTV) $(PREFIX)/lib
+-	strip -x $(PREFIX)/lib/libflif_dec$(LIBEXT) \
+-	  $(PREFIX)/lib/libflif_dec$(LIBEXTV)
++	install -m 755 libflif_dec$(LIBEXT) libflif_dec$(LIBEXTV) $(PREFIX)/$(LIBDIR)
+ 
+ magic:
+ 	if ! grep -q FLIF /etc/magic; then cat ../doc/flif.magic >> /etc/magic; fi
