@@ -52,6 +52,7 @@ multilib_src_install() {
 	emake SHARED=1 DIR_INSTALL="${ED}/usr" LIBDIR="$(get_libdir)" install
 	use static-libs && emake DIR_INSTALL="${ED}/usr" LIBDIR="$(get_libdir)" install
 	multilib_is_native_abi && dobin build/JxrDecApp build/JxrEncApp
+	sed -i "s|${ED}/usr|${ERROT}/usr|g" "${ED}/usr/$(get_libdir)/pkgconfig/libjxr.pc" || die
 }
 
 multilib_src_install_all() {
