@@ -15,11 +15,13 @@ SRC_URI="https://github.com/Jannis234/ImPack2/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="X doc crypt bmp jpeg2k +png tiff webp brotli bzip2 lzma zlib zstd"
+IUSE="X doc crypt bmp flif jpeg2k jxr +png tiff webp brotli bzip2 lzma zlib zstd"
 
 DEPEND="crypt? ( dev-libs/nettle:= )
 	bmp? ( media-libs/libnsbmp:= )
+	flif? ( media-libs/flif:= )
 	jpeg2k? ( media-libs/openjpeg:2= )
+	jxr? ( media-libs/jxrlib )
 	png? ( media-libs/libpng:= )
 	tiff? ( media-libs/tiff:0= )
 	webp? ( media-libs/libwebp:= )
@@ -33,13 +35,15 @@ RDEPEND="${DEPEND}
 	!media-gfx/impack"
 BDEPEND="sys-apps/help2man"
 
-REQUIRED_USE="|| ( bmp jpeg2k png tiff webp )"
+REQUIRED_USE="|| ( bmp flif jpeg2k jxr png tiff webp )"
 S="${WORKDIR}/${MyP}"
 
 impack_make() {
 	tc-export CC AR RANLIB PKG_CONFIG
 	emake CCFLAGS="${CFLAGS}" \
 		WITH_NETTLE=$(usex crypt 1 0) \
+		WITH_FLIF=$(usex flif 1 0) \
+		WITH_JXRLIB=$(usex jxr 1 0) \
 		WITH_LIBNSBMP=$(usex bmp 1 0) \
 		WITH_LIBPNG=$(usex png 1 0) \
 		WITH_LIBTIFF=$(usex tiff 1 0) \

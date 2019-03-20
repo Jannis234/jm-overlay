@@ -4,6 +4,8 @@
 	<use>
 		<flag name="bmp">Add support for BMP images</flag>
 		<flag name="brotli">Enable brotli compression support</flag>
+		<flag name="flif">Enable support for FLIF image</flag>
+		<flag name="jxr">Enable support for JPEG XR images</flag>
 		<flag name="zstd">Enable zstd compression support</flag>
 	</use>
 </pkgmetadata>

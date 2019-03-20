@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 	!media-gfx/impack"
 BDEPEND="sys-apps/help2man"
 
-REQUIRED_USE="|| ( png tiff webp bmp )"
+REQUIRED_USE="|| ( bmp jpeg2k png tiff webp )"
 S="${WORKDIR}/${MyP}"
 
 impack_make() {
