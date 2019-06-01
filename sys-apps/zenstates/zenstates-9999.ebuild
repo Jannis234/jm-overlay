@@ -27,6 +27,7 @@ src_install() {
 		use togglecode && python_newscript togglecode.py togglecode
 	}
 	python_foreach_impl do_install
+	newinitd "${FILESDIR}"/disable-c6 disable-c6
 	systemd_dounit "${FILESDIR}"/disable-c6.service
 	dodoc README.md
 }
