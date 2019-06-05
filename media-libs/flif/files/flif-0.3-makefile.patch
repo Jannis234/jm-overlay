@@ -1,6 +1,15 @@
 diff -ru FLIF-0.3_orig/src/Makefile FLIF-0.3/src/Makefile
 --- FLIF-0.3_orig/src/Makefile	2017-04-28 17:46:54.000000000 +0200
-+++ FLIF-0.3/src/Makefile	2019-03-15 02:10:19.750365858 +0100
++++ FLIF-0.3/src/Makefile	2019-06-06 01:15:00.224506378 +0200
+@@ -1,6 +1,6 @@
+ PREFIX := $(DESTDIR)/usr/local
+-CXXFLAGS := $(shell pkg-config --cflags zlib libpng) -DLODEPNG_NO_COMPILE_PNG -DLODEPNG_NO_COMPILE_DISK
+-LDFLAGS := $(shell pkg-config --libs libpng)
++CXXFLAGS := $(shell $(PKG_CONFIG) --cflags zlib libpng) -DLODEPNG_NO_COMPILE_PNG -DLODEPNG_NO_COMPILE_DISK
++LDFLAGS := $(shell $(PKG_CONFIG) --libs libpng)
+ 
+ OSNAME := $(shell uname -s)
+ SONAME = -soname
 @@ -36,21 +36,21 @@
  
  # Command-line FLIF encoding/decoding tool - LGPLv3

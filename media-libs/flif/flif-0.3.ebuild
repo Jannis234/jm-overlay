@@ -34,7 +34,7 @@ src_prepare() {
 
 multilib_src_compile() {
 	cd src || die
-	tc-export CC CXX
+	tc-export CC CXX PKG_CONFIG
 	emake all decoder OPTIMIZATIONS="${CXXFLAGS}" LIB_OPTIMIZATIONS="${CXXFLAGS}"
 	if use sdl && multilib_is_native_abi; then
 		emake viewflif
