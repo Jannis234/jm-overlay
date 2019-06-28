@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IMPACK_LINGUAS=( de )
 IUSE="aot doc ${IMPACK_LINGUAS[@]/#/l10n_}"
 
+# Needs gtk-sharp:3 from "dotnet" overlay (layman -a dotnet)
 RDEPEND=">=dev-lang/mono-3
 	dev-dotnet/gtk-sharp:3"
 DEPEND="${RDEPEND}"
