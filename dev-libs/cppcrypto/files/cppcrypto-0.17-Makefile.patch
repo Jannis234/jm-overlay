@@ -1,0 +1,50 @@
+diff -ru cppcrypto_orig/Makefile cppcrypto/Makefile
+--- cppcrypto_orig/Makefile	2017-08-28 11:55:34.000000000 +0200
++++ cppcrypto/Makefile	2019-10-25 09:02:02.143402727 +0200
+@@ -23,7 +23,7 @@
+ SOSUFFIX = .dylib
+ SOVERSION=$(VERSION)$(SOSUFFIX)
+ SODIR=$(LIBDIR)
+-LDFLAGS=-lc++ -dynamiclib -install-name=$(LIBDIR)/libcppcrypto$(SOVERSION)
++LDFLAGS=$(USER_LDFLAGS) -lc++ -dynamiclib -install-name=$(LIBDIR)/libcppcrypto$(SOVERSION)
+ endif
+ 
+ ifeq ($(UNAME),Linux)
+@@ -42,7 +42,7 @@
+ OBJ64FORMAT  := elf64
+ INLINE_AS := 1
+ SODIR=$(LIBDIR)
+-LDFLAGS=-Wl,-z,now -Wl,-z,relro -Wl,-soname,libcppcrypto$(SOVERSION)
++LDFLAGS=$(USER_LDFLAGS) -Wl,-z,now -Wl,-z,relro -Wl,-soname,libcppcrypto$(SOVERSION)
+ CC=gcc
+ CXX=g++
+ endif
+@@ -53,7 +53,7 @@
+ OBJ32FORMAT  := elf32
+ OBJ64FORMAT  := elf64
+ SODIR=$(LIBDIR)
+-LDFLAGS=-lc++
++LDFLAGS=$(USER_LDFLAGS) -lc++
+ CC=clang
+ CXX=clang++
+ endif
+@@ -92,7 +92,7 @@
+ CXX=g++
+ LIBPREFIX = cyg
+ YASM64FLAGS = -DWINABI -DWIN_ABI -DWIN64
+-LDFLAGS=-Wl,--out-implib=libcppcrypto.dll.a -Wl,--export-all-symbols -Wl,--enable-auto-import 
++LDFLAGS=$(USER_LDFLAGS) -Wl,--out-implib=libcppcrypto.dll.a -Wl,--export-all-symbols -Wl,--enable-auto-import 
+ endif
+ 
+ ifndef OBJ64FORMAT
+@@ -103,8 +103,8 @@
+ MAKE_DIR     ?= install -d
+ INSTALL_DATA ?= install
+ 
+-CFLAGS=-O2 -Wall -g -fstack-protector -DNDEBUG -msse2
+-CXXFLAGS=-O2 -Wall -g -fstack-protector -fpermissive -std=gnu++11 -DNDEBUG -msse2
++CFLAGS=$(USER_CFLAGS) -Wall -DNDEBUG
++CXXFLAGS=$(USER_CXXFLAGS) -Wall -fpermissive -std=gnu++11 -DNDEBUG
+ 
+ ifeq ($(shell getconf LONG_BIT), 64)
+ PLATFORM64BIT=1
