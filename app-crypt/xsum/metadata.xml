@@ -4,6 +4,9 @@
 	<use>
 		<flag name="blake2">Enable BLAKE2 hashes using app-crypt/libb2</flag>
 		<flag name="botan">Enable support for dev-libs/botan</flag>
+		<flag name="cppcrypto">Enable support for dev-libs/cppcrypto</flag>
+		<flag name="crypto++">Enable support for dev-libs/crypto++</flag>
+		<flag name="glib">Enable support for dev-libs/glib</flag>
 		<flag name="gcrypt">Enable support for dev-libs/libgcrypt</flag>
 		<flag name="lzma">Enable CRC32 and CRC64 using app-arch/xz-utils</flag>
 		<flag name="mbedtls">Enable support for net-libs/mbedtls</flag>
@@ -13,6 +16,6 @@
 		<flag name="openssl">Enable support for dev-libs/openssl</flag>
 		<flag name="rhash">Enable support for app-crypt/rhash</flag>
 		<flag name="xxhash">Enable support for dev-libs/xxhash</flag>
-		<flag name="zlib">Enable Adler-32 and CRC32 using sys-libs/zlib</flag>
+		<flag name="zlib">Enable gzip compression, Adler-32 and CRC32 using sys-libs/zlib</flag>
 	</use>
 </pkgmetadata>
