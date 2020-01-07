@@ -3,8 +3,11 @@
 <pkgmetadata>
 	<use>
 		<flag name="llvm">Enable LLVM based recompilation (recommended)</flag>
+		<flag name="system-llvm">Use the system-wide LLVM library instead of the bundled one (not recommended)</flag>
 		<flag name="gdb">Enable debugging with sys-devel/gdb</flag>
 		<flag name="vulkan">Enable vulkan video output</flag>
 		<flag name="evdev">Enable evdev for input</flag>
+		<flag name="discord-rpc">Enable Discord integration</flag>
+		<flag name="faudio">Enable audio using app-emulation/faudio</flag>
 	</use>
 </pkgmetadata>

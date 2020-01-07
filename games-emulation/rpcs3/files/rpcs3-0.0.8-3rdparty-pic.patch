@@ -1,0 +1,24 @@
+diff -ru rpcs3_orig/3rdparty/libpng/CMakeLists.txt rpcs3/3rdparty/libpng/CMakeLists.txt
+--- rpcs3_orig/3rdparty/libpng/CMakeLists.txt	2020-01-07 18:29:55.047688687 +0100
++++ rpcs3/3rdparty/libpng/CMakeLists.txt	2020-01-07 20:20:42.817499344 +0100
+@@ -24,6 +24,8 @@
+ project(libpng C ASM)
+ enable_testing()
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++
+ set(PNGLIB_MAJOR 1)
+ set(PNGLIB_MINOR 6)
+ set(PNGLIB_RELEASE 36)
+diff -ru rpcs3_orig/3rdparty/libusb/CMakeLists.txt rpcs3/3rdparty/libusb/CMakeLists.txt
+--- rpcs3_orig/3rdparty/libusb/CMakeLists.txt	2020-01-07 18:29:55.103689160 +0100
++++ rpcs3/3rdparty/libusb/CMakeLists.txt	2020-01-07 20:20:52.077582227 +0100
+@@ -8,6 +8,8 @@
+ 
+ project(libusb)
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++
+ option(WITHOUT_EXPERIMENTAL_WARNING "Disable the warning that CMake build is experimental whenever CMake is run" ON)
+ if (NOT WITHOUT_EXPERIMENTAL_WARNING)
+ 	message(WARNING "The CMake build system is not officially endorsed.  Support may or may not be provided on the libusb-devel@sourceforge.net mailing list")
