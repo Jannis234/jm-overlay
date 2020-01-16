@@ -1,0 +1,12 @@
+diff -ru sbsigntools-0.9.2.orig/src/sbverify.c sbsigntools-0.9.2/src/sbverify.c
+--- sbsigntools-0.9.2.orig/src/sbverify.c	2019-01-10 01:09:37.000000000 +0100
++++ sbsigntools-0.9.2/src/sbverify.c	2020-01-16 03:50:22.884806319 +0100
+@@ -56,7 +56,7 @@
+ #include <openssl/pem.h>
+ #include <openssl/x509v3.h>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+ #define X509_OBJECT_get0_X509(obj) ((obj)->data.x509)
+ #define X509_OBJECT_get_type(obj) ((obj)->type)
+ #define X509_STORE_CTX_get0_cert(ctx) ((ctx)->cert)
