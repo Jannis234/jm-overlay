@@ -1,6 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-MISC-FREE MoVfuscator wcwidth.cpp ConvertUTF.cpp
+MISC-FREE MoVfuscator
 
 EULA Xcode street_2_art fff_tusj zynamics-bindiff-eula
