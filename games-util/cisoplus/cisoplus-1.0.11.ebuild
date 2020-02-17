@@ -8,8 +8,8 @@ MyP="${PN}_${MyPV}"
 
 DESCRIPTION="A powerfull PSP ISO compressor"
 HOMEPAGE="http://cisoplus.pspgen.com/"
-SRC_URI="http://cisoplus.pspgen.com/Files/${MyP}.zip
-	doc? ( http://cisoplus.pspgen.com/cisoplus3.pdf )"
+SRC_URI="https://web.archive.org/web/20160323075247/http://cisoplus.pspgen.com/Files/${MyP}.zip
+	doc? ( https://web.archive.org/web/20160323075146/http://cisoplus.pspgen.com/cisoplus3.pdf )"
 
 LICENSE="all-rights-reserved"
 SLOT="0"
