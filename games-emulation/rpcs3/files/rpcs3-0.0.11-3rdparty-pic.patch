@@ -1,0 +1,12 @@
+diff -ru rpcs3-0.0.11_orig/3rdparty/libusb_cmake/CMakeLists.txt rpcs3-0.0.11/3rdparty/libusb_cmake/CMakeLists.txt
+--- rpcs3-0.0.11_orig/3rdparty/libusb_cmake/CMakeLists.txt	2020-07-25 18:07:29.967944063 +0200
++++ rpcs3-0.0.11/3rdparty/libusb_cmake/CMakeLists.txt	2020-07-25 18:09:02.043803243 +0200
+@@ -6,6 +6,8 @@
+ 
+ project(libusb)
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++
+ option(WITH_DEBUG_LOG "enable debug logging" OFF)
+ # if debug logging is enabled, by default enable logging
+ option(WITH_LOGGING "if false, disable all logging" ON)
