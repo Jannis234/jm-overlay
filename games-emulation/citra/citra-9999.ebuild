@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -10,12 +10,12 @@ HOMEPAGE="https://citra-emu.org/"
 
 EGIT_REPO_URI="https://github.com/citra-emu/citra.git"
 # These are used by citra and externals/dynarmic which seems to break with git-r3.eclass
-EGIT_SUBMODULES=("*" "-externals/fmt" "-externals/xbyak")
+EGIT_SUBMODULES=("*" "-externals/dynarmic/externals/fmt" "-externals/dynarmic/externals/xbyak")
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="system-boost doc sdl2 qt5 clang telemetry i18n"
+IUSE="system-boost doc sdl2 qt5 clang telemetry i18n ffmpeg discord"
 
 REQUIRED_USE="|| ( sdl2 qt5 )"
 RDEPEND="virtual/opengl
@@ -31,7 +31,9 @@ RDEPEND="virtual/opengl
 		dev-qt/qtmultimedia:5
 		dev-qt/qtopengl:5
 		dev-qt/qtwidgets:5
-	)"
+	)
+	ffmpeg? ( media-video/ffmpeg:= )
+	!ffmpeg? ( media-libs/fdk-aac:= )"
 DEPEND="${DEPEND}
 	>=dev-util/cmake-3.8
 	doc? ( >=app-doc/doxygen-1.8.8[dot] )
@@ -58,12 +60,6 @@ src_unpack() {
 	done
 }
 
-src_prepare() {
-	eapply "${FILESDIR}/citra-system-boost.patch"
-	eapply_user
-	cmake-utils_src_prepare
-}
-
 src_configure() {
 	if use clang; then
 		export CC=clang
@@ -76,10 +72,13 @@ src_configure() {
 		-DENABLE_SDL2="$(usex sdl2)"
 		-DCITRA_USE_BUNDLED_SDL2=OFF
 		-DCITRA_USE_BUNDLED_QT=OFF
-		-DCITRA_USE_BUNDLED_CURL=OFF
+		-DCITRA_USE_BUNDLED_FFMPEG=OFF
 		-DENABLE_QT_TRANSLATION="$(usex i18n)"
 		-DENABLE_WEB_SERVICE="$(usex telemetry)"
 		-DUSE_SYSTEM_BOOST="$(usex system-boost)"
+		-DENABLE_FFMPEG_AUDIO_DECODER="$(usex ffmpeg)"
+		-DENABLE_FFMPEG_VIDEO_DUMPER="$(usex ffmpeg)"
+		-DUSE_DISCORD_PRESENCE="$(usex discord)"
 	)
 	cmake-utils_src_configure
 }
