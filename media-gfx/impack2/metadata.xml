@@ -2,9 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
+		<flag name="avif">Add support for AVIF images</flag>
 		<flag name="bmp">Add support for BMP images</flag>
 		<flag name="brotli">Enable brotli compression support</flag>
 		<flag name="flif">Enable support for FLIF images</flag>
+		<flag name="heif">Enable support for HEIF/HEIC images</flag>
 		<flag name="jpegls">Enable support for JPEG-LS images</flag>
 		<flag name="jxr">Enable support for JPEG XR images</flag>
 		<flag name="zstd">Enable zstd compression support</flag>
