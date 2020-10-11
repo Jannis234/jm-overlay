@@ -16,7 +16,8 @@ IUSE="static-libs doc"
 
 RDEPEND="dev-qt/qtcore:5=
 	dev-qt/qtgui:5=
-	dev-qt/qtwidgets:5="
+	dev-qt/qtwidgets:5=
+	dev-cpp/cpp-utilities:="
 DEPEND="${RDEPEND}"
 BDEPEND="doc? ( app-doc/doxygen )"
 
