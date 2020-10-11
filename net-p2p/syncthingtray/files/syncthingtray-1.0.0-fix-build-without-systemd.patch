@@ -1,0 +1,12 @@
+diff --color -ru syncthingtray-1.0.0_orig/plasmoid/lib/syncthingapplet.cpp syncthingtray-1.0.0/plasmoid/lib/syncthingapplet.cpp
+--- syncthingtray-1.0.0_orig/plasmoid/lib/syncthingapplet.cpp	2020-10-08 16:39:22.000000000 +0200
++++ syncthingtray-1.0.0/plasmoid/lib/syncthingapplet.cpp	2020-10-11 23:33:54.045754953 +0200
+@@ -222,7 +222,7 @@
+     const auto systemdConsideredForReconnect
+         = settings.systemd.apply(m_connection, currentConnectionConfig(), reconnectRequired).consideredForReconnect;
+ #else
+-    const auto systemdRelevantForReconnect = false;
++    const auto systemdConsideredForReconnect = false;
+ #endif
+     if (!systemdConsideredForReconnect && (reconnectRequired || !m_connection.isConnected())) {
+         m_connection.reconnect();
