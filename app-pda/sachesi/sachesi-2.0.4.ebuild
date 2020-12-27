@@ -1,7 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit qmake-utils desktop
 
@@ -31,11 +31,6 @@ RDEPEND="dev-qt/qtcore:5=
 	!libressl? ( dev-libs/openssl:0= )
 	libressl? ( dev-libs/libressl:= )"
 DEPEND="${RDEPEND}"
-
-src_prepare() {
-	eapply "${FILESDIR}/${P}-libressl.patch"
-	eapply_user
-}
 
 src_configure() {
 	eqmake5 Sachesi.pro CONFIG+="shared_quazip shared_lzo2"
