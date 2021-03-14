@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-multilib
 
@@ -22,6 +22,7 @@ S="${WORKDIR}/googletest-release-${PV}/googletest"
 src_prepare() {
 	eapply "${FILESDIR}/gtest-1.8.0-libdir.patch"
 	eapply_user
+	cmake-utils_src_prepare
 }
 
 multilib_src_configure() {
