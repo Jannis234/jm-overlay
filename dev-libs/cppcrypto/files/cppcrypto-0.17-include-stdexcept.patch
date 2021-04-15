@@ -1,0 +1,11 @@
+diff --color -ru cppcrypto_orig/blake.cpp cppcrypto/blake.cpp
+--- cppcrypto_orig/blake.cpp	2017-10-23 15:49:49.000000000 +0200
++++ cppcrypto/blake.cpp	2021-04-15 02:55:09.015655901 +0200
+@@ -8,6 +8,7 @@
+ #include "blake.h"
+ #include <memory.h>
+ #include <functional>
++#include <stdexcept>
+ 
+ //#define CPPCRYPTO_DEBUG
+ //#define NO_OPTIMIZED_VERSIONS

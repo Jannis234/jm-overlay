@@ -24,6 +24,7 @@ S="${WORKDIR}/cppcrypto"
 src_prepare() {
 	eapply_user
 	eapply "${FILESDIR}/${P}-Makefile.patch"
+	eapply "${FILESDIR}/${P}-include-stdexcept.patch"
 	multilib_copy_sources
 }
 
