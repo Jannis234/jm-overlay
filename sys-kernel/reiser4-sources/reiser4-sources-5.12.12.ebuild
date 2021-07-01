@@ -7,6 +7,7 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_GENPATCHES_VER="13"
 K_SECURITY_UNSUPPORTED="1"
+K_NODRYRUN="1"
 REISER4_VER="5.12"
 
 inherit kernel-2
