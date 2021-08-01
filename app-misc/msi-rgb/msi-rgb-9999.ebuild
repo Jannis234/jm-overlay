@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Gentoo Authors
+# Copyright 2017-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -7,7 +7,7 @@ inherit git-r3 cargo
 
 DESCRIPTION="Utility for controlling RGB header on some MSI boards"
 HOMEPAGE="https://github.com/nagisa/msi-rgb"
-SRC_URI="$(cargo_crate_uris ${CRATES})"
+SRC_URI=""
 EGIT_REPO_URI="https://github.com/nagisa/msi-rgb.git"
 
 LICENSE="ISC MIT"
