@@ -2,7 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
-		<flag name="px437">Install fonts with the original DOS charset</flag>
-		<flag name="pxplus">Install fonts with unicode enhancements</flag>
+		<flag name="otb-bm">Install bitmap only font variants (OpenType bitmap)</flag>
+		<flag name="ttf-ac">Install aspect-corrected font variants (TrueType)</flag>
+		<flag name="ttf-mx">Install "mixed" bitmap+outline font variants (TrueType)</flag>
+		<flag name="ttf-px">Install outlined font variants (TrueType)</flag>
 	</use>
 </pkgmetadata>
