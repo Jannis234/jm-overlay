@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_{8,9,10} )
+PYTHON_COMPAT=( python3_{8,9} )
 
 inherit distutils-r1
 
@@ -17,7 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-python/annexremote[${PYTHON_USEDEP}]
-	dev-python/pydrive[${PYTHON_USEDEP}]
-	dev-python/tenacity[${PYTHON_USEDEP}]"
-DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]"
+	>=dev-python/drivelib-0.1.4[${PYTHON_USEDEP}]
+	dev-python/GitPython[${PYTHON_USEDEP}]
+	dev-python/tenacity[${PYTHON_USEDEP}]
+	dev-python/humanfriendly[${PYTHON_USEDEP}]"
+DEPEND="${RDEPEND}"
