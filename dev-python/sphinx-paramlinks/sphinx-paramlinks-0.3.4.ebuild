@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_{6,7,8,9} pypy )
+PYTHON_COMPAT=( python3_{8,9,10} pypy )
 
 inherit distutils-r1
 
