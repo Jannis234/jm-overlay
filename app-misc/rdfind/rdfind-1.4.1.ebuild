@@ -19,6 +19,6 @@ RESTRICT="test"
 
 DEPEND="dev-libs/nettle"
 RDEPEND="${DEPEND}"
-BDEPEND="verify-sig? ( app-crypt/openpgp-keys-pauldreik )"
+BDEPEND="verify-sig? ( sec-keys/openpgp-keys-pauldreik )"
 
 VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/pauldreik.asc
