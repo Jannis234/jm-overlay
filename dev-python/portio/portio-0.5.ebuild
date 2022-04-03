@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_{8,9,10} pypy pypy3 )
+PYTHON_COMPAT=( python3_{8,9,10} pypy3 )
 inherit distutils-r1
 
 DESCRIPTION="Python low level port I/O for Linux x86"
