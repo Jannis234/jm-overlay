@@ -1,13 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="8"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="78"
+K_GENPATCHES_VER="22"
 K_SECURITY_UNSUPPORTED="1"
-REISER4_VER="4.9.3"
+REISER4_VER="5.16"
 
 inherit kernel-2
 detect_version
@@ -18,7 +18,7 @@ HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches https://sourceforge.net/pro
 IUSE="experimental"
 
 DESCRIPTION="Full sources including the Gentoo and Reiser4 patchsets for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
-REISER4_URI="https://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-4.x/reiser4-for-${REISER4_VER}.patch.gz"
+REISER4_URI="https://downloads.sourceforge.net/project/reiser4/reiser4-for-linux-5.x/reiser4-for-${REISER4_VER}.patch.gz"
 GENPATCHES_URI="https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.base.tar.xz
 	https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.extras.tar.xz
 	https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.experimental.tar.xz"
