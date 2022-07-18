@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=8
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="Displays information about DOL files (Nintendo GameCube/Wii binaries)"
 HOMEPAGE="http://wiibrew.org/wiki/Readdol"
@@ -19,14 +19,14 @@ DEPEND="${RDEPEND}
 	app-arch/unzip"
 
 src_prepare() {
-	rm readdol.exe
+	rm readdol.exe || die
 
 	sed -i \
 		-e "s/-g -O2//" \
 		-e "s/gcc/${CHOST}-gcc/" \
 		Makefile || die
 
-	epatch_user
+	eapply_user
 }
 
 src_compile() {
