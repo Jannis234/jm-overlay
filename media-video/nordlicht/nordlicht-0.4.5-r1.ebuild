@@ -1,8 +1,9 @@
-# Copyright 1999-2021 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib
 
 DESCRIPTION="library + tool that creates colorful video barcodes"
@@ -13,11 +14,10 @@ SRC_URI="https://github.com/blinry/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="GPL-2+ BSD BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test libav"
+IUSE="test"
 
 RDEPEND="dev-libs/popt[${MULTILIB_USEDEP}]
-	libav? ( media-video/libav:=[${MULTILIB_USEDEP}] )
-	!libav? ( media-video/ffmpeg:=[${MULTILIB_USEDEP}] )"
+	media-video/ffmpeg:=[${MULTILIB_USEDEP}]"
 DEPEND="${RDEPEND}
 	sys-apps/help2man"
 
@@ -32,7 +32,7 @@ src_unpack() {
 
 src_prepare() {
 	eapply_user
-	cmake-utils_src_prepare
+	cmake_src_prepare
 	use test && multilib_copy_sources
 }
 

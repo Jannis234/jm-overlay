@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils multibuild
+inherit cmake multibuild
 
 FORKAWESOME_PV="1.2.0"
 
@@ -39,7 +39,7 @@ src_configure() {
 		else
 			mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 		fi
-		cmake-utils_src_configure
+		cmake_src_configure
 	}
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
 	multibuild_foreach_variant myconfig
@@ -47,10 +47,10 @@ src_configure() {
 
 src_compile() {
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
-	multibuild_foreach_variant cmake-utils_src_compile
+	multibuild_foreach_variant cmake_src_compile
 }
 
 src_install() {
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
-	multibuild_foreach_variant cmake-utils_src_install
+	multibuild_foreach_variant cmake_src_install
 }

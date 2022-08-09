@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Tray application and Dolphin/Plasma integration for Syncthing"
 HOMEPAGE="https://github.com/Martchus/syncthingtray"
@@ -59,5 +59,5 @@ src_configure() {
 		-DWEBVIEW_PROVIDER=$webview
 		-DJS_PROVIDER=$js
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

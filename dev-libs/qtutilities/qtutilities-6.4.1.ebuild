@@ -1,9 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit cmake-utils multibuild
+inherit cmake multibuild
 
 DESCRIPTION="Common Qt related C++ classes and routines"
 HOMEPAGE="https://github.com/Martchus/qtutilities"
@@ -32,7 +32,7 @@ src_configure() {
 		else
 			mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 		fi
-		cmake-utils_src_configure
+		cmake_src_configure
 	}
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
 	multibuild_foreach_variant myconfig
@@ -40,9 +40,9 @@ src_configure() {
 
 src_compile() {
 	mycompile() {
-		cmake-utils_src_compile
+		cmake_src_compile
 		if [[ ${MULTIBUILD_VARIANT} = shared ]]; then
-			use doc && cmake-utils_src_compile apidoc
+			use doc && cmake_src_compile apidoc
 		fi
 	}
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
@@ -51,7 +51,7 @@ src_compile() {
 
 src_install() {
 	myinstall() {
-		cmake-utils_src_install
+		cmake_src_install
 		if [[ ${MULTIBUILD_VARIANT} = shared ]]; then
 			use doc && dodoc -r "${BUILD_DIR}/api-doc/html"
 		fi

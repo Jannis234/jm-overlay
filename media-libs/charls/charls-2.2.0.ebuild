@@ -3,6 +3,7 @@
 
 EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib
 
 DESCRIPTION="C++ implementation of the JPEG-LS standard"
@@ -23,7 +24,7 @@ multilib_src_configure() {
 		-DCHARLS_BUILD_TESTS=OFF
 		-DCHARLS_INSTALL=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 multilib_src_install_all() {

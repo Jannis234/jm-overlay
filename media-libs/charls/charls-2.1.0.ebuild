@@ -1,8 +1,9 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2020-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib
 
 DESCRIPTION="C++ implementation of the JPEG-LS standard"
@@ -23,7 +24,7 @@ multilib_src_configure() {
 		-DCHARLS_BUILD_TESTS=OFF
 		-DCHARLS_INSTALL=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 multilib_src_install_all() {

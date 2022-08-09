@@ -1,9 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Tray application and Dolphin/Plasma integration for Syncthing"
 HOMEPAGE="https://github.com/Martchus/syncthingtray"
@@ -45,7 +45,7 @@ REQUIRED_USE="^^ ( webkit webengine )"
 
 src_prepare() {
 	eapply "${FILESDIR}/${PN}-1.0.0-fix-build-without-systemd.patch"
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -63,5 +63,5 @@ src_configure() {
 		-DWEBVIEW_PROVIDER=$webview
 		-DJS_PROVIDER=$js
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

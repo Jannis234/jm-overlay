@@ -1,8 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib multibuild
 
 DESCRIPTION="Common C++ classes and routines"
@@ -30,7 +31,7 @@ multilib_src_configure() {
 		else
 			mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 		fi
-		cmake-utils_src_configure
+		cmake_src_configure
 	}
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
 	multibuild_foreach_variant myconfig
@@ -38,9 +39,9 @@ multilib_src_configure() {
 
 multilib_src_compile() {
 	mycompile() {
-		cmake-utils_src_compile
+		cmake_src_compile
 		if [[ ${MULTIBUILD_VARIANT} = shared ]]; then
-			use doc && multilib_is_native_abi && cmake-utils_src_compile apidoc
+			use doc && multilib_is_native_abi && cmake_src_compile apidoc
 		fi
 	}
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
@@ -49,7 +50,7 @@ multilib_src_compile() {
 
 multilib_src_install() {
 	myinstall() {
-		cmake-utils_src_install
+		cmake_src_install
 		if [[ ${MULTIBUILD_VARIANT} = shared ]]; then
 			use doc && multilib_is_native_abi && dodoc -r "${BUILD_DIR}/api-doc/html"
 		fi
@@ -65,5 +66,5 @@ src_install() {
 
 multilib_src_test() {
 	MULTIBUILD_VARIANTS=($(usev static-libs) shared)
-	multibuild_foreach_variant cmake-utils_src_compile check
+	multibuild_foreach_variant cmake_src_compile check
 }

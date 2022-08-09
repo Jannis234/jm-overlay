@@ -1,8 +1,9 @@
-# Copyright 1999-2021 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
+CMAKE_ECLASS=cmake
 inherit cmake-multilib
 
 DESCRIPTION="Google C++ Testing Framework"
@@ -22,7 +23,7 @@ S="${WORKDIR}/googletest-release-${PV}/googletest"
 src_prepare() {
 	eapply "${FILESDIR}/gtest-1.8.0-libdir.patch"
 	eapply_user
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 multilib_src_configure() {
@@ -32,11 +33,11 @@ multilib_src_configure() {
 		-Dgtest_build_samples=$(multilib_is_native_abi && use examples && echo ON || echo OFF)
 		-Dgtest_build_tests=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 multilib_src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	docinto samples
 	multilib_is_native_abi && use examples && dodoc sample*_unittest
 }
