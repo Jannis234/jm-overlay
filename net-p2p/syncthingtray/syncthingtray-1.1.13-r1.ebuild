@@ -16,7 +16,7 @@ IUSE="kde systemd webkit webengine"
 
 DEPEND=">=dev-cpp/cpp-utilities-5.0.0:=
 	>=dev-libs/qtutilities-6.3.0:=
-	dev-libs/qtforkawesome:=
+	dev-libs/qtforkawesome:=[declarative]
 	>=dev-qt/qtcore-5.6:5=
 	>=dev-qt/qtnetwork-5.6:5=
 	>=dev-qt/qtgui-5.6:=
