@@ -27,7 +27,7 @@ RDEPEND="virtual/opengl
 	x11-libs/libXext
 	x11-libs/libXrandr
 	dev-libs/libpcre
-	x11-libs/libva
+	media-libs/libva
 	alsa? ( media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
 	jack? ( media-sound/jack-audio-connection-kit )
