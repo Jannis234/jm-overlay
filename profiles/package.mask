@@ -1,0 +1,4 @@
+# Depends on dev-python/oauth2client (masked in gentoo)
+dev-python/drivelib
+dev-vcs/git-annex-remote-googledrive
+
