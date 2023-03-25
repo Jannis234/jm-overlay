@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="whisper_models_tiny">Install the tiny model</flag>
+		<flag name="whisper_models_tiny-en">Install an English-only variant of the tiny model</flag>
+		<flag name="whisper_models_base">Install the base model</flag>
+		<flag name="whisper_models_base-en">Install an English-only variant of the base model</flag>
+		<flag name="whisper_models_small">Install the small model</flag>
+		<flag name="whisper_models_small-en">Install an English-only variant of the small model</flag>
+		<flag name="whisper_models_medium">Install the medium model</flag>
+		<flag name="whisper_models_medium-en">Install an English-only variant of the medium model</flag>
+		<flag name="whisper_models_large">Install the large model</flag>
+		<flag name="whisper_models_large-v1">Install the original version of the large model</flag>
+	</use>
+</pkgmetadata>

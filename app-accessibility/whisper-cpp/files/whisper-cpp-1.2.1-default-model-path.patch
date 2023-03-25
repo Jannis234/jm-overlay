@@ -1,0 +1,12 @@
+diff --color -ru whisper.cpp-1.2.1_orig/examples/main/main.cpp whisper.cpp-1.2.1/examples/main/main.cpp
+--- whisper.cpp-1.2.1_orig/examples/main/main.cpp	2023-02-28 21:29:12.000000000 +0100
++++ whisper.cpp-1.2.1/examples/main/main.cpp	2023-03-25 19:07:17.715524942 +0100
+@@ -80,7 +80,7 @@
+ 
+     std::string language = "en";
+     std::string prompt;
+-    std::string model    = "models/ggml-base.en.bin";
++    std::string model    = "/usr/share/whisper/ggml-models/base.en.bin";
+ 
+     std::vector<std::string> fname_inp = {};
+     std::vector<std::string> fname_out = {};
