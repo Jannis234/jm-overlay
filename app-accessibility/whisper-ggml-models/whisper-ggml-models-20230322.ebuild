@@ -26,6 +26,7 @@ MODELS=(
 	"large" "large-v1"
 )
 
+REQUIRED_USE="|| ("
 for i in ${MODELS[@]}; do
 	use_default=""
 	if [ "$i" == "base" ]; then
@@ -34,8 +35,10 @@ for i in ${MODELS[@]}; do
 		use_default="-"
 	fi
 	IUSE="${IUSE} ${use_default}whisper_models_${i/./-}"
+	REQUIRED_USE="${REQUIRED_USE} whisper_models_${i/./-}"
 	SRC_URI="${SRC_URI} whisper_models_${i/./-}? ( https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-${i}.bin -> whisper-ggml-${i}.bin )"
 done
+REQUIRED_USE="${REQUIRED_USE} )"
 
 whisper_check-reqs() {
 	req=0
