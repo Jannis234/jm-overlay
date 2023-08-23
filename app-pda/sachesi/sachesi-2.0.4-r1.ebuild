@@ -15,7 +15,7 @@ SRC_URI="https://github.com/xsacha/Sachesi/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="libressl"
+IUSE=""
 
 S="${WORKDIR}/${MyP}"
 
@@ -28,8 +28,7 @@ RDEPEND="dev-qt/qtcore:5=
 	virtual/libudev:=
 	dev-libs/lzo:2
 	virtual/libusb:1
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:= )"
+	dev-libs/openssl:0="
 DEPEND="${RDEPEND}"
 
 src_prepare() {
