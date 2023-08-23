@@ -32,6 +32,12 @@ RDEPEND="dev-qt/qtcore:5=
 	libressl? ( dev-libs/libressl:= )"
 DEPEND="${RDEPEND}"
 
+src_prepare() {
+	sed -i "s/-lquazip/-lquazip1-qt5/g" Sachesi.pro || die
+	sed -i "s|lrelease|$(qt5_get_bindir)/lrelease|g" Sachesi.pro || die
+	eapply_user
+}
+
 src_configure() {
 	eqmake5 Sachesi.pro CONFIG+="shared_quazip shared_lzo2"
 }
