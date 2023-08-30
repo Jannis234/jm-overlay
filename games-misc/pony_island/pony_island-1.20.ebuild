@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit eutils
+inherit desktop wrapper
 
 DESCRIPTION="Pony Island is a suspense puzzle game in disguise"
 HOMEPAGE="http://www.pony-island.com/"

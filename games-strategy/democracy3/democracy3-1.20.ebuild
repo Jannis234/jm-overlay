@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 MyPN="Democracy3"
 
-inherit eutils
+inherit desktop wrapper
 
 DESCRIPTION="Indepth political simulator"
 HOMEPAGE="http://www.positech.co.uk/democracy3/index.php"
