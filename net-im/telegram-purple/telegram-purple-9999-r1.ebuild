@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,11 +12,10 @@ EGIT_REPO_URI="${HOMEPAGE}"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+webp libressl"
+IUSE="+webp"
 
 DEPEND="net-im/pidgin
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:0= )
+	dev-libs/openssl:0=
 	webp? ( media-libs/libwebp )"
 RDEPEND="${DEPEND}"
 

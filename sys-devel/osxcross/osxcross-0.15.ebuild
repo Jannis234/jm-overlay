@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,14 +22,13 @@ CHECKREQS_DISK_BUILD="10G"
 EGIT_COMMMIT="5702a9ab39274d6edc7138410c3701f0b8b35923"
 RESTRICT="mirror bindist"
 
-# We don't need a "libressl" USE flag because MacPorts just uses the "openssl" binary, the library isn't needed
 CDEPEND=">=sys-devel/clang-3.2:*
 	app-arch/xar"
 RDEPEND="${CDEPEND}
 	macports? (
 		app-shells/bash
 		net-misc/wget
-		|| ( dev-libs/openssl:0 dev-libs/libressl )
+		dev-libs/openssl:0
 	)"
 DEPEND="${CDEPEND}
 	app-shells/bash:0

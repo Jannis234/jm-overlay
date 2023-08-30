@@ -1,4 +1,4 @@
-# Copyright 2019-2021 Gentoo Authors
+# Copyright 2019-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,7 +12,7 @@ SRC_URI="https://github.com/Jannis234/xsum/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="openmp botan cppcrypto crypto++ glib gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium -openssl -libressl rhash xxhash zlib"
+IUSE="openmp botan cppcrypto crypto++ glib gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium -openssl rhash xxhash zlib"
 
 DEPEND="botan? ( dev-libs/botan:2= )
 	cppcrypto? ( dev-libs/cppcrypto:= )
@@ -28,16 +28,13 @@ DEPEND="botan? ( dev-libs/botan:2= )
 	lzma? ( app-arch/xz-utils:= )
 	sodium? ( dev-libs/libsodium:= )
 	openssl? ( dev-libs/openssl:= )
-	libressl? ( dev-libs/libressl:= )
 	rhash? ( app-crypt/rhash:= )
 	xxhash? ( dev-libs/xxhash:= )
 	zlib? ( sys-libs/zlib:= )"
 RDEPEND="${DEPEND}"
 BDEPEND="sys-apps/help2man"
 
-REQUIRED_USE="?? ( openssl libressl )"
-RESTRICT="openssl? ( bindist )
-	libressl? ( bindist )"
+RESTRICT="openssl? ( bindist )"
 
 xsum_make() {
 	tc-export CC AR RANLIB PKG_CONFIG
@@ -58,7 +55,7 @@ xsum_make() {
 		WITH_LIBGCRYPT=$(usex gcrypt 1 0) \
 		WITH_LIBLZMA=$(usex lzma 1 0) \
 		WITH_LIBSODIUM=$(usex sodium 1 0) \
-		WITH_OPENSSL=$(usex openssl 1 $(usex libressl 1 0)) \
+		WITH_OPENSSL=$(usex openssl 1 0) \
 		WITH_RHASH=$(usex rhash 1 0) \
 		WITH_XXHASH=$(usex xxhash 1 0) \
 		WITH_ZLIB=$(usex zlib 1 0) \

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/xoreaxeaxeax/movfuscator"
 LICENSE="MoVfuscator LCC test? ( Unlicense ) examples? ( BSD )"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="+softfloat postproc test doc examples libressl"
+IUSE="+softfloat postproc test doc examples"
 
 MOVFUSCATOR_REPO_URI="https://github.com/xoreaxeaxeax/movfuscator.git"
 LCC_REPO_URI="https://github.com/drh/lcc"
@@ -23,13 +23,11 @@ DEPEND="amd64? ( sys-devel/gcc:=[multilib] )
 	x86? ( sys-devel/gcc:= )
 	examples? (
 		amd64? (
-			!libressl? ( dev-libs/openssl:0=[abi_x86_32] )
-			libressl? ( dev-libs/libressl:0=[abi_x86_32] )
+			dev-libs/openssl:0=[abi_x86_32]
 			sys-libs/ncurses:0=[abi_x86_32]
 		)
 		x86? (
-			!libressl? ( dev-libs/openssl:0= )
-			libressl? ( dev-libs/libressl:0= )
+			dev-libs/openssl:0=
 			sys-libs/ncurses:0=
 		)
 	)"
