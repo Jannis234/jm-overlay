@@ -12,9 +12,12 @@ SRC_URI="https://github.com/Jannis234/xsum/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="openmp botan gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium -openssl rhash xxhash zlib"
+IUSE="openmp botan cppcrypto crypto++ glib gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium openssl rhash xxhash zlib"
 
 DEPEND="botan? ( dev-libs/botan:2= )
+	cppcrypto? ( >=dev-libs/cppcrypto-0.18:= )
+	crypto++? ( >=dev-libs/crypto++-8.6.0:= )
+	glib? ( dev-libs/glib:2= )
 	gnutls? ( net-libs/gnutls:= )
 	mbedtls? ( net-libs/mbedtls:= )
 	mhash? ( app-crypt/mhash:= )
@@ -24,14 +27,12 @@ DEPEND="botan? ( dev-libs/botan:2= )
 	gcrypt? ( >=dev-libs/libgcrypt-1.7.0:= )
 	lzma? ( app-arch/xz-utils:= )
 	sodium? ( dev-libs/libsodium:= )
-	openssl? ( <dev-libs/openssl-3:= )
+	openssl? ( >=dev-libs/openssl-3.0:= )
 	rhash? ( app-crypt/rhash:= )
 	xxhash? ( dev-libs/xxhash:= )
 	zlib? ( sys-libs/zlib:= )"
 RDEPEND="${DEPEND}"
 BDEPEND="sys-apps/help2man"
-
-RESTRICT="openssl? ( bindist )"
 
 xsum_make() {
 	tc-export CC AR RANLIB PKG_CONFIG
@@ -40,6 +41,9 @@ xsum_make() {
 	emake CCFLAGS="${CFLAGS}" \
 		WITH_OPENMP=$(usex openmp 1 0) \
 		WITH_BOTAN=$(usex botan 1 0) \
+		WITH_CPPCRYPTO=$(usex cppcrypto 1 0) \
+		WITH_CRYPTOPP=$(usex crypto++ 1 0) \
+		WITH_GLIB=$(usex glib 1 0) \
 		WITH_GNUTLS=$(usex gnutls 1 0) \
 		WITH_MBEDTLS=$(usex mbedtls 1 0) \
 		WITH_MHASH=$(usex mhash 1 0) \

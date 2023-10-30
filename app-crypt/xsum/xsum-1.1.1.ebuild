@@ -27,7 +27,7 @@ DEPEND="botan? ( dev-libs/botan:2= )
 	gcrypt? ( >=dev-libs/libgcrypt-1.7.0:= )
 	lzma? ( app-arch/xz-utils:= )
 	sodium? ( dev-libs/libsodium:= )
-	openssl? ( dev-libs/openssl:= )
+	openssl? ( <dev-libs/openssl-3:= )
 	rhash? ( app-crypt/rhash:= )
 	xxhash? ( dev-libs/xxhash:= )
 	zlib? ( sys-libs/zlib:= )"
