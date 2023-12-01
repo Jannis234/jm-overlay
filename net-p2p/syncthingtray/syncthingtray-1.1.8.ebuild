@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Gentoo Authors
+# Copyright 2021-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -33,7 +33,7 @@ DEPEND=">=dev-cpp/cpp-utilities-5.0.0:=
 	kde? (
 		>=dev-qt/qtdeclarative-5.12:=
 		kde-frameworks/kio:5=
-		kde-frameworks/plasma:5=
+		kde-plasma/libplasma:5=
 	)"
 RDEPEND="${DEPEND}
 	net-p2p/syncthing"

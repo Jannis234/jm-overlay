@@ -30,7 +30,7 @@ DEPEND=">=dev-cpp/cpp-utilities-5.20.0:=
 	kde? (
 		>=dev-qt/qtdeclarative-5.12:=
 		kde-frameworks/kio:5=
-		kde-frameworks/plasma:5=
+		kde-plasma/libplasma:5=
 	)"
 RDEPEND="${DEPEND}
 	net-p2p/syncthing"
