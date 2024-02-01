@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-DEPEND="test? ( dev-util/valgrind )
+DEPEND="test? ( dev-debug/valgrind )
 	sys-apps/texinfo"
 RDEPEND=""
 

@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 BDEPEND="sys-apps/texinfo"
-DEPEND="test? ( dev-util/valgrind )"
+DEPEND="test? ( dev-debug/valgrind )"
 RDEPEND=""
 
 src_prepare() {
