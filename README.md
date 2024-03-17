@@ -1,20 +1,15 @@
 # Welcome!
 
 It looks like you have found my personal portage overlay.
-This overlay contains mostly random ebuilds that might be useful for somebody.
+This overlay contains mostly random ebuilds that may or may not be useful for somebody.
 
 # Adding the overlay
-The overlay is available using layman. Just run "layman -a jm-overlay" and you should be able to use it.
-If you don't want to use layman, just clone the git repository somewhere and add the path to "PORTDIR_OVERLAY" in your make.conf
-
-# Updating md5-cache
-The directory metadata/md5-cache can contain cache files to speed up portage when working with ebuilds from the overlay.
-This overlay does not include these files (anymore), so it is recommended to generate these yourself. To do that, just run:
+The overlay is available through app-eselect/eselect-repository. After installing, you can add it by running
 ```
-egencache --update --repo=jm-overlay
+eselect repository enable jm-overlay
 ```
 
 # Quality of this overlay
 Everything in this overlay should be considered experimental!
-While I try to keep the quality of the ebuilds as high as I can, Gentoo can run in many different configurations and I can't test all of them myself. If you have any problems or suggestions, feel free to report them on github.
+While I try to write ebuilds with reasonable quality, they are mostly just tested on my personal machines (amd64). Since Gentoo can run in many other configurations, there might be cases where an ebuild won't build or install correctly. If that happens to you, please feel free to report the problem on Github so I can fix it.
 
