@@ -6,7 +6,7 @@ diff --color -ru whisper.cpp-1.2.1_orig/examples/main/main.cpp whisper.cpp-1.2.1
      std::string language = "en";
      std::string prompt;
 -    std::string model    = "models/ggml-base.en.bin";
-+    std::string model    = "/usr/share/whisper/ggml-models/base.en.bin";
++    std::string model    = "/usr/share/whisper/whisper-ggml-default.bin";
  
      std::vector<std::string> fname_inp = {};
      std::vector<std::string> fname_out = {};

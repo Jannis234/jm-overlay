@@ -1,0 +1,12 @@
+diff --color -ru whisper.cpp-1.5.4_orig/examples/main/main.cpp whisper.cpp-1.5.4/examples/main/main.cpp
+--- whisper.cpp-1.5.4_orig/examples/main/main.cpp	2024-01-05 16:11:27.000000000 +0100
++++ whisper.cpp-1.5.4/examples/main/main.cpp	2024-03-17 22:35:51.829480801 +0100
+@@ -95,7 +95,7 @@
+     std::string language  = "en";
+     std::string prompt;
+     std::string font_path = "/System/Library/Fonts/Supplemental/Courier New Bold.ttf";
+-    std::string model     = "models/ggml-base.en.bin";
++    std::string model     = "/usr/share/whisper/whisper-ggml-default.bin";
+ 
+     // [TDRZ] speaker turn string
+     std::string tdrz_speaker_turn = " [SPEAKER_TURN]"; // TODO: set from command line
