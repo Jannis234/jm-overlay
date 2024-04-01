@@ -2,6 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
+		<flag name="argon2">Use app-crypt/argon2 for password hashing (requires USE=crypt)</flag>
 		<flag name="avif">Add support for AVIF images</flag>
 		<flag name="bmp">Add support for BMP images</flag>
 		<flag name="brotli">Enable brotli compression support</flag>
