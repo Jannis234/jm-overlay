@@ -6,23 +6,19 @@ EAPI=7
 PYTHON_COMPAT=( python3_{10,11,12} pypy3 )
 
 inherit distutils-r1
+DISTUTILS_USE_PEP517=setuptools
 
 DESCRIPTION="Classes to calculate CRCs and checksums from binary data"
-HOMEPAGE="https://sourceforge.net/projects/crccheck/"
-SRC_URI="https://sourceforge.net/projects/crccheck/files/${P}.tar.gz"
+HOMEPAGE="https://github.com/MartinScharrer/crccheck"
+SRC_URI="https://github.com/MartinScharrer/crccheck/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3+"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND="app-arch/unzip"
+BDEPEND=""
 
-distutils_enable_tests "nose"
-
-src_prepare() {
-	sed -i "s/, 'tests'//g" setup.py || die
-	eapply_user
-}
+distutils_enable_tests pytest
