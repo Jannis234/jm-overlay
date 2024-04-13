@@ -6,6 +6,7 @@ EAPI=7
 PYTHON_COMPAT=( python3_{10,11,12} )
 
 inherit distutils-r1
+DISTUTILS_USE_PEP517=setuptools
 
 DESCRIPTION="A python client for the OpenRGB SDK"
 HOMEPAGE="https://github.com/jath03/openrgb-python/"
@@ -19,6 +20,8 @@ IUSE="examples"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+distutils_enable_sphinx docs
 
 src_install() {
 	distutils-r1_src_install

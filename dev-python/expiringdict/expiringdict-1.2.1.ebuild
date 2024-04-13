@@ -5,6 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{10,11,12} )
 inherit distutils-r1
+DISTUTILS_USE_PEP517=setuptools
 
 DESCRIPTION="Helper module to easily develop git-annex remotes"
 HOMEPAGE="https://github.com/mailgun/expiringdict"
