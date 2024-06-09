@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit git-r3 readme.gentoo-r1 eutils
+inherit git-r3 readme.gentoo-r1 wrapper
 
 DESCRIPTION="Upload files to onedrive via linux command line"
 HOMEPAGE="https://github.com/fkalis/bash-onedrive-upload"
