@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit  java-utils-2
+inherit desktop java-utils-2
 
 MyPV="1_0_3"
 
@@ -11,7 +11,7 @@ DESCRIPTION="Application that turns mouse movements into modern art"
 HOMEPAGE="http://iographica.com/"
 SRC_URI="https://github.com/anatolyzenkov/IOGraph/releases/download/v${PV}/${PN}_v${MyPV}.jar"
 
-LICENSE="all-rights-reserved"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
