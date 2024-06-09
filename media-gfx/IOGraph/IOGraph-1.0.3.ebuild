@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils java-utils-2
+inherit  java-utils-2
 
 MyPV="1_0_3"
 
