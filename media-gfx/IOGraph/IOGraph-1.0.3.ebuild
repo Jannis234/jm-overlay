@@ -1,15 +1,15 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit eutils java-utils-2
+inherit  java-utils-2
 
-MyPV="1_0_1"
+MyPV="1_0_3"
 
 DESCRIPTION="Application that turns mouse movements into modern art"
 HOMEPAGE="http://iographica.com/"
-SRC_URI="http://iographica.com/download/linux/${PN}_v${MyPV}.jar"
+SRC_URI="https://github.com/anatolyzenkov/IOGraph/releases/download/v${PV}/${PN}_v${MyPV}.jar"
 
 LICENSE="all-rights-reserved"
 SLOT="0"
