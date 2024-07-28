@@ -1,0 +1,55 @@
+diff --color -ru acarsdec-acarsdec-3.7_orig/CMakeLists.txt acarsdec-acarsdec-3.7/CMakeLists.txt
+--- acarsdec-acarsdec-3.7_orig/CMakeLists.txt	2022-08-04 21:44:32.000000000 +0200
++++ acarsdec-acarsdec-3.7/CMakeLists.txt	2024-07-28 17:02:01.480528941 +0200
+@@ -1,13 +1,13 @@
+ cmake_minimum_required (VERSION 3.2)
+ project (acarsdec C)
+ 
+-add_compile_options(-Ofast -march=native)
+-
+ add_executable(acarsdec acars.c  acarsdec.c  cJSON.c  label.c  msk.c  output.c netout.c fileout.c )
+ 
+-find_package(PkgConfig)
++option(libacars_enable "Enable libacars")
++if (libacars_enable)
++		find_package(PkgConfig REQUIRED)
+ if(PKG_CONFIG_FOUND)
+-pkg_check_modules(LIBACARS libacars-2>=2.0.0)
++		pkg_check_modules(LIBACARS libacars-2>=2.0.0 REQUIRED)
+ if(LIBACARS_FOUND)
+ message ( STATUS "Using libacars")
+ add_definitions(-DHAVE_LIBACARS )
+@@ -18,8 +18,11 @@
+ message ( STATUS "Not using libacars")
+ endif()
+ endif()
++endif()
+ 
+-find_library(MQTT paho-mqtt3a)
++option(mqtt_enable "Enable mqtt")
++if (mqtt_enable)
++find_library(MQTT paho-mqtt3a REQUIRED)
+ if(MQTT)
+ message ( STATUS "Using MQTT")
+ add_definitions(-DWITH_MQTT )
+@@ -28,8 +31,11 @@
+ else()
+ message ( STATUS "Not using MQTT")
+ endif()
++endif()
+ 
+-find_library(LIBSNDFILE sndfile)
++option(sndfile_enable "Enable libsndfile")
++if (sndfile_enable)
++find_library(LIBSNDFILE sndfile REQUIRED)
+ if(LIBSNDFILE)
+ message ( STATUS "Using libsnd")
+ add_definitions(-DWITH_SNDFILE )
+@@ -38,6 +44,7 @@
+ else()
+ message ( STATUS "Not using libsndfile")
+ endif()
++endif()
+ 
+ option(rtl "Compiling for rtl sdr" )
+ if(rtl)
