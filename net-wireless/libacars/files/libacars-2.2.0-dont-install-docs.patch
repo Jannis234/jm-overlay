@@ -1,0 +1,19 @@
+diff --color -ru libacars-2.2.0_orig/libacars/CMakeLists.txt libacars-2.2.0/libacars/CMakeLists.txt
+--- libacars-2.2.0_orig/libacars/CMakeLists.txt	2023-08-21 23:18:46.000000000 +0200
++++ libacars-2.2.0/libacars/CMakeLists.txt	2024-07-28 15:10:58.572357809 +0200
+@@ -241,15 +241,6 @@
+ 	DESTINATION
+ 	"${CMAKE_INSTALL_LIBDIR}/pkgconfig"
+ )
+-install(FILES
+-	"${PROJECT_SOURCE_DIR}/README.md"
+-	"${PROJECT_SOURCE_DIR}/LICENSE.md"
+-	DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/${LA_SUBDIR}"
+-)
+-install(DIRECTORY
+-	"${PROJECT_SOURCE_DIR}/doc/"
+-	DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/${LA_SUBDIR}"
+-)
+ # Copy zlib1.dll to the bundle on Windows
+ if(WIN32 AND ZLIB_FOUND
+ AND NOT ${ZLIBDLL_LIBRARY_RELEASE} STREQUAL "ZLIBDLL_LIBRARY_RELEASE-NOTFOUND")
