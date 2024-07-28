@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="profiling">Enable profiling</flag>
+		<flag name="sdr">Enable SDR input using net-wireless/soapysdr</flag>
+		<flag name="zeromq">Enable ZeroMQ output</flag>
+	</use>
+</pkgmetadata>
