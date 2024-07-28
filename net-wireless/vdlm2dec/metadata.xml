@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="airspy">Enable Airspy SDR support</flag>
+		<flag name="libacars">Enable decoding of ARINC-622 ATS applications using net-wireless/libacars</flag>
+		<flag name="rtlsdr">Enable RTL-SDR SDR support</flag>
+	</use>
+</pkgmetadata>

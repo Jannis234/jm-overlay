@@ -1,0 +1,29 @@
+diff --color -ru vdlm2dec-2.3_orig/CMakeLists.txt vdlm2dec-2.3/CMakeLists.txt
+--- vdlm2dec-2.3_orig/CMakeLists.txt	2023-03-05 18:17:24.000000000 +0100
++++ vdlm2dec-2.3/CMakeLists.txt	2024-07-28 17:50:57.458538962 +0200
+@@ -1,13 +1,13 @@
+ cmake_minimum_required (VERSION 3.2)
+ project (vdlm2dec C)
+ 
+-add_compile_options(-Ofast -march=native )
+-
+ add_executable(vdlm2dec cJSON.c  crc.c  d8psk.c  label.c  main.c  outacars.c  arincpos.c out.c  outxid.c  rs.c  vdlm2.c  viterbi.c )
+ 
+-find_package(PkgConfig)
++option(libacars_enable "Enable libacars")
++if (libacars_enable)
++find_package(PkgConfig REQUIRED)
+ if(PKG_CONFIG_FOUND)
+-pkg_check_modules(LIBACARS libacars-2>=2.0.0)
++pkg_check_modules(LIBACARS libacars-2>=2.0.0 REQUIRED)
+ if(LIBACARS_FOUND)
+ message ( STATUS "Using libacars")
+ add_definitions(-DHAVE_LIBACARS )
+@@ -19,6 +19,7 @@
+ message ( STATUS "Not using libacars")
+ endif()
+ endif()
++endif()
+ 
+ option(rtl "Compiling for rtl sdr" )
+ if(rtl)
