@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 inherit git-r3 readme.gentoo-r1 wrapper
 
@@ -31,7 +31,7 @@ src_install() {
 	doins -r *
 	for i in onedrive-authorize onedrive-upload onedriveb-authorize onedriveb-upload; do
 		fperms +x "/usr/$(get_libdir)/${PN}/$i"
-		make_wrapper $i "${EROOT}usr/$(get_libdir)/${PN}/$i" "${EROOT}usr/$(get_libdir)/${PN}/"
+		make_wrapper $i "${EROOT}/usr/$(get_libdir)/${PN}/$i" "${EROOT}/usr/$(get_libdir)/${PN}/"
 	done
 	fperms +x "/usr/$(get_libdir)/${PN}/libs/json/bash-json-parser"
 	readme.gentoo_create_doc
