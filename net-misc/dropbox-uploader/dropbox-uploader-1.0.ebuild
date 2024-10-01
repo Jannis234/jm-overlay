@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 DESCRIPTION=" BASH script to upload, download, list or delete files from Dropbox"
 HOMEPAGE="https://github.com/andreafabrizi/Dropbox-Uploader/"

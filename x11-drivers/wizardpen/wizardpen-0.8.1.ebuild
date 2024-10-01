@@ -1,13 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit versionator
+inherit udev
 
 DESCRIPTION="A Linux/HAL/udev/X11 driver for most non-Wacom graphics pads"
 HOMEPAGE="https://launchpad.net/wizardpen"
-SRC_URI="https://launchpad.net/wizardpen/trunk/$(get_version_component_range 1-2)/+download/xorg-input-wizardpen-${PV}.tar.bz2"
+SRC_URI="https://launchpad.net/wizardpen/trunk/$(ver_cut 1-2)/+download/xorg-input-wizardpen-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -28,4 +28,12 @@ src_prepare() {
 
 src_configure() {
 	econf --with-udev-rules-dir=/lib/udev/rules.d
+}
+
+pkg_postinst() {
+	udev_reload
+}
+
+pkg_postrm() {
+	udev_reload
 }
