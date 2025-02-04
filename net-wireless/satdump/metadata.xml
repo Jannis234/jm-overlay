@@ -8,11 +8,12 @@
 		<flag name="satdump_plugins_aim">Enable AIM support</flag>
 		<flag name="satdump_plugins_analog">Enable analog protocols</flag>
 		<flag name="satdump_plugins_airspy_sdr">Enable Airspy SDR support</flag>
+		<flag name="satdump_plugins_aws">Enable AWS (Sterna) support</flag>
 		<flag name="satdump_plugins_bladerf_sdr">Enable BladeRF SDR support</flag>
 		<flag name="satdump_plugins_bluewalker3">Enable BlueWalker-3 support</flag>
 		<flag name="satdump_plugins_bochum">Enable Bochum support</flag>
 		<flag name="satdump_plugins_cluster">Enable CLUSTER support</flag>
-		<flag name="satdump_plugins_cubesat">Enable support for SubeSats</flag>
+		<flag name="satdump_plugins_cubesat">Enable support for CubeSats</flag>
 		<flag name="satdump_plugins_dmsp">Enable DMSP support</flag>
 		<flag name="satdump_plugins_dscovr">Enable DSCOVR support</flag>
 		<flag name="satdump_plugins_dvb">Enable DVB-S/DVB-S2 support</flag>
@@ -36,6 +37,7 @@
 		<flag name="satdump_plugins_landsat">Enable LandSat support</flag>
 		<flag name="satdump_plugins_mats">Enable MATS support</flag>
 		<flag name="satdump_plugins_meteor">Enable Meteor (HRPT, LRPT, etc.) support</flag>
+		<flag name="satdump_plugins_meteosat">Enable Meteosat support</flag>
 		<flag name="satdump_plugins_mirisdr_sdr">Enable MiriSDR SDR support</flag>
 		<flag name="satdump_plugins_net_source_sdr">Enable network source SDR support</flag>
 		<flag name="satdump_plugins_noaa_metop">Enable NOAA/MetOp (AHRPT, HRPT, X-Band dumps, GAC, etc.) support</flag>
@@ -46,6 +48,7 @@
 		<flag name="satdump_plugins_portaudio_sink">Enable audio output using media-libs/portaudio</flag>
 		<flag name="satdump_plugins_proba">Enable Proba (1, 2, V, etc.) support</flag>
 		<flag name="satdump_plugins_remote_sdr">Enable remote SDR support</flag>
+		<flag name="satdump_plugins_rfnm_sdr">Enable RFNM SDR support</flag>
 		<flag name="satdump_plugins_rtaudio_sdr">Enable input support using media-libs/rtaudio</flag>
 		<flag name="satdump_plugins_rtaudio_sink">Enable audio output using media-libs/rtaudio</flag>
 		<flag name="satdump_plugins_rtlsdr_sdr">Enable RTL-SDR SDR support</flag>
