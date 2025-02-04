@@ -3,5 +3,6 @@
 <pkgmetadata>
 	<use>
 		<flag name="declarative">Enable features that use dev-qt/qtdeclarative</flag>
+		<flag name="style">Apply icon mode via QStyle</flag>
 	</use>
 </pkgmetadata>
