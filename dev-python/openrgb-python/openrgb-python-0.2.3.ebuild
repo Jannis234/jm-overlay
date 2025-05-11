@@ -1,12 +1,12 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 PYTHON_COMPAT=( python3_{10,11,12,13} )
+DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1
-DISTUTILS_USE_PEP517=setuptools
 
 DESCRIPTION="A python client for the OpenRGB SDK"
 HOMEPAGE="https://github.com/jath03/openrgb-python/"

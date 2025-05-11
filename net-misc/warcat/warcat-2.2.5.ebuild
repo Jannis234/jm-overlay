@@ -1,12 +1,12 @@
-# Copyright 1999-2024 Gentoo Foundation
+# Copyright 1999-2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 PYTHON_COMPAT=( python3_{10,11,12,13} pypy3 )
+DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1
-DISTUTILS_USE_PEP517=setuptools
 
 DESCRIPTION="Tool and library for handling Web ARChive (WARC) files"
 HOMEPAGE="https://github.com/chfoo/warcat"
