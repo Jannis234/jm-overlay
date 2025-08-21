@@ -1,0 +1,125 @@
+diff -ru acarsdec-4.3.1_orig/CMakeLists.txt acarsdec-4.3.1/CMakeLists.txt
+--- acarsdec-4.3.1_orig/CMakeLists.txt	2025-07-24 12:02:24.000000000 +0200
++++ acarsdec-4.3.1/CMakeLists.txt	2025-08-21 22:35:29.411210950 +0200
+@@ -1,8 +1,6 @@
+ cmake_minimum_required (VERSION 3.12)
+ project (acarsdec C)
+ 
+-add_compile_options(-Ofast)
+-
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+ 
+ add_executable(acarsdec acars.c  acarsdec.c  label.c  msk.c  output.c netout.c fileout.c lib.c statsd.c)
+@@ -14,6 +12,9 @@
+ message ( FATAL_ERROR "pkg-config NOT FOUND")
+ endif()
+ 
++option (cjson_enable "Enable cJSON")
++option (mqtt_enable "Enable MQTT")
++if (cjson_enable)
+ pkg_check_modules(LIBCJSON libcjson)
+ if(LIBCJSON_FOUND)
+ add_definitions(-DHAVE_CJSON )
+@@ -22,6 +23,7 @@
+ target_link_directories(acarsdec PUBLIC ${LIBCJSON_LIBRARY_DIRS})
+ 
+  SET(WITH_MQTT NO)
++ if (mqtt_enable)
+  find_library(MQTT paho-mqtt3a)
+  if(MQTT)
+  add_definitions(-DWITH_MQTT )
+@@ -32,10 +34,14 @@
+  SET(WITH_MQTT YES)
+  endif()
+  message ( STATUS "Using paho-mqtt3a: ${WITH_MQTT}")
++ endif()
+ 
+ endif()
++endif()
+ 
++option(alsa_enable "Enable ALSA")
+ SET(WITH_ALSA NO)
++if (libalsa_enable)
+ pkg_check_modules(LIBASOUND alsa)
+ if(LIBASOUND_FOUND)
+ add_definitions(-DWITH_ALSA )
+@@ -46,8 +52,11 @@
+ SET(WITH_ALSA YES)
+ endif()
+ message ( STATUS "Using alsa: ${WITH_ALSA}")
++endif()
+ 
++option(libacars_enable "Enable libacars")
+ SET(WITH_LIBACARS NO)
++if (libacars_enable)
+ pkg_check_modules(LIBACARS libacars-2>=2.0.0)
+ if(LIBACARS_FOUND)
+ add_definitions(-DHAVE_LIBACARS )
+@@ -57,8 +66,11 @@
+ SET(WITH_LIBACARS YES)
+ endif()
+ message ( STATUS "Using libacars: ${WITH_LIBACARS}")
++endif()
+ 
++option(libsndfile_enable "Enable libsndfile")
+ SET(WITH_SNDFILE NO)
++if (libsndfile_enable)
+ find_library(LIBSNDFILE sndfile)
+ if(LIBSNDFILE)
+ add_definitions(-DWITH_SNDFILE )
+@@ -69,8 +81,11 @@
+ SET(WITH_SNDFILE YES)
+ endif()
+ message ( STATUS "Using libsnd: ${WITH_SNDFILE}")
++endif()
+ 
++option (rtl_enable "Enable RTl-SDR")
+ SET(WITH_RTL NO)
++if (rtl_enable)
+ find_library(LIBRTL rtlsdr)
+ if(LIBRTL)
+ add_definitions(-DWITH_RTL )
+@@ -79,8 +94,11 @@
+ SET(WITH_RTL YES)
+ endif()
+ message ( STATUS "Using librtlsdr: ${WITH_RTL}")
++endif()
+ 
++option (airspy_enable "Enable Airspy")
+ SET(WITH_AIR NO)
++if (airspy_enable)
+ find_library(LIBAIR airspy)
+ if(LIBAIR)
+ add_definitions(-DWITH_AIR )
+@@ -89,8 +107,11 @@
+ SET(WITH_AIR YES)
+ endif()
+ message ( STATUS "Using libairspy: ${WITH_AIR}")
++endif()
+ 
++option (sdrplay_enable "Enable sdrplay")
+ SET(WITH_SDRPLAY NO)
++if (sdrplay_enable)
+ find_library(LIBPLAY mirsdrapi-rsp)
+ if(LIBPLAY)
+ add_definitions(-DWITH_SDRPLAY )
+@@ -99,8 +120,11 @@
+ SET(WITH_SDRPLAY YES)
+ endif()
+ message ( STATUS "Using libmirsdrapi-rsp: ${WITH_SDRPLAY}")
++endif()
+ 
++option (soapy_enable "Enable SoapySDR")
+ SET(WITH_SOAPY NO)
++if (soapy_enable)
+ find_library(LIBSOAPY SoapySDR)
+ if(LIBSOAPY)
+ add_definitions(-DWITH_SOAPY )
+@@ -109,6 +133,7 @@
+ SET(WITH_SOAPY YES)
+ endif()
+ message ( STATUS "Using libSoapySDR: ${WITH_SOAPY}")
++endif()
+ 
+ target_link_libraries( acarsdec pthread m )
+ 
