@@ -14,12 +14,10 @@ SRC_URI="http://www.comedi.org/download/${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc static-libs udev firmware pdf python scxi"
+IUSE="doc static-libs pdf python scxi"
 
-DEPEND="udev? ( virtual/udev )
-	python? ( ${PYTHON_DEPS} )"
-RDEPEND="${DEPEND}
-	firmware? ( !sys-kernel/linux-firmware[-savedconfig] )"
+DEPEND="python? ( ${PYTHON_DEPS} )"
+RDEPEND="${DEPEND}"
 BDEPEND="doc? ( app-text/xmlto )
 	pdf? ( app-text/dblatex )"
 REQUIRED_USE="pdf? ( doc )
@@ -32,19 +30,13 @@ multilib_src_configure() {
 	ECONF_SOURCE="${S}" econf \
 		$(use_enable static-libs static) \
 		$(use_enable scxi) \
-		$(multilib_native_use_enable firmware) \
+		$(multilib_native_use_enable doc) \
 		$(multilib_native_use_enable doc docbook) \
 		$(multilib_native_use_enable python python-binding) \
-		$(use_with pdf pdf-backend dblatex) \
-		$(use_with udev udev-hotplug "${EPREFIX}/lib")
+		$(use_with pdf pdf-backend dblatex)
 }
 
 multilib_src_install() {
 	default
 	use python && python_optimize
-}
-
-multilib_src_install_all() {
-	cd "${S}"
-	dodoc INSTALL AUTHORS ChangeLog NEWS README
 }

@@ -1,24 +1,24 @@
-# Copyright 1999-2025 Gentoo Foundation
+# Copyright 2019-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 PYTHON_COMPAT=( python3_{11,12,13,14} pypy3_11 )
-DISTUTILS_USE_PEP517=setuptools
-DISTUTILS_EXT=1
 
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
-DESCRIPTION="Python low level port I/O for Linux x86"
-HOMEPAGE="http://portio.inrim.it/ https://pypi.org/project/portio/"
+DESCRIPTION="Classes to calculate CRCs and checksums from binary data"
+HOMEPAGE="https://github.com/MartinScharrer/crccheck"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-LICENSE="GPL-3"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+BDEPEND=""
 
-DOCS=( index.rst )
+distutils_enable_tests pytest

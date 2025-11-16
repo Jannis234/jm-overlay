@@ -21,7 +21,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-distutils_enable_sphinx docs
+distutils_enable_sphinx docs "dev-python/sphinx-autodoc-typehints"
 
 src_install() {
 	distutils-r1_src_install
