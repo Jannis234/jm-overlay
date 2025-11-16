@@ -2,6 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
+		<flag name="kafka">Enable Apache Kafka output</flag>
 		<flag name="profiling">Enable profiling</flag>
 		<flag name="sdr">Enable SDR input using net-wireless/soapysdr</flag>
 		<flag name="zeromq">Enable ZeroMQ output</flag>
