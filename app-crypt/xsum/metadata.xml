@@ -3,7 +3,6 @@
 <pkgmetadata>
 	<use>
 		<flag name="blake2">Enable BLAKE2 hashes using app-crypt/libb2</flag>
-		<flag name="botan">Enable support for dev-libs/botan</flag>
 		<flag name="cppcrypto">Enable support for dev-libs/cppcrypto</flag>
 		<flag name="crypto++">Enable support for dev-libs/crypto++</flag>
 		<flag name="glib">Enable support for dev-libs/glib</flag>

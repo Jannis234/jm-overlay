@@ -1,4 +1,4 @@
-# Copyright 2020-2023 Gentoo Authors
+# Copyright 2019-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,10 +12,9 @@ SRC_URI="https://github.com/Jannis234/xsum/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="openmp botan cppcrypto crypto++ glib gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium -openssl rhash xxhash zlib"
+IUSE="openmp cppcrypto crypto++ glib gnutls mbedtls mhash nettle nss blake2 gcrypt lzma sodium -openssl rhash xxhash zlib"
 
-DEPEND="botan? ( dev-libs/botan:2= )
-	cppcrypto? ( dev-libs/cppcrypto:= )
+DEPEND="cppcrypto? ( dev-libs/cppcrypto:= )
 	crypto++? ( dev-libs/crypto++:= )
 	glib? ( dev-libs/glib:2= )
 	gnutls? ( net-libs/gnutls:= )
@@ -42,7 +41,6 @@ xsum_make() {
 	[[ "${CHOST}" == *-mingw* || "${CHOST}" == mingw* ]] && mingw=1
 	emake CCFLAGS="${CFLAGS}" \
 		WITH_OPENMP=$(usex openmp 1 0) \
-		WITH_BOTAN=$(usex botan 1 0) \
 		WITH_CPPCRYPTO=$(usex cppcrypto 1 0) \
 		WITH_CRYPTOPP=$(usex crypto++ 1 0) \
 		WITH_GLIB=$(usex glib 1 0) \
@@ -60,6 +58,7 @@ xsum_make() {
 		WITH_XXHASH=$(usex xxhash 1 0) \
 		WITH_ZLIB=$(usex zlib 1 0) \
 		WITH_WINDOWS_CNG=$mingw \
+		WITH_BOTAN=0 \
 		$@
 }
 
