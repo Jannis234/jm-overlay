@@ -1,6 +1,0 @@
-obj-m += nct6687.o
-
-module:
-	make -C $(KERNEL_DIR) M=$(S) modules
-
-clean:
