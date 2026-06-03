@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,28 +12,19 @@ SRC_URI="https://github.com/Martchus/qtutilities/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt5 qt6 static-libs doc"
+IUSE="static-libs doc"
 
-RDEPEND="qt5? (
-		dev-qt/qtcore:5=
-		dev-qt/qtgui:5=
-		dev-qt/qtwidgets:5=
-	)
-	qt6? (
-		dev-qt/qtbase:6=[gui,widgets]
-	)
+RDEPEND="dev-qt/qtbase:6=[gui,widgets]
 	>=dev-cpp/cpp-utilities-5.5.0:="
 DEPEND="${RDEPEND}"
 BDEPEND="doc? ( app-text/doxygen )"
-
-REQUIRED_USE="^^ ( qt5 qt6 )"
 
 src_configure() {
 	myconfig() {
 		local mycmakeargs=(
 			-DAPPEND_GIT_REVISION=OFF
 			-DNO_DOXYGEN=OFF
-			-DQT_PACKAGE_PREFIX=$(usex qt5 Qt5 Qt6)
+			-DQT_PACKAGE_PREFIX="Qt6"
 		)
 		if [[ ${MULTIBUILD_VARIANT} = static-libs ]]; then
 			mycmakeargs+=( -DBUILD_SHARED_LIBS=OFF )
