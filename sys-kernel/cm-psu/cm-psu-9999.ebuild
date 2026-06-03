@@ -1,9 +1,9 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit git-r3 linux-mod
+inherit git-r3 linux-mod-r1
 
 DESCRIPTION="Linux hwmon driver for Cooler Master power supplies"
 HOMEPAGE="https://github.com/Jannis234/cm-psu"
@@ -17,10 +17,15 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-BUILD_PARAMS="KERNEL_DIR=${KERNEL_DIR}"
-MODULE_NAMES="cm-psu(misc:${S}:${S})"
+#BUILD_PARAMS="KERNEL_DIR=${KERNEL_DIR}"
+#MODULE_NAMES="cm-psu(misc:${S}:${S})"
 
-src_prepare() {
-	cp "${FILESDIR}/${PN}-Makefile" "Makefile" || die
-	eapply_user
+#src_prepare() {
+#	cp "${FILESDIR}/${PN}-Makefile" "Makefile" || die
+#	eapply_user
+#}
+
+src_compile() {
+	local modlist=( "cm-psu=kernel/drivers/hwmon::" )
+	linux-mod-r1_src_compile
 }
