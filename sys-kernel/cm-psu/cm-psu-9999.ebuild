@@ -17,15 +17,8 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-#BUILD_PARAMS="KERNEL_DIR=${KERNEL_DIR}"
-#MODULE_NAMES="cm-psu(misc:${S}:${S})"
-
-#src_prepare() {
-#	cp "${FILESDIR}/${PN}-Makefile" "Makefile" || die
-#	eapply_user
-#}
-
 src_compile() {
 	local modlist=( "cm-psu=kernel/drivers/hwmon::" )
+	local modargs=( KERNELDIR="${KV_OUT_DIR}" )
 	linux-mod-r1_src_compile
 }

@@ -1,6 +1,0 @@
-obj-m += cm-psu.o
-
-module:
-	make -C $(KERNEL_DIR) M=$(S) modules
-
-clean:
